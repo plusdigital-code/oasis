@@ -14,6 +14,10 @@ export const Approutes: Routes = [
         loadChildren: './starter/starter.module#StarterModule'
       },
       {
+        path: 'auth',
+        loadChildren: './auth/auth.module#AuthModule'
+      },
+      {
         path: 'component',
         loadChildren: './component/component.module#ComponentsModule'
       }
