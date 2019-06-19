@@ -26,6 +26,10 @@ export const Approutes: Routes = [
         loadChildren: './offices/offices.module#OfficesModule'
       },
       {
+        path: 'contacts',
+        loadChildren: './contacts/contacts.module#ContactsModule'
+      },
+      {
         path: 'auth',
         loadChildren: './auth/auth.module#AuthModule'
       },

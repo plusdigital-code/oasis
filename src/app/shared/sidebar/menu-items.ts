@@ -45,6 +45,31 @@ export const ROUTES: RouteInfo[] = [
     submenu: []
   },
   {
+    path: '',
+    title: 'Contacts',
+    icon: 'mdi mdi-dots-horizontal',
+    class: 'nav-small-cap',
+    extralink: true,
+    submenu: []
+  },
+      {
+        path: '/contacts',
+        title: 'All Contacts',
+        icon: 'icon-Address-Book',
+        class: '',
+        extralink: false,
+        submenu: []
+      },
+      {
+        path: '/leads',
+        title: 'Leads',
+        icon: 'icon-Car-Wheel',
+        class: '',
+        extralink: false,
+        submenu: []
+      },
+
+  {
     path: '/starter',
     title: 'Starter Page',
     icon: 'icon-Files',
