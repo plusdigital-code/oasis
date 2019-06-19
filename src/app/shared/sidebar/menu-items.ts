@@ -37,6 +37,15 @@ export const ROUTES: RouteInfo[] = [
     ]
   },
   {
+    path: '/brokers',
+    title: 'Brokers',
+    icon: 'icon-Handshake',
+    class: '',
+    extralink: false,
+    submenu: [
+    ]
+  },
+  {
     path: '',
     title: 'Personal',
     icon: 'mdi mdi-dots-horizontal',

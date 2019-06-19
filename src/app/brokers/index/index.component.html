@@ -1,0 +1,17 @@
+<div class="row p-t-20">
+      
+    <div class="col-md-8">
+            <formio-grid src="https://digitaloffice.form.io/broker" [query]="{limit:20, sort:'data.firstName'}" (rowSelect)="onSelect($event)"></formio-grid>
+                  </div>
+    <div class="col-md-4">
+       <div class="card bg-light-info">
+    <div class="card-body">
+<formio src="https://digitaloffice.form.io/searchbrokers" (submit)="onSubmit($event)"></formio>
+</div>
+</div>
+    </div>
+
+
+</div>
+
+

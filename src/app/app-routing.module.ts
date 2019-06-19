@@ -22,6 +22,10 @@ export const Approutes: Routes = [
         loadChildren: './agent/agent.module#AgentModule'
       },
       {
+        path: 'brokers',
+        loadChildren: './brokers/brokers.module#BrokersModule'
+      },
+      {
         path: 'offices',
         loadChildren: './offices/offices.module#OfficesModule'
       },
