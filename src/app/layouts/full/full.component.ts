@@ -1,5 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 declare var $: any;
 
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
@@ -42,6 +42,12 @@ export class FullComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+          return;
+      }
+      window.scrollTo(0, 0)
+  });
     if (this.router.url === '/') {
       this.router.navigate(['/dashboard/dashboard1']);
     }
