@@ -47,12 +47,20 @@ export const ROUTES: RouteInfo[] = [
   },
   {
     path: '',
-    title: 'Personal',
+    title: 'Mandates',
     icon: 'mdi mdi-dots-horizontal',
     class: 'nav-small-cap',
     extralink: true,
     submenu: []
   },
+      {
+        path: '/mandates',
+        title: 'My Mandates',
+        icon: 'icon-Car-Wheel',
+        class: '',
+        extralink: false,
+        submenu: []
+      },
   {
     path: '',
     title: 'Contacts',

@@ -30,6 +30,10 @@ export const Approutes: Routes = [
         loadChildren: './offices/offices.module#OfficesModule'
       },
       {
+        path: 'mandates',
+        loadChildren: './mandates/mandates.module#MandatesModule'
+      },
+      {
         path: 'contacts',
         loadChildren: './contacts/contacts.module#ContactsModule'
       },

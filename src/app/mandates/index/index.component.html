@@ -1,0 +1,5 @@
+<formio-grid src="https://digitaloffice.form.io/mandates"
+(rowSelect)="onSelect($event)"
+[query]="{sort:created,limit:30}"
+[createText]="'New Listing'"
+(createItem)="onCreateItem()"></formio-grid>
