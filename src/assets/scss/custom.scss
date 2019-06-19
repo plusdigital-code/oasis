@@ -159,3 +159,20 @@ display: inline !important;
 .help-block{
     font-size:11px;
 }
+
+.btn-warning{
+    color: #000;
+    font-weight: 600;
+}
+
+.btn-warning:hover{
+    font-weight: 700;
+    background-color: #000;
+    color: #fff200
+}
+
+.btn-warning:focus{
+    background-color: #000;
+    color: #fff200;
+    font-weight: 700;
+}

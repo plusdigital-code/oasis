@@ -1,0 +1,13 @@
+<div style="background-color: #fafafa;">
+    <ul class="nav nav-tabs" style="margin-bottom: 25px; width:100%;">
+      <li class="nav-item"><a class="nav-link" routerLink="../"><i class="fa fa-chevron-left"></i> </a></li>
+      <li class="nav-item"><a class="nav-link" routerLink="view" routerLinkActive="active"><i class="icon-Preview"></i> Overview</a></li>
+      <li class="nav-item"><a class="nav-link" href="./#/listings/{{ service.resource?.data.listingProfileId }}/view" routerLinkActive="active"><i class="icon-Add-UserStar"></i> Listing Profile</a></li>
+      <li class="nav-item"><a class="nav-link" href="./#/tools/{{ service.resource?.data.toolsId }}/view" routerLinkActive="active"><i class="icon-Add-UserStar"></i> Publish</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink="edit" routerLinkActive="active"><i class="icon-Pen-2"></i> Edit</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink="delete" routerLinkActive="active"><i class="sl-icon-trash"></i></a></li>
+      
+    </ul>
+    <div class="clearfix"></div>
+    </div>
+    <router-outlet></router-outlet>

@@ -14,6 +14,18 @@ export const Approutes: Routes = [
         loadChildren: './starter/starter.module#StarterModule'
       },
       {
+        path: 'account',
+        loadChildren: './account/account.module#AccountModule'
+      },
+      {
+        path: 'agent',
+        loadChildren: './agent/agent.module#AgentModule'
+      },
+      {
+        path: 'offices',
+        loadChildren: './offices/offices.module#OfficesModule'
+      },
+      {
         path: 'auth',
         loadChildren: './auth/auth.module#AuthModule'
       },
