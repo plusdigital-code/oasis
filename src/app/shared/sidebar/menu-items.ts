@@ -80,7 +80,7 @@ export const ROUTES: RouteInfo[] = [
       {
         path: '/leads',
         title: 'Leads',
-        icon: 'icon-Car-Wheel',
+        icon: 'icon-Add-UserStar',
         class: '',
         extralink: false,
         submenu: []
