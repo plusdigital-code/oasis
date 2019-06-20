@@ -61,7 +61,11 @@ import { AgmCoreModule } from '@agm/core';
         {
             path: 'documents',
             loadChildren: './documents/documents.module#DocumentsModule'
-        }
+        },
+        {
+          path: 'mandate-leads',
+          loadChildren: './mandate-leads/mandate-leads.module#MandateLeadsModule'
+      }
         ]
       },
     ])
