@@ -56,7 +56,7 @@ export const ROUTES: RouteInfo[] = [
       {
         path: '/mandates',
         title: 'My Mandates',
-        icon: 'icon-Car-Wheel',
+        icon: 'icon-File-Edit',
         class: '',
         extralink: false,
         submenu: []

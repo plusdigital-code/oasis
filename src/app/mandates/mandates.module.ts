@@ -15,12 +15,14 @@ import {
 import { IndexComponent } from './index/index.component';
 import { FormioGrid } from 'angular-formio/grid';
 import { ViewComponent } from './view/view.component';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   imports: [
     CommonModule,
     FormioModule,
     FormioGrid,
+    AgmCoreModule,
     FormioResource,
     RouterModule.forChild([
       {
@@ -42,7 +44,7 @@ import { ViewComponent } from './view/view.component';
           },
           {
             path: 'view',
-            component: FormioResourceViewComponent
+            component: ViewComponent
           },
           {
             path: 'edit',
@@ -51,7 +53,15 @@ import { ViewComponent } from './view/view.component';
           {
             path: 'delete',
             component: FormioResourceDeleteComponent
-          }
+          },
+          {
+            path: 'showings',
+            loadChildren: './showings/showings.module#ShowingsModule'
+        },
+        {
+            path: 'documents',
+            loadChildren: './documents/documents.module#DocumentsModule'
+        }
         ]
       },
     ])
