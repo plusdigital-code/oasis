@@ -1,3 +1,4 @@
-<p>
-  index works!
-</p>
+<formio-grid src="https://digitaloffice.form.io/leads"
+(rowSelect)="onSelect($event)"
+[createText]="'New Listing'"
+(createItem)="onCreateItem()"></formio-grid>

@@ -38,6 +38,10 @@ export const Approutes: Routes = [
         loadChildren: './contacts/contacts.module#ContactsModule'
       },
       {
+        path: 'leads',
+        loadChildren: './leads/leads.module#LeadsModule'
+      },
+      {
         path: 'auth',
         loadChildren: './auth/auth.module#AuthModule'
       },
