@@ -63,7 +63,7 @@ export const ROUTES: RouteInfo[] = [
   },
   {
     path: '',
-    title: 'Listings',
+    title: 'Available Stock',
     icon: 'mdi mdi-dots-horizontal',
     class: 'nav-small-cap',
     extralink: true,
@@ -71,7 +71,7 @@ export const ROUTES: RouteInfo[] = [
   },
   {
     path: '/office-stock',
-    title: 'Office Stock',
+    title: 'Office Listings',
     icon: 'icon-File-Edit',
     class: '',
     extralink: false,
