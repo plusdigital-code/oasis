@@ -1,0 +1,25 @@
+<div style="background-color: #fafafa;">
+      <ul class="nav nav-tabs" style="margin-bottom: 25px; width:100%;">
+            <li class="nav-item"><a class="nav-link" routerLink="../"><i class="fa fa-chevron-left"></i></a></li>
+            <li class="nav-item"><a class="nav-link" routerLink="view" routerLinkActive="active">Mandate</a></li>
+            <li class="nav-item"><a class="nav-link"
+                        href="./#/listings/{{ service.resource?.data.listingProfileId }}/view"
+                        routerLinkActive="active"><i class="icon-File-HorizontalText"></i> Listing Profile</a></li>
+            <li class="nav-item"><a class="nav-link" href="./#/tools/{{ service.resource?.data.toolsId }}/view"
+                  routerLinkActive="active"><i class="icon-Megaphone"></i> Marketing</a></li>
+            <li class="nav-item"><a class="nav-link" routerLink="showings" routerLinkActive="active"><i
+                              class="icon-Calendar-4"></i> Showings</a></li>
+            <li class="nav-item"><a class="nav-link" routerLink="mandate-leads" routerLinkActive="active"><i
+                              class="icon-Add-UserStar"></i> Leads</a></li>
+            <li class="nav-item"><a class="nav-link" routerLink="documents" routerLinkActive="active"><i
+                              class="icon-Files"></i>
+                        Notes & Docs</a></li>
+            <li class="nav-item"><a class="nav-link" routerLink="edit" routerLinkActive="active"><i
+                              class="icon-Pen-2"></i>
+                        Edit</a></li>
+            <li class="nav-item"><a class="nav-link" routerLink="delete" routerLinkActive="active"><i
+                              class="sl-icon-trash"></i></a></li>
+      </ul>
+      <div class="clearfix"></div>
+</div>
+<router-outlet></router-outlet>

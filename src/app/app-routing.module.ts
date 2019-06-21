@@ -14,6 +14,46 @@ export const Approutes: Routes = [
         loadChildren: './starter/starter.module#StarterModule'
       },
       {
+        path: 'account',
+        loadChildren: './account/account.module#AccountModule'
+      },
+      {
+        path: 'agent',
+        loadChildren: './agent/agent.module#AgentModule'
+      },
+      {
+        path: 'brokers',
+        loadChildren: './brokers/brokers.module#BrokersModule'
+      },
+      {
+        path: 'offices',
+        loadChildren: './offices/offices.module#OfficesModule'
+      },
+      {
+        path: 'mandates',
+        loadChildren: './mandates/mandates.module#MandatesModule'
+      },
+      {
+        path: 'listings',
+        loadChildren: './listings/listings.module#ListingsModule'
+      },
+      {
+        path: 'tools',
+        loadChildren: './tools/tools.module#ToolsModule'
+      },
+      {
+        path: 'contacts',
+        loadChildren: './contacts/contacts.module#ContactsModule'
+      },
+      {
+        path: 'leads',
+        loadChildren: './leads/leads.module#LeadsModule'
+      },
+      {
+        path: 'auth',
+        loadChildren: './auth/auth.module#AuthModule'
+      },
+      {
         path: 'component',
         loadChildren: './component/component.module#ComponentsModule'
       }

@@ -3,12 +3,89 @@ import { RouteInfo } from './sidebar.metadata';
 export const ROUTES: RouteInfo[] = [
   {
     path: '',
-    title: 'Personal',
+    title: 'Agents and Offices',
     icon: 'mdi mdi-dots-horizontal',
     class: 'nav-small-cap',
     extralink: true,
     submenu: []
   },
+  {
+    path: '/account',
+    title: 'Account',
+    icon: 'icon-Security-Settings',
+    class: '',
+    extralink: false,
+    submenu: [
+    ]
+  },
+  {
+    path: '/offices',
+    title: 'Offices',
+    icon: 'icon-Office',
+    class: '',
+    extralink: false,
+    submenu: [
+    ]
+  },
+  {
+    path: '/agent',
+    title: 'Agents',
+    icon: 'icon-MaleFemale',
+    class: '',
+    extralink: false,
+    submenu: [
+    ]
+  },
+  {
+    path: '/brokers',
+    title: 'Brokers',
+    icon: 'icon-Handshake',
+    class: '',
+    extralink: false,
+    submenu: [
+    ]
+  },
+  {
+    path: '',
+    title: 'Mandates',
+    icon: 'mdi mdi-dots-horizontal',
+    class: 'nav-small-cap',
+    extralink: true,
+    submenu: []
+  },
+  {
+    path: '/mandates',
+    title: 'My Mandates',
+    icon: 'icon-File-Edit',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+  {
+    path: '',
+    title: 'Contacts',
+    icon: 'mdi mdi-dots-horizontal',
+    class: 'nav-small-cap',
+    extralink: true,
+    submenu: []
+  },
+  {
+    path: '/contacts',
+    title: 'All Contacts',
+    icon: 'icon-Address-Book',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+  {
+    path: '/leads',
+    title: 'Leads',
+    icon: 'icon-Add-UserStar',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+
   {
     path: '/starter',
     title: 'Starter Page',

@@ -1,0 +1,3 @@
+<formio src="https://digitaloffice.form.io/searchagents" (submit)="onSubmit($event)"></formio>
+<formio-grid src="https://digitaloffice.form.io/agent" [query]="{sort:'data.firstName',limit:50}"
+    (rowSelect)="onSelect($event)" [createText]="'Create New Agent'" (createItem)="onCreateItem()"></formio-grid>

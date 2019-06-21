@@ -1,0 +1,12 @@
+<div style="background-color: #fafafa;">
+    <ul class="nav nav-tabs" style="margin-bottom: 25px; width:100%;">
+      <li class="nav-item"><a class="nav-link" href="./#/mandates/{{ service.resource?.data.listingProfile.data.mandates._id }}/view"><i class="fa fa-chevron-left"></i> </a></li>
+      <li class="nav-item"><a class="nav-link" routerLink="view" routerLinkActive="active"> Publishing Overview</a></li>
+      <li class="nav-item"><a class="nav-link" href="./#/tools/{{ service.resource?._id }}/websitelisting/{{ service.resource?.data.websiteListing }}/view" routerLinkActive="active"><i class=" icon-Favorite-Window"></i> Website</a></li>
+      <li class="nav-item"><a class="nav-link" href="./#/tools/{{ service.resource?._id }}/privateproperty/{{ service.resource?.data.privateProperty }}/view" routerLinkActive="active">Private Property</a></li>
+       <li class="nav-item"><a class="nav-link" href="./#/tools/{{ service.resource?._id }}/property24/{{ service.resource?.data.property24 }}/view" routerLinkActive="active">Property24</a></li>
+      
+    </ul>
+    <div class="clearfix"></div>
+    </div>
+    <router-outlet></router-outlet>
