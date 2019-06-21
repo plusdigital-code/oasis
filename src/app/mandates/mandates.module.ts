@@ -57,19 +57,19 @@ import { AgmCoreModule } from '@agm/core';
           {
             path: 'showings',
             loadChildren: './showings/showings.module#ShowingsModule'
-        },
-        {
+          },
+          {
             path: 'documents',
             loadChildren: './documents/documents.module#DocumentsModule'
-        },
-        {
-          path: 'mandate-leads',
-          loadChildren: './mandate-leads/mandate-leads.module#MandateLeadsModule'
-      },
-      {
-        path: 'mandate-listing',
-        loadChildren: './mandate-listing/mandate-listing.module#MandateListingModule'
-    }
+          },
+          {
+            path: 'mandate-leads',
+            loadChildren: './mandate-leads/mandate-leads.module#MandateLeadsModule'
+          },
+          {
+            path: 'mandate-listing',
+            loadChildren: './mandate-listing/mandate-listing.module#MandateListingModule'
+          }
         ]
       },
     ])

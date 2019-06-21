@@ -77,12 +77,14 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     FormioResources,
     FormioAuthService,
     FormManagerService,
-    {provide: FormManagerConfig, useValue: {
-      tag: 'common'
-    }},
-    {provide: FormioAuthConfig, useValue: AuthConfig},
-    {provide: FormioAppConfig, useValue: AppConfig}
+    {
+      provide: FormManagerConfig, useValue: {
+        tag: 'common'
+      }
+    },
+    { provide: FormioAuthConfig, useValue: AuthConfig },
+    { provide: FormioAppConfig, useValue: AppConfig }
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

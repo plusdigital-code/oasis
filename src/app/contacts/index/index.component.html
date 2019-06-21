@@ -1,6 +1,2 @@
 <formio src="https://digitaloffice.form.io/searchcontacts" (submit)="onSubmit($event)"></formio>
-<formio-grid src="https://digitaloffice.form.io/contacts"
-[query]="{'data.firstName__ne':'',sort:'data.firstName'}"
-(rowSelect)="onSelect($event)"
-[createText]="'New Contact'"
-(createItem)="onCreateItem()"></formio-grid> 
+<formio-grid src="https://digitaloffice.form.io/contacts" [query]="{'data.firstName__ne':'',sort:'data.firstName'}" (rowSelect)="onSelect($event)" [createText]="'New Contact'" (createItem)="onCreateItem()"></formio-grid>

@@ -1,30 +1,30 @@
 <div class="row">
-    <div class="col-md-4">
-      <div class="card">
-        <div class="card-body">
-          <h6>{{ service.resource?.data.officeName }}</h6>
-          <small class="text-muted">Office Number </small><br />
-          {{ service.resource?.data.officeNumber }}<br />
-          <small class="text-muted">Office Email </small><br />
-          <a target="_blank"
-            href="mailto:{{service.resource?.data.officeEmailAddress}}">{{ service.resource?.data.officeEmailAddress }}</a><br />
-          <small class="text-muted">Office Address </small><br />
-          <a target="_blank"
-            href="{{service.resource?.data.address.url}}">{{ service.resource?.data.address.formatted_address }}</a><br />
-        </div>
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-body">
+        <h6>{{ service.resource?.data.officeName }}</h6>
+        <small class="text-muted">Office Number </small><br />
+        {{ service.resource?.data.officeNumber }}<br />
+        <small class="text-muted">Office Email </small><br />
+        <a target="_blank"
+          href="mailto:{{service.resource?.data.officeEmailAddress}}">{{ service.resource?.data.officeEmailAddress }}</a><br />
+        <small class="text-muted">Office Address </small><br />
+        <a target="_blank"
+          href="{{service.resource?.data.address.url}}">{{ service.resource?.data.address.formatted_address }}</a><br />
       </div>
     </div>
-    <div class="col-md-5">
-        <div class="card">
-            <div class="card-body">
-              <h3>Interested in Working with {{ service.resource?.data.officeName }}?</h3>
-              <p class="capitalize text-muted">Complete the Form Below to get in Touch</p>
-              <formio src="https://digitaloffice.form.io/agentcontactform"></formio>
-            </div>
-          </div>
-    </div>
-    <div class="col-md-3">
-        <a href="/#/offices/{{ service.resource?._id }}/office-listings" class="btn btn-block btn-rounded btn-warning">View
-          {{ service.resource?.data.officeName }}'s Listings</a>
+  </div>
+  <div class="col-md-5">
+    <div class="card">
+      <div class="card-body">
+        <h3>Interested in Working with {{ service.resource?.data.officeName }}?</h3>
+        <p class="capitalize text-muted">Complete the Form Below to get in Touch</p>
+        <formio src="https://digitaloffice.form.io/agentcontactform"></formio>
+      </div>
     </div>
   </div>
+  <div class="col-md-3">
+    <a href="/#/offices/{{ service.resource?._id }}/office-listings" class="btn btn-block btn-rounded btn-warning">View
+      {{ service.resource?.data.officeName }}'s Listings</a>
+  </div>
+</div>

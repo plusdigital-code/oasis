@@ -26,7 +26,7 @@ export const ROUTES: RouteInfo[] = [
     extralink: false,
     submenu: [
     ]
-  }, 
+  },
   {
     path: '/agent',
     title: 'Agents',
@@ -53,14 +53,14 @@ export const ROUTES: RouteInfo[] = [
     extralink: true,
     submenu: []
   },
-      {
-        path: '/mandates',
-        title: 'My Mandates',
-        icon: 'icon-File-Edit',
-        class: '',
-        extralink: false,
-        submenu: []
-      },
+  {
+    path: '/mandates',
+    title: 'My Mandates',
+    icon: 'icon-File-Edit',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
   {
     path: '',
     title: 'Contacts',
@@ -69,22 +69,22 @@ export const ROUTES: RouteInfo[] = [
     extralink: true,
     submenu: []
   },
-      {
-        path: '/contacts',
-        title: 'All Contacts',
-        icon: 'icon-Address-Book',
-        class: '',
-        extralink: false,
-        submenu: []
-      },
-      {
-        path: '/leads',
-        title: 'Leads',
-        icon: 'icon-Add-UserStar',
-        class: '',
-        extralink: false,
-        submenu: []
-      },
+  {
+    path: '/contacts',
+    title: 'All Contacts',
+    icon: 'icon-Address-Book',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+  {
+    path: '/leads',
+    title: 'Leads',
+    icon: 'icon-Add-UserStar',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
 
   {
     path: '/starter',

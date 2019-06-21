@@ -6,7 +6,7 @@ import { FormioResourceViewComponent } from 'angular-formio/resource';
   templateUrl: './view.component.html',
   styleUrls: ['./view.component.css']
 })
-export class ViewComponent extends FormioResourceViewComponent { 
+export class ViewComponent extends FormioResourceViewComponent {
 
   @ViewChild('map1') map1;
   @ViewChild('map2') map2;

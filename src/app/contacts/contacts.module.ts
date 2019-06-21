@@ -17,7 +17,6 @@ import { FormioGrid } from 'angular-formio/grid';
 import { ViewComponent } from './view/view.component';
 import { ContactSearchComponent } from './contact-components/contact-search/contact-search.component';
 
-
 @NgModule({
     imports: [
         CommonModule,
@@ -54,21 +53,21 @@ import { ContactSearchComponent } from './contact-components/contact-search/cont
                         path: 'delete',
                         component: FormioResourceDeleteComponent
                     }
-               
-        ]
-    },
+
+                ]
+            },
         ])
     ],
-  declarations: [ViewComponent, ResourceComponent, IndexComponent, ContactSearchComponent],
-  providers: [
-    FormioResourceService,
-    {
-        provide: FormioResourceConfig,
-        useValue: {
-            name: 'contacts',
-            form: 'contacts'
+    declarations: [ViewComponent, ResourceComponent, IndexComponent, ContactSearchComponent],
+    providers: [
+        FormioResourceService,
+        {
+            provide: FormioResourceConfig,
+            useValue: {
+                name: 'contacts',
+                form: 'contacts'
+            }
         }
-    }
-]
+    ]
 })
 export class ContactsModule { }

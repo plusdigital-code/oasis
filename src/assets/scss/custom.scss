@@ -1,115 +1,132 @@
 // In this scss you can overwrite all our scss, we suggested you to add your scss into this, so whenever the update comes it will not affect your code.
 // In this scss you can overwrite all our scss, we suggested you to add your scss into this, so whenever the update comes it will not affect your code.
-body{color:#000000; font-size:1rem;}
-
-.topbar .top-navbar .navbar-header .navbar-brand .logo-icon{
-    margin:0 auto;
+body {
+    color: #000000;
+    font-size: 1rem;
 }
-.topbar .top-navbar .navbar-header .navbar-brand{
+
+.topbar .top-navbar .navbar-header .navbar-brand .logo-icon {
+    margin: 0 auto;
+}
+
+.topbar .top-navbar .navbar-header .navbar-brand {
     padding: 0;
 }
 
-.sidebar-nav ul .sidebar-item .sidebar-link{
+.sidebar-nav ul .sidebar-item .sidebar-link {
     opacity: 1;
 }
 
-.sidebar-nav ul .nav-small-cap{
+.sidebar-nav ul .nav-small-cap {
     opacity: 1;
 }
-body{
-font-family: proxima-nova, sans-serif !important;
+
+body {
+    font-family: proxima-nova, sans-serif !important;
 }
 
-.topbar .nav-toggler, .topbar .topbartoggler{
-    color:#000000;
+.topbar .nav-toggler,
+.topbar .topbartoggler {
+    color: #000000;
 }
 
 // puts the google places autocomplete dropdown results above the bootstrap modal 1050 zindex.
 .pac-container {
     z-index: 10000 !important;
 }
-.form-control{
+
+.form-control {
     color: #000000;
 }
 
 .form-control:focus {
-color: #000000;
-border: 1px solid #57a3fa;
+    color: #000000;
+    border: 1px solid #57a3fa;
 }
+
 .form-control:active {
     color: #000000;
     border: 1px solid #57a3fa;
-    }
+}
 
-    .choices__list--dropdown {
-        color: #000000;
-        border: 1px solid #57a3fa;
-        }
-.input-group-text{
+.choices__list--dropdown {
+    color: #000000;
+    border: 1px solid #57a3fa;
+}
+
+.input-group-text {
     color: #000000;
 }
 
-.input-group-prepend, .input-group-append {
+.input-group-prepend,
+.input-group-append {
     border: none;
 }
 
-.address-search{
+.address-search {
     z-index: 1051 !important;
 }
 
 .fa-remove:before {
     content: "\f00d"
-    }
+}
 
- .fa-remove{
-        margin-left: 10px;
-        margin-right: 15px;
-    }
-    .choices__list--single {
-        font-weight: normal;
-    }
+.fa-remove {
+    margin-left: 10px;
+    margin-right: 15px;
+}
 
-    .navbar-light .navbar-nav .nav-link {
-        color: #7460ee;
-        font-weight: 700;
-    }
-    .navbar-dark .navbar-nav .nav-link{
-        color: #000000;
-        font-weight: 700;
-    }
-    .nav-tabs .nav-link {
-        border: 1px solid transparent;
-        font-size: 1.1rem;
-        letter-spacing: 0.07rem;
-        font-weight: 400;
-    }
-    .navbar-light .navbar-nav .nav-link:hover {
-        text-decoration: underline;
-        color: #57a3fa;
-    }
-    .navbar-dark .navbar-nav .nav-link:hover {
-        text-decoration: underline;
-        color: #fff200;
-        background-color:#000000;
+.choices__list--single {
+    font-weight: normal;
+}
 
-    }
-    .sidebar-nav ul .sidebar-item.selected > .sidebar-link, .sidebar-nav ul .sidebar-item.selected > .sidebar-link i {
-        text-decoration: underline;
-        background-color: #fff200;
-        color:#000000;
+.navbar-light .navbar-nav .nav-link {
+    color: #7460ee;
+    font-weight: 700;
+}
 
-    }
+.navbar-dark .navbar-nav .nav-link {
+    color: #000000;
+    font-weight: 700;
+}
 
-    .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link 
-    {
-        color: #7460ee;
-    }
+.nav-tabs .nav-link {
+    border: 1px solid transparent;
+    font-size: 1.1rem;
+    letter-spacing: 0.07rem;
+    font-weight: 400;
+}
 
-    .page-wrapper{
-        background: #fafafa;
-    }
+.navbar-light .navbar-nav .nav-link:hover {
+    text-decoration: underline;
+    color: #57a3fa;
+}
 
-    #main-wrapper[data-layout='vertical'] .topbar .navbar-collapse[data-navbarbg='skin6']{
+.navbar-dark .navbar-nav .nav-link:hover {
+    text-decoration: underline;
+    color: #fff200;
+    background-color: #000000;
+
+}
+
+.sidebar-nav ul .sidebar-item.selected>.sidebar-link,
+.sidebar-nav ul .sidebar-item.selected>.sidebar-link i {
+    text-decoration: underline;
+    background-color: #fff200;
+    color: #000000;
+
+}
+
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link {
+    color: #7460ee;
+}
+
+.page-wrapper {
+    background: #fafafa;
+}
+
+#main-wrapper[data-layout='vertical'] .topbar .navbar-collapse[data-navbarbg='skin6'] {
 
     background: #4a4a4a0d
 }
@@ -122,7 +139,7 @@ border: 1px solid #57a3fa;
 }
 
 .page-breadcrumb .page-title {
-font-size: 12px;
+    font-size: 12px;
 }
 
 .center {
@@ -131,20 +148,22 @@ font-size: 12px;
     margin-right: auto;
     width: 100%;
     height: 100%;
-  }
-
-.formio-component-listingProfileImages img {
-display: inline !important;
-  }
-  #e2vc8cw > div > div:nth-child(1) {
-      display:inline-flex;
-      margin-bottom: 25px;
 }
 
-.mailbox .message-center
-{height:100%;}
+.formio-component-listingProfileImages img {
+    display: inline !important;
+}
 
-#e0cmy5:hover{
+#e2vc8cw>div>div:nth-child(1) {
+    display: inline-flex;
+    margin-bottom: 25px;
+}
+
+.mailbox .message-center {
+    height: 100%;
+}
+
+#e0cmy5:hover {
     padding: 0px;
     margin-top: 25px;
     margin-right: 19px;
@@ -152,26 +171,26 @@ display: inline !important;
     transition-delay: 2ms;
 }
 
-.navbar-dark .navbar-nav .nav-link:focus{
+.navbar-dark .navbar-nav .nav-link:focus {
     color: #000;
 }
 
-.help-block{
-    font-size:11px;
+.help-block {
+    font-size: 11px;
 }
 
-.btn-warning{
+.btn-warning {
     color: #000;
     font-weight: 600;
 }
 
-.btn-warning:hover{
+.btn-warning:hover {
     font-weight: 700;
     background-color: #000;
     color: #fff200
 }
 
-.btn-warning:focus{
+.btn-warning:focus {
     background-color: #000;
     color: #fff200;
     font-weight: 700;

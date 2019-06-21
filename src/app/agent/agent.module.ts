@@ -51,9 +51,9 @@ import { ViewComponent } from './view/view.component';
                         path: 'delete',
                         component: FormioResourceDeleteComponent
                     }
-                   
-        ]
-    },
+
+                ]
+            },
         ])
     ],
     declarations: [ResourceComponent, IndexComponent, ViewComponent],

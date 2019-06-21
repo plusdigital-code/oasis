@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { FormioResourceIndexComponent } from 'angular-formio/resource';
 
 @Component({
@@ -6,6 +6,4 @@ import { FormioResourceIndexComponent } from 'angular-formio/resource';
   templateUrl: './index.component.html',
   styleUrls: ['./index.component.css']
 })
-export class IndexComponent extends FormioResourceIndexComponent {
- 
- }
+export class IndexComponent extends FormioResourceIndexComponent { }

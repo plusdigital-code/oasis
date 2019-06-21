@@ -6,6 +6,6 @@ import { FormioResourceComponent } from 'angular-formio/resource';
   templateUrl: './resource.component.html',
   styleUrls: ['./resource.component.css']
 })
-export class ResourceComponent extends FormioResourceComponent {}
+export class ResourceComponent extends FormioResourceComponent { }
 
 

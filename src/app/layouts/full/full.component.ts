@@ -12,7 +12,7 @@ import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 export class FullComponent implements OnInit {
   public config: PerfectScrollbarConfigInterface = {};
 
-  constructor(public router: Router) {}
+  constructor(public router: Router) { }
 
   tabStatus = 'justified';
 
@@ -44,10 +44,10 @@ export class FullComponent implements OnInit {
   ngOnInit() {
     this.router.events.subscribe((evt) => {
       if (!(evt instanceof NavigationEnd)) {
-          return;
+        return;
       }
       window.scrollTo(0, 0)
-  });
+    });
     if (this.router.url === '/') {
       this.router.navigate(['/dashboard/dashboard1']);
     }

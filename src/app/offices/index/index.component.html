@@ -1,5 +1,2 @@
-<formio-grid src="https://digitaloffice.form.io/offices"
-[query]="{sort:'data.officeName',limit:25}"
-(rowSelect)="onSelect($event)"
-[createText]="'Create New Agent'"
-(createItem)="onCreateItem()"></formio-grid>
+<formio-grid src="https://digitaloffice.form.io/offices" [query]="{sort:'data.officeName',limit:25}"
+    (rowSelect)="onSelect($event)" [createText]="'Create New Agent'" (createItem)="onCreateItem()"></formio-grid>

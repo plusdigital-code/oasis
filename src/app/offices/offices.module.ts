@@ -30,10 +30,10 @@ import { OfficeSearchComponent } from './office-components/office-search/office-
                 data: {
                     title: 'Offices',
                     urls: [
-                      { title: 'Home', url: '/home/maxprop' },
-                      { title: 'Offices' }
+                        { title: 'Home', url: '/home/maxprop' },
+                        { title: 'Offices' }
                     ]
-                  }
+                }
             },
             {
                 path: 'new',
@@ -53,23 +53,23 @@ import { OfficeSearchComponent } from './office-components/office-search/office-
                         component: ViewComponent,
                     },
                     {
-                      path: 'edit',
-                      component: FormioResourceEditComponent
-                  },
-                  {
-                    path: 'delete',
-                    component: FormioResourceDeleteComponent
-                  },
-                  {
-                    path: 'office-agents',
-                    loadChildren: './office-agents/office-agents.module#OfficeAgentsModule'
-                  },
-                  {
-                    path: 'office-listings',
-                    loadChildren: './office-listings/office-listings.module#OfficeListingsModule'
-                  }
-        ]
-    },
+                        path: 'edit',
+                        component: FormioResourceEditComponent
+                    },
+                    {
+                        path: 'delete',
+                        component: FormioResourceDeleteComponent
+                    },
+                    {
+                        path: 'office-agents',
+                        loadChildren: './office-agents/office-agents.module#OfficeAgentsModule'
+                    },
+                    {
+                        path: 'office-listings',
+                        loadChildren: './office-listings/office-listings.module#OfficeListingsModule'
+                    }
+                ]
+            },
         ])
     ],
     declarations: [ResourceComponent, ViewComponent, IndexComponent, OfficeSearchComponent],
