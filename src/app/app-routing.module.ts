@@ -38,6 +38,10 @@ export const Approutes: Routes = [
         loadChildren: './listings/listings.module#ListingsModule'
       },
       {
+        path: 'tools',
+        loadChildren: './tools/tools.module#ToolsModule'
+      },
+      {
         path: 'contacts',
         loadChildren: './contacts/contacts.module#ContactsModule'
       },
