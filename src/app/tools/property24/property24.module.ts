@@ -63,6 +63,9 @@ import { FormioGrid } from 'angular-formio/grid';
       useValue: {
         name: 'property24',
         form: 'property24',
+        parents: [
+          'tools'
+        ]
       }
     }
   ]

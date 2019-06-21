@@ -61,8 +61,8 @@ import { FormioGrid } from 'angular-formio/grid';
     {
       provide: FormioResourceConfig,
       useValue: {
-        name: 'residentialListingWeb',
-        form: 'residentiallistingweb',
+        name: 'residentiallistingweb',
+        form: 'residentialListingWeb',
       }
     }
   ]
