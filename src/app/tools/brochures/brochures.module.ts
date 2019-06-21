@@ -8,13 +8,12 @@ import {
   FormioResourceConfig,
   FormioResourceService,
   FormioResourceCreateComponent,
+  FormioResourceIndexComponent,
   FormioResourceViewComponent,
   FormioResourceEditComponent,
   FormioResourceDeleteComponent
 } from 'angular-formio/resource';
-import { IndexComponent } from './index/index.component';
 import { FormioGrid } from 'angular-formio/grid';
-import { ViewComponent } from './view/view.component';
 
 @NgModule({
   imports: [
@@ -25,7 +24,7 @@ import { ViewComponent } from './view/view.component';
     RouterModule.forChild([
       {
         path: '',
-        component: IndexComponent
+        component: FormioResourceIndexComponent
       },
       {
         path: 'new',
@@ -42,7 +41,7 @@ import { ViewComponent } from './view/view.component';
           },
           {
             path: 'view',
-            component: ViewComponent
+            component: FormioResourceViewComponent
           },
           {
             path: 'edit',
@@ -51,37 +50,24 @@ import { ViewComponent } from './view/view.component';
           {
             path: 'delete',
             component: FormioResourceDeleteComponent
-          },
-          {
-            path: 'website-listing',
-            loadChildren: './website-listing/website-listing.module#WebsiteListingModule'
-          },
-          {
-            path: 'brochures',
-            loadChildren: './brochures/brochures.module#BrochuresModule'
-          },
-          {
-            path: 'privateproperty',
-            loadChildren: './privateproperty/privateproperty.module#PrivatepropertyModule'
-          },
-          {
-            path: 'property24',
-            loadChildren: './property24/property24.module#Property24Module'
           }
         ]
       },
     ])
   ],
-  declarations: [ResourceComponent, IndexComponent, ViewComponent],
+  declarations: [ResourceComponent],
   providers: [
     FormioResourceService,
     {
       provide: FormioResourceConfig,
       useValue: {
-        name: 'tools',
-        form: 'tools'
+        name: 'privateProperty',
+        form: 'privateproperty',
+        parents: [
+          'tools'
+        ]
       }
     }
   ]
 })
-export class ToolsModule { }
+export class BrochuresModule { }
