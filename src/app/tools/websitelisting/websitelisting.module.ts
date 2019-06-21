@@ -22,8 +22,8 @@ import {
     {
       provide: FormioResourceConfig,
       useValue: {
-        name: 'residentialListing',
-        form: 'residentiallisting',
+        name: 'residentialListingWeb',
+        form: 'residentiallistingweb',
       }
     }
   ]
