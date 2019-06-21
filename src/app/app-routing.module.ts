@@ -34,6 +34,10 @@ export const Approutes: Routes = [
         loadChildren: './mandates/mandates.module#MandatesModule'
       },
       {
+        path: 'listings',
+        loadChildren: './listings/listings.module#ListingsModule'
+      },
+      {
         path: 'contacts',
         loadChildren: './contacts/contacts.module#ContactsModule'
       },
