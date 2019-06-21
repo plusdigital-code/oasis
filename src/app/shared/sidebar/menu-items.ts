@@ -63,6 +63,30 @@ export const ROUTES: RouteInfo[] = [
   },
   {
     path: '',
+    title: 'Listings',
+    icon: 'mdi mdi-dots-horizontal',
+    class: 'nav-small-cap',
+    extralink: true,
+    submenu: []
+  },
+  {
+    path: '/office-stock',
+    title: 'Office Stock',
+    icon: 'icon-File-Edit',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+  {
+    path: '/',
+    title: 'Network Listings',
+    icon: 'icon-File-Edit',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+  {
+    path: '',
     title: 'Contacts',
     icon: 'mdi mdi-dots-horizontal',
     class: 'nav-small-cap',
@@ -85,7 +109,14 @@ export const ROUTES: RouteInfo[] = [
     extralink: false,
     submenu: []
   },
-
+  {
+    path: '',
+    title: 'Ref',
+    icon: 'mdi mdi-dots-horizontal',
+    class: 'nav-small-cap',
+    extralink: true,
+    submenu: []
+  },
   {
     path: '/starter',
     title: 'Starter Page',
@@ -94,14 +125,7 @@ export const ROUTES: RouteInfo[] = [
     extralink: false,
     submenu: []
   },
-  {
-    path: '',
-    title: 'UI',
-    icon: 'mdi mdi-dots-horizontal',
-    class: 'nav-small-cap',
-    extralink: true,
-    submenu: []
-  },
+
   {
     path: '',
     title: 'UI Elements',

@@ -34,6 +34,10 @@ export const Approutes: Routes = [
         loadChildren: './mandates/mandates.module#MandatesModule'
       },
       {
+        path: 'office-stock',
+        loadChildren: './office-stock/office-stock.module#OfficeStockModule'
+      },
+      {
         path: 'listings',
         loadChildren: './listings/listings.module#ListingsModule'
       },
