@@ -1,10 +1,31 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { FormioModule } from 'angular-formio';
+import {
+  FormioResource,
+  FormioResourceRoutes,
+  FormioResourceConfig,
+  FormioResourceService
+} from 'angular-formio/resource';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    FormioModule,
+    FormioResource,
+    RouterModule.forChild(FormioResourceRoutes())
   ],
-  declarations: []
+  declarations: [],
+  providers: [
+    FormioResourceService,
+    {
+      provide: FormioResourceConfig,
+      useValue: {
+        name: 'residentialListing',
+        form: 'residentiallisting',
+      }
+    }
+  ]
 })
 export class WebsitelistingModule { }
