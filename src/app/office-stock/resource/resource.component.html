@@ -1,7 +1,15 @@
-<div style="background-color: #fafafa;">
+<div class="card no-card-border bg-light-info">
+  <div class="card-body">
+      <button class="btn btn-warning btn-rounded float-right d-inline" type="button"><i class="fas fa-share"></i> Share</button>
+      <a href="https://digital-office-files.s3.amazonaws.com/brochures/{{ service.resource?.data.mandates.data.uniqueCode }}-showhouse.pdf" class="btn btn-warning btn-rounded float-right d-inline m-r-5"><i class="fas fa-download"></i> Brochure</a>
+      <a target="_blank" href="{{ service.resource?.data.mandates.data.address.url }}" class="btn btn-warning btn-rounded float-right d-inline"><i class="fas fa-map"></i> Google Maps</a>
+      <img class="float-left m-r-25" style="max-width:54px;" src="assets/images/For-Sale-Hero-Icon-2.png" />
+      <h6 class="float-left d-inline p-t-10"><i class="fas fa-map-marker-alt"></i> {{ service.resource?.data.mandates.data.address.formatted_address }}</h6>
+  </div>
+</div>
+<div style="background-color: #fafafa;" class="m-t-30">
   <ul class="nav nav-tabs" style="margin-bottom: 25px; width:100%;">
     <li class="nav-item"><a class="nav-link" routerLink="../"><i class="fa fa-chevron-left"></i> Back To Office Stock</a></li>
-    <li class="nav-item"><a class="nav-link" routerLink="view" routerLinkActive="active"><i class="icon-MaleFemale"></i> {{ service.resource?.data.mandates.data.address.formatted_address }}</a></li>
   </ul>
   <div class="clearfix"></div>
   </div>

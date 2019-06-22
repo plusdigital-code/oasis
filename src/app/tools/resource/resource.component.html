@@ -1,12 +1,11 @@
-<div style="background-color: #fafafa;">
+<div style="background-color: #fafafa;" class="m-t-30">
     <ul class="nav nav-tabs" style="margin-bottom: 25px; width:100%;">
       <li class="nav-item"><a class="nav-link" href="./#/mandates/{{ service.resource?.data.listingProfile.data.mandates._id }}/view"><i class="fa fa-chevron-left"></i> Back to Mandate</a></li>
       <li class="nav-item"><a class="nav-link" routerLink="view" routerLinkActive="active"> Marketing Overview</a></li>
       <li class="nav-item"><a class="nav-link" href="./#/tools/{{ service.resource?._id }}/website-listing/{{ service.resource?.data.websiteListing }}/view" routerLinkActive="active"><i class=" icon-Favorite-Window"></i> Website</a></li>
       <li class="nav-item"><a class="nav-link" href="./#/tools/{{ service.resource?._id }}/privateproperty/{{ service.resource?.data.privateProperty }}/view" routerLinkActive="active"><i class="icon-Link-2"></i> Private Property</a></li>
        <li class="nav-item"><a class="nav-link" href="./#/tools/{{ service.resource?._id }}/property24/{{ service.resource?.data.property24 }}/view" routerLinkActive="active"><i class="icon-Link-2"></i> Property24</a></li>
-       <li class="nav-item"><a class="nav-link" routerLink="brochures" routerLinkActive="active"><i class="far fa-file-pdf"></i> Brochures</a></li>
-
+       <li class="nav-item"><a class="nav-link" href="https://digital-office-files.s3.amazonaws.com/brochures/{{ service.resource?.data.listingProfile.data.mandates.data.uniqueCode }}-showhouse.pdf"><i class="far fa-file-pdf"></i> Download Brochure</a></li>
     </ul>
     <div class="clearfix"></div>
     </div>

@@ -12,7 +12,7 @@ export const ROUTES: RouteInfo[] = [
   {
     path: '/account',
     title: 'Account',
-    icon: 'icon-Security-Settings',
+    icon: 'fas fa-shield-alt',
     class: '',
     extralink: false,
     submenu: [
@@ -21,7 +21,7 @@ export const ROUTES: RouteInfo[] = [
   {
     path: '/offices',
     title: 'Offices',
-    icon: 'icon-Office',
+    icon: 'fas fa-hospital',
     class: '',
     extralink: false,
     submenu: [
@@ -30,7 +30,7 @@ export const ROUTES: RouteInfo[] = [
   {
     path: '/agent',
     title: 'Agents',
-    icon: 'icon-MaleFemale',
+    icon: 'fas fa-users',
     class: '',
     extralink: false,
     submenu: [
@@ -39,7 +39,7 @@ export const ROUTES: RouteInfo[] = [
   {
     path: '/brokers',
     title: 'Brokers',
-    icon: 'icon-Handshake',
+    icon: 'fas fa-handshake',
     class: '',
     extralink: false,
     submenu: [
@@ -56,7 +56,7 @@ export const ROUTES: RouteInfo[] = [
   {
     path: '/mandates',
     title: 'My Mandates',
-    icon: 'fab fa-wpforms',
+    icon: 'fas fa-clipboard-list',
     class: '',
     extralink: false,
     submenu: []
@@ -72,7 +72,7 @@ export const ROUTES: RouteInfo[] = [
   {
     path: '/office-stock',
     title: 'Office Listings',
-    icon: 'sl-icon-map',
+    icon: 'fas fa-map',
     class: '',
     extralink: false,
     submenu: []
@@ -80,7 +80,7 @@ export const ROUTES: RouteInfo[] = [
   {
     path: '/',
     title: 'Network Listings',
-    icon: 'icon-Home-Window',
+    icon: 'fas fa-sitemap',
     class: '',
     extralink: false,
     submenu: []
@@ -96,7 +96,7 @@ export const ROUTES: RouteInfo[] = [
   {
     path: '/contacts',
     title: 'All Contacts',
-    icon: 'icon-Address-Book',
+    icon: 'fas fa-address-book',
     class: '',
     extralink: false,
     submenu: []
@@ -104,7 +104,7 @@ export const ROUTES: RouteInfo[] = [
   {
     path: '/leads',
     title: 'Leads',
-    icon: 'icon-Add-UserStar',
+    icon: 'fas fa-address-card',
     class: '',
     extralink: false,
     submenu: []
