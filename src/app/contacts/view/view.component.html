@@ -1,25 +1,32 @@
 <div class="row">
-  <div class="col-md-3">
-    <div class="card">
-      <div class="card-body">
-        {{ service.resource?.data.fullName }}
+    <div class="col-md-5">
+      <div class="card">
+        <div class="card-body">
+          <h4>{{ service.resource?.data.fullName }}</h4>
+          <small *ngIf="service.resource?.data.mobile" class="text-muted">Mobile Number </small><br />
+          {{ service.resource?.data.mobile }}<br />
+          <small *ngIf="service.resource?.data.email" class="text-muted">Email Address </small><br />
+          <a href="{{ service.resource?.data.email }}">{{service.resource?.data.email }}</a><br />
+          <small *ngIf="service.resource?.data.workNumber" class="text-muted">Work Number: </small><br />
+          {{ service.resource?.data.workNumber }}
+        </div>
+      </div>
+    </div>
     
+    <div class="col-md-2">
+      
+      <div class="card bg-light">
+        <div class="card-body">
+          
+        </div>
       </div>
     </div>
-  </div>
-  <div class="col-md-5">
-    <div class="card">
-      <div class="card-body">
- 
+    <div class="col-md-5">
+        <div class="card">
+          <div class="card-body">
+            <h4>Add New Interaction With {{ service.resource?.data.firstName }}</h4>
+            <formio src="https://digitaloffice.form.io/agentcontactform"></formio>
+          </div>
+        </div>
       </div>
-    </div>
   </div>
-  <div class="col-md-4">
-
-    <div class="card bg-light-info">
-      <div class="card-body">
-
-      </div>
-    </div>
-  </div>
-</div>
