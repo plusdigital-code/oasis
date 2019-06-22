@@ -56,7 +56,7 @@ export const ROUTES: RouteInfo[] = [
   {
     path: '/mandates',
     title: 'My Mandates',
-    icon: 'icon-File-Edit',
+    icon: 'fab fa-wpforms',
     class: '',
     extralink: false,
     submenu: []
@@ -72,7 +72,7 @@ export const ROUTES: RouteInfo[] = [
   {
     path: '/office-stock',
     title: 'Office Listings',
-    icon: 'icon-File-Edit',
+    icon: 'sl-icon-map',
     class: '',
     extralink: false,
     submenu: []
@@ -80,7 +80,7 @@ export const ROUTES: RouteInfo[] = [
   {
     path: '/',
     title: 'Network Listings',
-    icon: 'icon-File-Edit',
+    icon: 'icon-Home-Window',
     class: '',
     extralink: false,
     submenu: []
