@@ -61,8 +61,8 @@ import { FormioGrid } from 'angular-formio/grid';
     {
       provide: FormioResourceConfig,
       useValue: {
-        name: 'privateProperty',
-        form: 'privateproperty',
+        name: 'brochures',
+        form: 'brochures',
         parents: [
           'tools'
         ]

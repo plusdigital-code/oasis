@@ -14,11 +14,15 @@ import {
   FormioResourceDeleteComponent
 } from 'angular-formio/resource';
 import { FormioGrid } from 'angular-formio/grid';
+import { ViewComponent } from './view/view.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
   imports: [
     CommonModule,
     FormioModule,
+    NgbModule,
     FormioGrid,
     FormioResource,
     RouterModule.forChild([
@@ -41,7 +45,7 @@ import { FormioGrid } from 'angular-formio/grid';
           },
           {
             path: 'view',
-            component: FormioResourceViewComponent
+            component: ViewComponent
           },
           {
             path: 'edit',
@@ -55,7 +59,7 @@ import { FormioGrid } from 'angular-formio/grid';
       },
     ])
   ],
-  declarations: [ResourceComponent],
+  declarations: [ResourceComponent, ViewComponent],
   providers: [
     FormioResourceService,
     {
@@ -63,6 +67,9 @@ import { FormioGrid } from 'angular-formio/grid';
       useValue: {
         name: 'residentiallistingweb',
         form: 'residentialListingWeb',
+        parents: [
+          'tools'
+        ]
       }
     }
   ]

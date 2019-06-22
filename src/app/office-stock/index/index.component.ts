@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 import { FormioResourceIndexComponent } from 'angular-formio/resource';
 
 @Component({
@@ -7,8 +7,4 @@ import { FormioResourceIndexComponent } from 'angular-formio/resource';
   styleUrls: ['./index.component.css']
 })
 export class IndexComponent extends FormioResourceIndexComponent {
-  onSubmit(submission: any) {
-    console.log(submission);
-    window.location.href = './#/mandates/' + submission.data.searchMandates + '/view';
-  }
  }
