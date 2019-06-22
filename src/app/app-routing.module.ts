@@ -54,6 +54,10 @@ export const Approutes: Routes = [
         loadChildren: './leads/leads.module#LeadsModule'
       },
       {
+        path: 'brand-marketing',
+        loadChildren: './brand-marketing/brand-marketing.module#BrandMarketingModule'
+      },
+      {
         path: 'auth',
         loadChildren: './auth/auth.module#AuthModule'
       },

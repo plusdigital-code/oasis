@@ -111,6 +111,22 @@ export const ROUTES: RouteInfo[] = [
   },
   {
     path: '',
+    title: 'Brand & Marketing',
+    icon: 'mdi mdi-dots-horizontal',
+    class: 'nav-small-cap',
+    extralink: true,
+    submenu: []
+  },
+  {
+    path: '/brand-marketing',
+    title: 'Brand & Marketing',
+    icon: 'fas fa-images',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+  {
+    path: '',
     title: 'Ref',
     icon: 'mdi mdi-dots-horizontal',
     class: 'nav-small-cap',
