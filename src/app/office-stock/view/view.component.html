@@ -1,5 +1,5 @@
 <div class="row m-t-15">
-  <div class="col-md-8 col-sm-12">
+  <div class="col-md-7 col-sm-12">
     <div class="card">
       <table class="table v-top no-border m-b-0 agent-header-index agent-header-index2">
         <tbody>
@@ -12,12 +12,8 @@
                     href="/#/suburb/{{service.resource?.data.suburb._id}}/suburb-homes">{{ service.resource?.data.suburb.data.suburb }}</a></span></small>
             </td>
             <td>
-                <small *ngIf="service.resource?.data.dateListed" class="m-b-0 p-b-0 float-right text-muted">Listed: {{ service.resource?.data.dateListed | date }}</small>
-                <span class="clearfix"></span>
-                <small class="m-b-0 p-t-0 p-b-0 m-t-0 float-right">Ref No: {{ service.resource?.data.mandates.data.uniqueCode }}</small>
-                <span class="clearfix"></span>
-                  <label class="label label-price font-bold m-t-3">R{{ service.resource?.data.price | number }}</label>
-              </td>
+              <label class="label label-price font-bold m-t-3">R{{ service.resource?.data.price | number }}</label>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -70,150 +66,305 @@
         </ng-template>
       </ngb-carousel>
       <div class="card-body">
-        <h3>{{ service.resource?.data.headline }}</h3>
-        <hr />
+
         <p class="m-t-15"><span [innerHTML]="service.resource?.data.description"></span></p>
       </div>
     </div>
+    <!--
     <div class="row">
       <div class="col-md-6 col-sm-6">
         <div class="card">
           <div class="card-body">
-            <h4>Rooms</h4>
-            <hr />
-            <table class="table no-border room-detail m-b-0">
-              <tbody>
-                <tr>
-                  <td>Bedrooms:</td>
-                  <td>
-                    {{ service.resource?.data.bedrooms }}
-                  </td>
-                </tr>
-                <tr>
-                  <td>Bathrooms:</td>
-                  <td>
-                    {{ service.resource?.data.bathrooms }}
-                  </td>
-                </tr>
-                <tr>
-                  <td>Kitchens:</td>
-                  <td>
-                    {{ service.resource?.data.kitchens }}
-                  </td>
-                </tr>
-                <tr *ngIf="service.resource?.data.diningRooms">
-                  <td>Dining Rooms:</td>
-                  <td>{{ service.resource?.data.diningRooms }}</td>
-                </tr>
-                <tr *ngIf="service.resource?.data.lounges">
-                  <td>Lounges:</td>
-                  <td>
-                    {{ service.resource?.data.lounges }}
-                  </td>
-                </tr>
-                <tr *ngIf="service.resource?.data.storeRooms">
-                  <td>Store Rooms:</td>
-                  <td>
-                    <span class="text-capitalize">{{ service.resource?.data.storeRooms }}</span>
-                  </td>
-                </tr>
-                <tr *ngIf="service.resource?.data.domesticRooms">
-                  <td>Domestic Rooms:</td>
-                  <td>
-                    {{ service.resource?.data.domesticRooms }}
-                  </td>
-                </tr>
-                <tr *ngIf="service.resource?.data.staffRooms">
-                  <td>Staff Rooms:</td>
-                  <td>
-                    {{ service.resource?.data.staffRooms }}
-                  </td>
-                </tr>
-                <tr *ngIf="service.resource?.data.studyRooms">
-                  <td>Study Rooms:</td>
-                  <td>{{ service.resource?.data.studyRooms }}</td>
-                </tr>
-                <tr *ngIf="service.resource?.data.flatlet">
-                  <td>Flatlet Rooms:</td>
-                  <td>{{ service.resource?.data.flatlet }}
-                  </td>
-                </tr>
-                <tr *ngIf="service.resource?.data.laundry">
-                  <td>Laundry:</td>
-                  <td>{{ service.resource?.data.laundryRooms }}
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            
           </div>
         </div>
       </div>
       <div class="col-md-6 col-sm-6">
-        <div class="card">
-          <div class="card-body bg-light-info">
-            <h4>Pricing</h4>
-            <hr />
-            <table class="table no-border room-detail m-b-0">
-              <tbody>
-                <tr>
-                  <td>Price:</td>
-                  <td>
-                    <span class="text-capitalize">R{{ service.resource?.data.price | number }}</span>
-                  </td>
-                </tr>
-                <tr *ngIf="service.resource?.data.rates">
-                  <td>Rates:</td>
-                  <td>
-                    <span class="text-capitalize">R{{ service.resource?.data.rates | number }}</span>
-                  </td>
-                </tr>
+    
+      </div>
+    </div>
+      -->
+  </div>
 
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-body bg-light-success">
-            <h4>Features</h4>
-            <hr />
-            <table class="table no-border room-detail m-b-0">
-              <tbody>
-                <tr *ngIf="service.resource?.data.pool">
-                  <td>Pool:</td>
+  <div class="col-md-5 col-sm-12">
+
+
+    <div class="card">
+      <div class="card-body bg-light-info">
+        <h4>Snapshot of {{ service.resource?.data.mandates.data.uniqueCode }}</h4>
+        <hr />
+        <table class="table no-border room-detail m-b-0">
+          <tbody>
+              <tr>
+                  <td>Date Listed:</td>
                   <td>
-                    <span class="text-capitalize">{{ service.resource?.data.pool }}</span>
+                    <span class="text-capitalize">{{ service.resource?.data.dateListed | date }}</span>
                   </td>
                 </tr>
-                <tr>
-                  <td>Security:</td>
-                  <td>
-                    <span class="text-capitalize">{{ service.resource?.data.security }}</span>
-                  </td>
-                </tr>
-                <tr *ngIf="service.resource?.data.view">
-                  <td>View:</td>
-                  <td>
-                    <span class="text-capitalize">{{ service.resource?.data.view }}</span>
-                  </td>
-                </tr>
-                <tr *ngIf="service.resource?.data.patio">
-                  <td>Patio:</td>
-                  <td>{{ service.resource?.data.patio }}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+            <tr>
+              <td>Price:</td>
+              <td>
+                <span class="text-capitalize">R{{ service.resource?.data.price | number }}</span>
+              </td>
+            </tr>
+            <tr *ngIf="service.resource?.data.rates">
+              <td>Rates:</td>
+              <td>
+                <span class="text-capitalize">R{{ service.resource?.data.rates | number }}</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Commission:</td>
+              <td>
+                <span class="text-capitalize">R{{ service.resource?.data.price | number }}</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Commission Amount:</td>
+              <td>
+                <span class="text-capitalize">R{{ service.resource?.data.price | number }}</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Commission Split:</td>
+              <td>
+                <span class="text-capitalize">R{{ service.resource?.data.price | number }}</span>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body bg-light-success">
+        <h4>Mandate Information</h4>
+        <hr />
+        <table class="table no-border room-detail m-b-0">
+          <tbody>
+            <tr>
+              <td>Mandate Type:</td>
+              <td>
+                <span class="text-capitalize">R{{ service.resource?.data.price | number }}</span>
+              </td>
+            </tr>
+            <tr *ngIf="service.resource?.data.rates">
+              <td>Rates:</td>
+              <td>
+                <span class="text-capitalize">R{{ service.resource?.data.rates | number }}</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Commission:</td>
+              <td>
+                <span class="text-capitalize">R{{ service.resource?.data.price | number }}</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Commission Amount:</td>
+              <td>
+                <span class="text-capitalize">R{{ service.resource?.data.price | number }}</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Commission Split:</td>
+              <td>
+                <span class="text-capitalize">R{{ service.resource?.data.price | number }}</span>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Need to Know More?</h4>
+        <h6 class="card-subtitle mb-2 text-muted">Get in Touch with {{ service.resource?.data.agent.data.firstName }} Here...</h6>
+        <hr />
+
+        <formio src="https://digitaloffice.form.io/listingcontact" (submit)="onSubmit($event)"></formio>
       </div>
     </div>
   </div>
-  <div class="col-md-4 col-sm-12">
+</div>
+<hr class="clearfix" style="margin-top:30px;margin-bottom:30px;">
 
+<div class="row">
+  <div class="col-md-6">
     <div class="card">
-      <div class="card-body text-center">
+      <div class="card-body">
+        <h3 class="m-b-20">Property Details</h3>
+        <table class="table table-bordered">
 
+          <tbody>
+            <tr>
+              <td><span class="font-bold">Room</span></td>
+              <td><span class="font-bold">Count</span></td>
+              <td><span class="font-bold">Notes</span></td>
+            </tr>
+            <tr>
+              <td>Bedrooms</td>
+              <td>{{ service.resource?.data.bedrooms }}</td>
+              <td>{{ service.resource?.data.bedroomNotes }}</td>
+            </tr>
+            <tr>
+              <td>Bathrooms</td>
+              <td>{{ service.resource?.data.bathrooms }}</td>
+              <td>{{ service.resource?.data.bathroomNotes }}</td>
+            </tr>
+            <tr *ngIf="service.resource?.data.kitchens">
+              <td>Kitchens</td>
+              <td>{{ service.resource?.data.kitchens }}</td>
+              <td>{{ service.resource?.data.kitchenNotes }}</td>
+            </tr>
+            <tr *ngIf="service.resource?.data.diningRooms">
+              <td>Dining Rooms</td>
+              <td>{{ service.resource?.data.diningRooms }}</td>
+              <td>{{ service.resource?.data.diningRoomNotes }}</td>
+            </tr>
+            <tr *ngIf="service.resource?.data.storeRooms">
+              <td>Store Rooms</td>
+              <td>{{ service.resource?.data.storeRooms | titlecase }}</td>
+              <td>{{ service.resource?.data.storeRoomNotes }}</td>
+            </tr>
+            <tr *ngIf="service.resource?.data.domesticRooms">
+              <td>Domestic Staff Rooms</td>
+              <td>{{ service.resource?.data.domesticRooms }}</td>
+              <td>{{ service.resource?.data.domesticRoomNotes }}</td>
+            </tr>
+            <tr *ngIf="service.resource?.data.studyRooms">
+              <td>Study Rooms</td>
+              <td>{{ service.resource?.data.studyRooms }}</td>
+              <td>{{ service.resource?.data.studyRoomNotes }}</td>
+            </tr>
+            <tr *ngIf="service.resource?.data.lounges">
+              <td>Lounges</td>
+              <td>{{ service.resource?.data.lounges }}</td>
+              <td>{{ service.resource?.data.loungeNotes }}</td>
+            </tr>
+            <tr *ngIf="service.resource?.data.laundry">
+              <td>Laundry</td>
+              <td>{{ service.resource?.data.laundry }}</td>
+              <td>{{ service.resource?.data.laundryNotes }}</td>
+            </tr>
+            <tr *ngIf="service.resource?.data.flatlet">
+              <td>Flatlet</td>
+              <td>{{ service.resource?.data.flatlet }}</td>
+              <td>{{ service.resource?.data.flatletNotes }}</td>
+            </tr>
+            <tr *ngIf="service.resource?.data.garages">
+              <td>Garages</td>
+              <td>{{ service.resource?.data.garages }}</td>
+              <td>{{ service.resource?.data.parkingNotes }}</td>
+            </tr>
+            <tr>
+            <tr *ngIf="service.resource?.data.carPorts">
+              <td>Car Ports</td>
+              <td>{{ service.resource?.data.carPorts }}</td>
+              <td>{{ service.resource?.data.parkingNotes }}</td>
+            </tr>
+            <tr *ngIf="service.resource?.data.pool">
+              <td>Pool</td>
+              <td>{{ service.resource?.data.pool | titlecase }}</td>
+              <td>{{ service.resource?.data.poolNotes }}</td>
+            </tr>
+            <tr *ngIf="service.resource?.data.security">
+              <td>Security</td>
+              <td>{{ service.resource?.data.security | titlecase }}</td>
+              <td>{{ service.resource?.data.securityNotes }}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="m-b-20">Property Details</h3>
+        <table class="table table-bordered">
 
+          <tbody>
+            <tr>
+              <td><span class="font-bold">Room</span></td>
+              <td><span class="font-bold">Count</span></td>
+              <td><span class="font-bold">Notes</span></td>
+            </tr>
+            <tr>
+              <td>Bedrooms</td>
+              <td>{{ service.resource?.data.bedrooms }}</td>
+              <td>{{ service.resource?.data.bedroomNotes }}</td>
+            </tr>
+            <tr>
+              <td>Bathrooms</td>
+              <td>{{ service.resource?.data.bathrooms }}</td>
+              <td>{{ service.resource?.data.bathroomNotes }}</td>
+            </tr>
+            <tr *ngIf="service.resource?.data.kitchens">
+              <td>Kitchens</td>
+              <td>{{ service.resource?.data.kitchens }}</td>
+              <td>{{ service.resource?.data.kitchenNotes }}</td>
+            </tr>
+            <tr *ngIf="service.resource?.data.diningRooms">
+              <td>Dining Rooms</td>
+              <td>{{ service.resource?.data.diningRooms }}</td>
+              <td>{{ service.resource?.data.diningRoomNotes }}</td>
+            </tr>
+            <tr *ngIf="service.resource?.data.storeRooms">
+              <td>Store Rooms</td>
+              <td>{{ service.resource?.data.storeRooms | titlecase }}</td>
+              <td>{{ service.resource?.data.storeRoomNotes }}</td>
+            </tr>
+            <tr *ngIf="service.resource?.data.domesticRooms">
+              <td>Domestic Staff Rooms</td>
+              <td>{{ service.resource?.data.domesticRooms }}</td>
+              <td>{{ service.resource?.data.domesticRoomNotes }}</td>
+            </tr>
+            <tr *ngIf="service.resource?.data.studyRooms">
+              <td>Study Rooms</td>
+              <td>{{ service.resource?.data.studyRooms }}</td>
+              <td>{{ service.resource?.data.studyRoomNotes }}</td>
+            </tr>
+            <tr *ngIf="service.resource?.data.lounges">
+              <td>Lounges</td>
+              <td>{{ service.resource?.data.lounges }}</td>
+              <td>{{ service.resource?.data.loungeNotes }}</td>
+            </tr>
+            <tr *ngIf="service.resource?.data.laundry">
+              <td>Laundry</td>
+              <td>{{ service.resource?.data.laundry }}</td>
+              <td>{{ service.resource?.data.laundryNotes }}</td>
+            </tr>
+            <tr *ngIf="service.resource?.data.flatlet">
+              <td>Flatlet</td>
+              <td>{{ service.resource?.data.flatlet }}</td>
+              <td>{{ service.resource?.data.flatletNotes }}</td>
+            </tr>
+            <tr *ngIf="service.resource?.data.garages">
+              <td>Garages</td>
+              <td>{{ service.resource?.data.garages }}</td>
+              <td>{{ service.resource?.data.parkingNotes }}</td>
+            </tr>
+            <tr>
+            <tr *ngIf="service.resource?.data.carPorts">
+              <td>Car Ports</td>
+              <td>{{ service.resource?.data.carPorts }}</td>
+              <td>{{ service.resource?.data.parkingNotes }}</td>
+            </tr>
+            <tr *ngIf="service.resource?.data.pool">
+              <td>Pool</td>
+              <td>{{ service.resource?.data.pool | titlecase }}</td>
+              <td>{{ service.resource?.data.poolNotes }}</td>
+            </tr>
+            <tr *ngIf="service.resource?.data.security">
+              <td>Security</td>
+              <td>{{ service.resource?.data.security | titlecase }}</td>
+              <td>{{ service.resource?.data.securityNotes }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>

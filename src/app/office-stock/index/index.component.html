@@ -1,9 +1,13 @@
 <div class="row m-t-20">
 
   <div class="col-md-8">
-    <formio-grid src="https://digitaloffice.form.io/officestock" (rowSelect)="onSelect($event)"></formio-grid>
+    <formio-grid src="https://digitaloffice.form.io/officestock" [query]="{limit:15, sort:'-data.dateListed'}" (rowSelect)="onSelect($event)"></formio-grid>
   </div>
   <div class="col-md-4">
-         
+      <div class="card bg-light-info">
+          <div class="card-body">
+              <a href="https://digital-office-files.s3.amazonaws.com/brochures/MXR17411-showhouse.pdf" class="btn btn-warning btn-block">Dowload Office Stock Sheet</a>
+          </div>
+      </div>
   </div>
 </div>
