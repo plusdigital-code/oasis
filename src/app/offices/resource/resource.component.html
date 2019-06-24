@@ -1,14 +1,11 @@
 <div style="background-color: #fafafa;" class="m-t-20">
   <ul class="nav nav-tabs" style="margin-bottom: 25px; width:100%;">
     <li class="nav-item"><a class="nav-link" routerLink="../"><i class="fa fa-chevron-left"></i> </a></li>
-    <li class="nav-item"><a class="nav-link" routerLink="view" routerLinkActive="active"><i class="icon-Preview"></i>
-        Overview</a></li>
+    <li class="nav-item"><a class="nav-link" routerLink="view" routerLinkActive="active">{{ service.resource?.data.officeName }}</a></li>
     <li class="nav-item"><a class="nav-link" href="./#/listings/{{ service.resource?.data.listingProfileId }}/view"
-        routerLinkActive="active"><i class="icon-Add-UserStar"></i> Listing Profile</a></li>
-    <li class="nav-item"><a class="nav-link" href="./#/tools/{{ service.resource?.data.toolsId }}/view"
-        routerLinkActive="active"><i class="icon-Add-UserStar"></i> Publish</a></li>
+        routerLinkActive="active"><i class="fas fa-map-marker-alt"></i> {{ service.resource?.data.officeName }} Listings</a></li>
     <li class="nav-item"><a class="nav-link" routerLink="edit" routerLinkActive="active"><i class="icon-Pen-2"></i>
-        Edit</a></li>
+        Edit Office</a></li>
     <li class="nav-item"><a class="nav-link" routerLink="delete" routerLinkActive="active"><i
           class="sl-icon-trash"></i></a></li>
   </ul>

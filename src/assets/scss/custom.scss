@@ -106,6 +106,7 @@ body {
 
 }
 
+
 .sidebar-nav ul .sidebar-item.selected>.sidebar-link,
 .sidebar-nav ul .sidebar-item.selected>.sidebar-link i {
     text-decoration: underline;
@@ -402,6 +403,11 @@ div > table > thead {
 
 small {
     line-height: 1rem;
+}
+
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+    color: #000000;
+    background-color: #fff200;
 }
 
 @media (max-width:768px){
