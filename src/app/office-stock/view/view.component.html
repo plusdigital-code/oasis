@@ -1,3 +1,12 @@
+<div class="card no-card-border bg-light m-t-20">
+    <div class="card-body">
+        <button class="btn btn-warning btn-rounded float-right d-inline" type="button"><i class="fas fa-share"></i> Share</button>
+        <a href="https://digital-office-files.s3.amazonaws.com/brochures/{{ service.resource?.data.mandates.data.uniqueCode }}-showhouse.pdf" class="btn btn-warning btn-rounded float-right d-inline m-r-5"><i class="fas fa-download"></i> Brochure</a>
+        <a target="_blank" href="{{ service.resource?.data.mandates.data.address.url }}" class="btn btn-warning btn-rounded float-right d-inline"><i class="fas fa-map"></i> Google Maps</a>
+        <img class="float-left m-r-25" style="max-width:54px;" src="assets/images/For-Sale-Hero-Icon-2.png" />
+        <h6 class="float-left d-inline p-t-10"><i class="fas fa-map-marker-alt"></i> {{ service.resource?.data.mandates.data.address.formatted_address }}</h6>
+    </div>
+  </div>
 <div class="row m-t-15">
   <div class="col-md-7 col-sm-12">
     <div class="card">
@@ -55,15 +64,7 @@
         <ng-template ngbSlide>
           <img src="{{ service.resource?.data.images['5']['url'] }}" alt="Random third slide">
         </ng-template>
-        <ng-template ngbSlide>
-          <img src="{{ service.resource?.data.images['6']['url'] }}" alt="Random third slide">
-        </ng-template>
-        <ng-template ngbSlide>
-          <img src="{{ service.resource?.data.images['7']['url'] }}" alt="Random third slide">
-        </ng-template>
-        <ng-template ngbSlide>
-          <img src="{{ service.resource?.data.images['8']['url'] }}" alt="Random third slide">
-        </ng-template>
+     
       </ngb-carousel>
       <div class="card-body">
 
@@ -87,27 +88,32 @@
   </div>
 
   <div class="col-md-5 col-sm-12">
-
-
+    <div class="card  bg-light-success">
+      <div class="card-body">
+        <div class="d-flex align-items-left">
+          <div class="m-r-30"><img alt="{{service.resource?.data.agent.data.fullName}}"
+              src="{{ service.resource?.data.agent.data.profilePhoto['0']['url'] }}" width="60"></div>
+          <div>
+            <p class="text-muted m-b-0">Listed By:</p>
+            <h5 class="m-b-0">{{ service.resource?.data.agent.data.fullName }}</h5>
+            <span>At {{ service.resource?.data.offices.data.officeName }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="card">
       <div class="card-body bg-light-info">
         <h4>Snapshot of {{ service.resource?.data.mandates.data.uniqueCode }}</h4>
         <hr />
         <table class="table no-border room-detail m-b-0">
           <tbody>
-            <tr>
+            <tr *ngIf="service.resource?.data.dateListed">
               <td>Date Listed:</td>
               <td>
                 <span>{{ service.resource?.data.dateListed | date }}</span>
               </td>
             </tr>
-            <tr>
-                <td>Listing Agent:</td>
-                <td>
-                 {{ service.resource?.data.agent.data.fullName }} <small class="text-muted">at {{ service.resource?.data.offices.data.officeName }}</small>
-                </td>
-              </tr>
-            <tr>
+            <tr class="font-bold">
               <td>Price:</td>
               <td>
                 <span>R{{ service.resource?.data.price | number }}</span>
@@ -142,7 +148,7 @@
       </div>
     </div>
     <div class="card">
-      <div class="card-body bg-light-success">
+      <div class="card-body bg-light-info">
         <h4>Mandate Information</h4>
         <hr />
         <table class="table no-border room-detail m-b-0">
@@ -158,22 +164,22 @@
               <td>
                 <span>{{ service.resource?.data.mandates.data.mandateStartDate | date }}</span>
               </td>
-             
+
             </tr>
             <tr *ngIf="service.resource?.data.mandates.data.mandateEndDate">
-                <td>Mandate End Date:</td>
-                <td>
-                  <span>{{ service.resource?.data.mandates.data.mandateEndDate | date }}</span>
-                </td>
-               
-              </tr>
+              <td>Mandate End Date:</td>
+              <td>
+                <span>{{ service.resource?.data.mandates.data.mandateEndDate | date }}</span>
+              </td>
+
+            </tr>
             <tr *ngIf="service.resource?.data.mandates.data.commissionPercentage">
               <td>Commission:</td>
               <td>
                 <span>{{ service.resource?.data.mandates.data.commissionPercentage | number }}%</span>
               </td>
             </tr>
-     
+
             <tr *ngIf="service.resource?.data.mandates.data.commissionAmount">
               <td>Commission Amount:</td>
               <td>
@@ -189,7 +195,7 @@
             <tr *ngIf="service.resource?.data.mandates.data.commissionSplitNotes">
               <td>Commission Notes:</td>
               <td>
-                  <span>{{ service.resource?.data.mandates.data.commissionSplitNotes }}</span>
+                <span>{{ service.resource?.data.mandates.data.commissionSplitNotes }}</span>
               </td>
             </tr>
 
@@ -317,7 +323,7 @@
               <td>{{ service.resource?.data.petsAllowed | titlecase }}</td>
               <td>{{ service.resource?.data.petsAllowedNotes }}</td>
             </tr>
-           
+
           </tbody>
         </table>
       </div>
