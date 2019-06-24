@@ -16,8 +16,16 @@
 </div>
 <div class="row">
   <div class="col-md-4">
-    <table class="table no-border mini-table m-t-20">
+      <div class="card bg-light-info no-card-border">
+          <div class="card-body">
+              <h3 class="m-b-10"> Commission Snapshot</h3>
+    <table class="table no-border table-sm m-t-20">
       <tbody>
+          <tr>
+              <td class="text-muted">Listing Type</td>
+              <td class="font-medium"> {{ service.resource?.data.listingType }}
+              </td>
+            </tr>
         <tr>
           <td class="text-muted">Unique Code</td>
           <td class="font-dark">{{ service.resource?.data.uniqueCode }}</td>
@@ -27,23 +35,59 @@
           <td class="font-medium"> {{ service.resource?.data.mandateStatus | titlecase }}
           </td>
         </tr>
-        <tr>
-          <td class="text-muted">Listing Type</td>
-          <td class="font-medium"> {{ service.resource?.data.listingType }}
-          </td>
-        </tr>
         <tr *ngIf="service.resource?.data.mandate">
-          <td class="text-muted">Mandate Type</td>
-          <td class="font-medium">{{ service.resource?.data.mandate }}</td>
-        </tr>
-        <tr>
-          <td class="text-muted">Date Listed</td>
-          <td class="font-medium">{{ service.resource?.data.dateListed | date }}</td>
-        </tr>
+            <td class="text-muted">Mandate Type:</td>
+            <td>
+              <span>{{ service.resource?.data.mandate | titlecase }}</span>
+            </td>
+          </tr>
+          <tr *ngIf="service.resource?.data.mandateStartDate">
+            <td class="text-muted">Mandate Start Date:</td>
+            <td>
+              <span>{{ service.resource?.data.mandateStartDate | date }}</span>
+            </td>
+
+          </tr>
+          <tr *ngIf="service.resource?.data.mandateEndDate">
+            <td class="text-muted">Mandate End Date:</td>
+            <td>
+              <span>{{ service.resource?.data.mandateEndDate | date }}</span>
+            </td>
+
+          </tr>
+          <tr *ngIf="service.resource?.data.commissionPercentage">
+            <td class="text-muted">Commission:</td>
+            <td>
+              <span>{{ service.resource?.data.commissionPercentage | number }}%</span>
+            </td>
+          </tr>
+
+          <tr *ngIf="service.resource?.data.commissionAmount">
+            <td class="text-muted">Commission Amount:</td>
+            <td>
+              <span>R{{ service.resource?.data.commissionAmount | number }}</span>
+            </td>
+          </tr>
+          <tr *ngIf="service.resource?.data.commissionSplit">
+            <td class="text-muted">Commission Split:</td>
+            <td>
+              <span>{{ service.resource?.data.commissionSplit }}</span>
+            </td>
+          </tr>
+          <tr *ngIf="service.resource?.data.commissionSplitNotes">
+            <td class="text-muted">Commission Notes:</td>
+            <td>
+              <span>{{ service.resource?.data.commissionSplitNotes }}</span>
+            </td>
+          </tr>
       </tbody>
     </table>
+    <a class="btn btn-block btn-outline-primary btn-rounded" href="./#/mandates/{{ service.resource?._id }}/edit"><i class="fas fa-edit"></i>
+      Edit Mandate Information</a>
+      </div>
+      </div>
   </div>
-  <div class="col-md-8">
+  <div class="col-md-7">
     <div class="row">
       <div class="col-12">
         <div class="card-deck">
@@ -85,7 +129,7 @@
   <div class="row m-t-30">
     <div class="col-12">
       <div class="card-deck">
-        <div class="card bg-primary text-white">
+        <div class="card bg-info text-white">
           <div class="card-body">
             <div class="d-flex">
               <div class="m-r-20 align-self-center">

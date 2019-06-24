@@ -6,4 +6,9 @@ import { FormioResourceViewComponent } from 'angular-formio/resource';
   templateUrl: './view.component.html',
   styleUrls: ['./view.component.css']
 })
-export class ViewComponent extends FormioResourceViewComponent { }
+export class ViewComponent extends FormioResourceViewComponent {
+  onSubmit(submission: any) {
+    console.log(submission);
+    window.location.href = './#/mandates/' + submission.data.searchMandates + '/view';
+  }
+ }
