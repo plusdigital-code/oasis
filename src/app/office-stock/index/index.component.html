@@ -1,7 +1,7 @@
 <div class="row m-t-20">
 
   <div class="col-md-8">
-    <formio-grid src="https://digitaloffice.form.io/officestock" [query]="{limit:15, sort:'-data.dateListed'}" (rowSelect)="onSelect($event)"></formio-grid>
+    <formio-grid src="https://digitaloffice.form.io/officestock" [query]="{limit:15}" (rowSelect)="onSelect($event)"></formio-grid>
   </div>
   <div class="col-md-4">
       <div class="card bg-light-info">

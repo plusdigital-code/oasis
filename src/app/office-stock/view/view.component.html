@@ -95,12 +95,12 @@
         <hr />
         <table class="table no-border room-detail m-b-0">
           <tbody>
-              <tr>
-                  <td>Date Listed:</td>
-                  <td>
-                    <span class="text-capitalize">{{ service.resource?.data.dateListed | date }}</span>
-                  </td>
-                </tr>
+            <tr>
+              <td>Date Listed:</td>
+              <td>
+                <span class="text-capitalize">{{ service.resource?.data.dateListed | date }}</span>
+              </td>
+            </tr>
             <tr>
               <td>Price:</td>
               <td>
@@ -113,25 +113,24 @@
                 <span class="text-capitalize">R{{ service.resource?.data.rates | number }}</span>
               </td>
             </tr>
-            <tr>
-              <td>Commission:</td>
+            <tr *ngIf="service.resource?.data.floorSpace">
+              <td>Floor Space:</td>
               <td>
-                <span class="text-capitalize">R{{ service.resource?.data.price | number }}</span>
+                <span class="text-capitalize">{{ service.resource?.data.floorSpace }}</span>
               </td>
             </tr>
-            <tr>
-              <td>Commission Amount:</td>
+            <tr *ngIf="service.resource?.data.leasePeriod">
+              <td>Lease Period:</td>
               <td>
-                <span class="text-capitalize">R{{ service.resource?.data.price | number }}</span>
+                <span class="text-capitalize">{{ service.resource?.data.leasePeriod }}</span>
               </td>
             </tr>
-            <tr>
-              <td>Commission Split:</td>
+            <tr *ngIf="service.resource?.data.available">
+              <td>Available From:</td>
               <td>
-                <span class="text-capitalize">R{{ service.resource?.data.price | number }}</span>
+                <span class="text-capitalize">{{ service.resource?.data.available }}</span>
               </td>
             </tr>
-
           </tbody>
         </table>
       </div>
@@ -142,34 +141,36 @@
         <hr />
         <table class="table no-border room-detail m-b-0">
           <tbody>
-            <tr>
+            <tr *ngIf="service.resource?.data.mandates.data.mandate">
               <td>Mandate Type:</td>
               <td>
-                <span class="text-capitalize">R{{ service.resource?.data.price | number }}</span>
+                <span class="text-capitalize">R{{ service.resource?.data.mandates.data.mandate }}</span>
               </td>
             </tr>
-            <tr *ngIf="service.resource?.data.rates">
-              <td>Rates:</td>
-              <td>
-                <span class="text-capitalize">R{{ service.resource?.data.rates | number }}</span>
-              </td>
-            </tr>
-            <tr>
+            <tr *ngIf="service.resource?.data.mandates.data.commissionPercentage">
               <td>Commission:</td>
               <td>
-                <span class="text-capitalize">R{{ service.resource?.data.price | number }}</span>
+                <span
+                  class="text-capitalize">R{{ service.resource?.data.mandates.data.commissionPercentage | number }}</span>
               </td>
             </tr>
-            <tr>
+            <tr *ngIf="service.resource?.data.mandates.data.commissionAmount">
               <td>Commission Amount:</td>
               <td>
-                <span class="text-capitalize">R{{ service.resource?.data.price | number }}</span>
+                <span
+                  class="text-capitalize">R{{ service.resource?.data.mandates.data.commissionAmount | number }}</span>
               </td>
             </tr>
-            <tr>
+            <tr *ngIf="service.resource?.data.mandates.data.commissionSplit">
               <td>Commission Split:</td>
               <td>
-                <span class="text-capitalize">R{{ service.resource?.data.price | number }}</span>
+                <span class="text-capitalize">R{{ service.resource?.data.mandates.data.commissionSplit }}</span>
+              </td>
+            </tr>
+            <tr *ngIf="service.resource?.data.mandates.data.commissionSplitNotes">
+              <td>Commission Notes:</td>
+              <td>
+                <span class="text-capitalize">R{{ service.resource?.data.mandates.data.commissionSplitNotes }}</span>
               </td>
             </tr>
 
@@ -180,7 +181,8 @@
     <div class="card">
       <div class="card-body">
         <h4 class="card-title">Need to Know More?</h4>
-        <h6 class="card-subtitle mb-2 text-muted">Get in Touch with {{ service.resource?.data.agent.data.firstName }} Here...</h6>
+        <h6 class="card-subtitle mb-2 text-muted">Get in Touch with {{ service.resource?.data.agent.data.firstName }}
+          Here...</h6>
         <hr />
 
         <formio src="https://digitaloffice.form.io/listingcontact" (submit)="onSubmit($event)"></formio>
