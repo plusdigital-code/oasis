@@ -98,37 +98,43 @@
             <tr>
               <td>Date Listed:</td>
               <td>
-                <span class="text-capitalize">{{ service.resource?.data.dateListed | date }}</span>
+                <span>{{ service.resource?.data.dateListed | date }}</span>
               </td>
             </tr>
             <tr>
+                <td>Listing Agent:</td>
+                <td>
+                 {{ service.resource?.data.agent.data.fullName }} <small class="text-muted">at {{ service.resource?.data.offices.data.officeName }}</small>
+                </td>
+              </tr>
+            <tr>
               <td>Price:</td>
               <td>
-                <span class="text-capitalize">R{{ service.resource?.data.price | number }}</span>
+                <span>R{{ service.resource?.data.price | number }}</span>
               </td>
             </tr>
             <tr *ngIf="service.resource?.data.rates">
               <td>Rates:</td>
               <td>
-                <span class="text-capitalize">R{{ service.resource?.data.rates | number }}</span>
+                <span>R{{ service.resource?.data.rates | number }}</span>
               </td>
             </tr>
             <tr *ngIf="service.resource?.data.floorSpace">
               <td>Floor Space:</td>
               <td>
-                <span class="text-capitalize">{{ service.resource?.data.floorSpace }}</span>
+                <span>{{ service.resource?.data.floorSpace }}</span>
               </td>
             </tr>
             <tr *ngIf="service.resource?.data.leasePeriod">
               <td>Lease Period:</td>
               <td>
-                <span class="text-capitalize">{{ service.resource?.data.leasePeriod }}</span>
+                <span>{{ service.resource?.data.leasePeriod }}</span>
               </td>
             </tr>
             <tr *ngIf="service.resource?.data.available">
               <td>Available From:</td>
               <td>
-                <span class="text-capitalize">{{ service.resource?.data.available }}</span>
+                <span>{{ service.resource?.data.available }}</span>
               </td>
             </tr>
           </tbody>
@@ -144,33 +150,46 @@
             <tr *ngIf="service.resource?.data.mandates.data.mandate">
               <td>Mandate Type:</td>
               <td>
-                <span class="text-capitalize">R{{ service.resource?.data.mandates.data.mandate }}</span>
+                <span>{{ service.resource?.data.mandates.data.mandate | titlecase }}</span>
               </td>
             </tr>
+            <tr *ngIf="service.resource?.data.mandates.data.mandateStartDate">
+              <td>Mandate Start Date:</td>
+              <td>
+                <span>{{ service.resource?.data.mandates.data.mandateStartDate | date }}</span>
+              </td>
+             
+            </tr>
+            <tr *ngIf="service.resource?.data.mandates.data.mandateEndDate">
+                <td>Mandate End Date:</td>
+                <td>
+                  <span>{{ service.resource?.data.mandates.data.mandateEndDate | date }}</span>
+                </td>
+               
+              </tr>
             <tr *ngIf="service.resource?.data.mandates.data.commissionPercentage">
               <td>Commission:</td>
               <td>
-                <span
-                  class="text-capitalize">R{{ service.resource?.data.mandates.data.commissionPercentage | number }}</span>
+                <span>{{ service.resource?.data.mandates.data.commissionPercentage | number }}%</span>
               </td>
             </tr>
+     
             <tr *ngIf="service.resource?.data.mandates.data.commissionAmount">
               <td>Commission Amount:</td>
               <td>
-                <span
-                  class="text-capitalize">R{{ service.resource?.data.mandates.data.commissionAmount | number }}</span>
+                <span>R{{ service.resource?.data.mandates.data.commissionAmount | number }}</span>
               </td>
             </tr>
             <tr *ngIf="service.resource?.data.mandates.data.commissionSplit">
               <td>Commission Split:</td>
               <td>
-                <span class="text-capitalize">R{{ service.resource?.data.mandates.data.commissionSplit }}</span>
+                <span>{{ service.resource?.data.mandates.data.commissionSplit }}</span>
               </td>
             </tr>
             <tr *ngIf="service.resource?.data.mandates.data.commissionSplitNotes">
               <td>Commission Notes:</td>
               <td>
-                <span class="text-capitalize">R{{ service.resource?.data.mandates.data.commissionSplitNotes }}</span>
+                  <span>{{ service.resource?.data.mandates.data.commissionSplitNotes }}</span>
               </td>
             </tr>
 
@@ -196,7 +215,7 @@
   <div class="col-md-6">
     <div class="card">
       <div class="card-body">
-        <h3 class="m-b-20">Property Details</h3>
+        <h3 class="m-b-20">Room Details</h3>
         <table class="table table-bordered">
 
           <tbody>
@@ -289,81 +308,16 @@
 
           <tbody>
             <tr>
-              <td><span class="font-bold">Room</span></td>
-              <td><span class="font-bold">Count</span></td>
+              <td><span class="font-bold">Feature</span></td>
+              <td><span class="font-bold">Detail</span></td>
               <td><span class="font-bold">Notes</span></td>
             </tr>
-            <tr>
-              <td>Bedrooms</td>
-              <td>{{ service.resource?.data.bedrooms }}</td>
-              <td>{{ service.resource?.data.bedroomNotes }}</td>
+            <tr *ngIf="service.resource?.data.petsAllowed">
+              <td>Pets Allowed?</td>
+              <td>{{ service.resource?.data.petsAllowed | titlecase }}</td>
+              <td>{{ service.resource?.data.petsAllowedNotes }}</td>
             </tr>
-            <tr>
-              <td>Bathrooms</td>
-              <td>{{ service.resource?.data.bathrooms }}</td>
-              <td>{{ service.resource?.data.bathroomNotes }}</td>
-            </tr>
-            <tr *ngIf="service.resource?.data.kitchens">
-              <td>Kitchens</td>
-              <td>{{ service.resource?.data.kitchens }}</td>
-              <td>{{ service.resource?.data.kitchenNotes }}</td>
-            </tr>
-            <tr *ngIf="service.resource?.data.diningRooms">
-              <td>Dining Rooms</td>
-              <td>{{ service.resource?.data.diningRooms }}</td>
-              <td>{{ service.resource?.data.diningRoomNotes }}</td>
-            </tr>
-            <tr *ngIf="service.resource?.data.storeRooms">
-              <td>Store Rooms</td>
-              <td>{{ service.resource?.data.storeRooms | titlecase }}</td>
-              <td>{{ service.resource?.data.storeRoomNotes }}</td>
-            </tr>
-            <tr *ngIf="service.resource?.data.domesticRooms">
-              <td>Domestic Staff Rooms</td>
-              <td>{{ service.resource?.data.domesticRooms }}</td>
-              <td>{{ service.resource?.data.domesticRoomNotes }}</td>
-            </tr>
-            <tr *ngIf="service.resource?.data.studyRooms">
-              <td>Study Rooms</td>
-              <td>{{ service.resource?.data.studyRooms }}</td>
-              <td>{{ service.resource?.data.studyRoomNotes }}</td>
-            </tr>
-            <tr *ngIf="service.resource?.data.lounges">
-              <td>Lounges</td>
-              <td>{{ service.resource?.data.lounges }}</td>
-              <td>{{ service.resource?.data.loungeNotes }}</td>
-            </tr>
-            <tr *ngIf="service.resource?.data.laundry">
-              <td>Laundry</td>
-              <td>{{ service.resource?.data.laundry }}</td>
-              <td>{{ service.resource?.data.laundryNotes }}</td>
-            </tr>
-            <tr *ngIf="service.resource?.data.flatlet">
-              <td>Flatlet</td>
-              <td>{{ service.resource?.data.flatlet }}</td>
-              <td>{{ service.resource?.data.flatletNotes }}</td>
-            </tr>
-            <tr *ngIf="service.resource?.data.garages">
-              <td>Garages</td>
-              <td>{{ service.resource?.data.garages }}</td>
-              <td>{{ service.resource?.data.parkingNotes }}</td>
-            </tr>
-            <tr>
-            <tr *ngIf="service.resource?.data.carPorts">
-              <td>Car Ports</td>
-              <td>{{ service.resource?.data.carPorts }}</td>
-              <td>{{ service.resource?.data.parkingNotes }}</td>
-            </tr>
-            <tr *ngIf="service.resource?.data.pool">
-              <td>Pool</td>
-              <td>{{ service.resource?.data.pool | titlecase }}</td>
-              <td>{{ service.resource?.data.poolNotes }}</td>
-            </tr>
-            <tr *ngIf="service.resource?.data.security">
-              <td>Security</td>
-              <td>{{ service.resource?.data.security | titlecase }}</td>
-              <td>{{ service.resource?.data.securityNotes }}</td>
-            </tr>
+           
           </tbody>
         </table>
       </div>
