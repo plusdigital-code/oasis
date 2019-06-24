@@ -410,6 +410,8 @@ small {
     background-color: #fff200;
 }
 
+.carousel-item > img {width: 100%}
+
 @media (max-width:768px){
     h3 {
         font-size: 0.90rem;
