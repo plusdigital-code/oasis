@@ -10,7 +10,7 @@ export const ROUTES: RouteInfo[] = [
     submenu: []
   },
   {
-    path: '/account',
+    path: '/account/5ced2266eadf9c6df7e51a8b/view',
     title: 'Account',
     icon: 'fas fa-shield-alt',
     class: '',

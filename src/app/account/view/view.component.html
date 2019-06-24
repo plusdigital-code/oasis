@@ -1,3 +1,32 @@
-<p>
-  view works!
-</p>
+<div class="row">
+    <div class="col-md-6">
+      <div class="card bg-light-info">
+        <div class="card-body">
+          <h2>{{ service.resource?.data.companyName }}</h2>
+          <small class="text-muted">Contact Email </small><br />
+          <a target="_blank"
+            href="#">{{ service.resource?.data.contactEmail }}</a><br />
+            <small class="text-muted">Website Address: </small><br />
+         <a target="_blank"
+           href="#">{{ service.resource?.data.websiteAddress }}</a><br />
+          <small class="text-muted">Office Address </small><br />
+          <a target="_blank"
+            href="#">{{ service.resource?.data.headOfficeAddress.formatted_address }}</a><br />
+            <small class="text-muted">Postal Address </small><br />
+         {{ service.resource?.data.headOfficePostalAddress }}
+         
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+            <img class="m-b-15" style="width:100%;" src="{{ service.resource?.data.companyLogo['0']['url'] }}" />
+       
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+  
+    </div>
+  </div>
