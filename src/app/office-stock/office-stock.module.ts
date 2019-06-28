@@ -65,8 +65,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     {
       provide: FormioResourceConfig,
       useValue: {
-        name: 'officeStock',
-        form: 'officestock',
+        name: 'officeListings',
+        form: 'officelistings',
    
       }
     }

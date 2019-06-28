@@ -3,10 +3,17 @@
     <div class="card  bg-light no-card-border">
       <div class="card-body">
         <div class="d-flex align-items-center">
-          <div class="m-r-10"><img alt="{{ service.resource?.data.listingProfile.data.agent.data.firstName }}" class="rounded-circle" src="{{ service.resource?.data.listingProfile.data.agent.data.profilePhoto['0']['url'] }}" width="60"></div>
+          <div class="m-r-10"><img alt="{{ service.resource?.data.listingProfile.data.agent.data.firstName }}"
+              class="rounded img-fluid"
+              src="{{ service.resource?.data.listingProfile.data.agent.data.profilePhoto['0']['url'] }}" width="70">
+          </div>
           <div>
-            <h6>Hi {{ service.resource?.data.listingProfile.data.agent.data.firstName }}</h6>
-            <h3 class="m-b-0">Welcome To The Marketing Portal for <span class="text-success">{{ service.resource?.data.listingProfile.data.mandates.data.address.formatted_address }}</span></h3><span class="text-muted">Listed On: {{ service.resource?.data.listingProfile.data.mandates.data.dateListed | date }}</span>
+            <h6 class="m-b-0">Hi {{ service.resource?.data.listingProfile.data.agent.data.firstName }}</h6>
+            <h3 class="m-b-0 m-t-0">Welcome To The Marketing Portal for <span
+                class="text-success">{{ service.resource?.data.listingProfile.data.mandates.data.address.formatted_address }}</span>
+            </h3>
+            <span class="text-muted">Listed On:
+              {{ service.resource?.data.listingProfile.data.mandates.data.dateListed | date }}</span>
           </div>
         </div>
       </div>
@@ -67,16 +74,16 @@
   <div class="col-lg-4">
     <div class="card bg-primary text-white">
       <div class="card-body">
-       
-        </div>
+
       </div>
+    </div>
     <div class="card bg-cyan text-white">
       <div class="card-body">
-    
+
       </div>
     </div>
   </div>
- 
+
   <div class="col-lg-8">
     <div class="card">
       <div class="card-body">

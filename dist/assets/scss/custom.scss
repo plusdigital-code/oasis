@@ -402,7 +402,7 @@ div > table > thead {
 }
 
 small {
-    line-height: 1rem;
+    line-height: 0.9rem;
 }
 
 .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
@@ -411,6 +411,10 @@ small {
 }
 
 .carousel-item > img {width: 100%}
+
+.table-stock {
+    font-size:0.9rem;
+}
 
 @media (max-width:768px){
     h3 {

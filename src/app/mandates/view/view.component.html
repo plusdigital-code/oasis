@@ -1,93 +1,64 @@
 <div class="row">
-  <div class="col-md-12">
-    <div class="card  bg-light-info no-card-border">
-      <div class="card-body">
-        <div class="d-flex align-items-center">
-          <div class="m-r-30"><img alt="{{service.resource?.data.agent.data.fullName}}"
-              src="{{ service.resource?.data.agent.data.profilePhoto['0']['url'] }}" width="70" class="img-fluid rounded"></div>
-          <div>
-            <span class="text-muted">{{ service.resource?.data.agent.data.fullName }}</span>
-            <h3 class="m-b-0"> {{ service.resource?.data.address.formatted_address }}</h3>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="row">
   <div class="col-md-4">
-      <div class="card bg-light-info no-card-border">
-          <div class="card-body">
-              <h3 class="m-b-10"> Commission Snapshot</h3>
-    <table class="table no-border table-sm m-t-20">
-      <tbody>
-          <tr>
+    <div class="card bg-light-info no-card-border">
+      <div class="card-body">
+        <h3 class="m-b-10"> Mandate Snapshot</h3>
+        <hr />
+        <table class="table no-border table-sm m-t-20">
+          <tbody>
+            <tr>
+              <td class="text-muted">Unique Code</td>
+              <td class="font-dark">{{ service.resource?.data.uniqueCode }}</td>
+            </tr>
+            <tr>
+              <td class="text-muted">Listing Agent:</td>
+              <td class="font-medium">{{ service.resource?.data.agent.data.fullName }}<br />
+                <small>At {{ service.resource?.data.offices.data.officeName }}</small></td>
+            </tr>
+            <tr>
+              <td class="text-muted">Date Created:</td>
+              <td>
+                <span>{{ service.resource?.created | date }}</span>
+              </td>
+            </tr>
+            <tr>
               <td class="text-muted">Listing Type</td>
               <td class="font-medium"> {{ service.resource?.data.listingType }}
               </td>
             </tr>
-        <tr>
-          <td class="text-muted">Unique Code</td>
-          <td class="font-dark">{{ service.resource?.data.uniqueCode }}</td>
-        </tr>
-        <tr *ngIf="service.resource?.data.mandateStatus">
-          <td class="text-muted">Mandate Status</td>
-          <td class="font-medium"> {{ service.resource?.data.mandateStatus | titlecase }}
-          </td>
-        </tr>
-        <tr *ngIf="service.resource?.data.mandate">
-            <td class="text-muted">Mandate Type:</td>
-            <td>
-              <span>{{ service.resource?.data.mandate | titlecase }}</span>
-            </td>
-          </tr>
-          <tr *ngIf="service.resource?.data.mandateStartDate">
-            <td class="text-muted">Mandate Start Date:</td>
-            <td>
-              <span>{{ service.resource?.data.mandateStartDate | date }}</span>
-            </td>
-
-          </tr>
-          <tr *ngIf="service.resource?.data.mandateEndDate">
-            <td class="text-muted">Mandate End Date:</td>
-            <td>
-              <span>{{ service.resource?.data.mandateEndDate | date }}</span>
-            </td>
-
-          </tr>
-          <tr *ngIf="service.resource?.data.commissionPercentage">
-            <td class="text-muted">Commission:</td>
-            <td>
-              <span>{{ service.resource?.data.commissionPercentage | number }}%</span>
-            </td>
-          </tr>
-
-          <tr *ngIf="service.resource?.data.commissionAmount">
-            <td class="text-muted">Commission Amount:</td>
-            <td>
-              <span>R{{ service.resource?.data.commissionAmount | number }}</span>
-            </td>
-          </tr>
-          <tr *ngIf="service.resource?.data.commissionSplit">
-            <td class="text-muted">Commission Split:</td>
-            <td>
-              <span>{{ service.resource?.data.commissionSplit }}</span>
-            </td>
-          </tr>
-          <tr *ngIf="service.resource?.data.commissionSplitNotes">
-            <td class="text-muted">Commission Notes:</td>
-            <td>
-              <span>{{ service.resource?.data.commissionSplitNotes }}</span>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-    <a class="btn btn-block btn-outline-primary btn-rounded" href="./#/mandates/{{ service.resource?._id }}/edit"><i class="fas fa-edit"></i>
-      Edit Mandate Information</a>
+            <tr *ngIf="service.resource?.data.mandateStatus">
+              <td class="text-muted">Mandate Status</td>
+              <td class="font-medium"> {{ service.resource?.data.mandateStatus | titlecase }}
+              </td>
+            </tr>
+            <tr *ngIf="service.resource?.data.mandate">
+              <td class="text-muted">Mandate Type:</td>
+              <td>
+                <span>{{ service.resource?.data.mandate | titlecase }}</span>
+              </td>
+            </tr>
+            <tr *ngIf="service.resource?.data.mandateStartDate">
+              <td class="text-muted">Mandate Start Date:</td>
+              <td>
+                <span>{{ service.resource?.data.mandateStartDate | date }}</span>
+              </td>
+            </tr>
+            <tr *ngIf="service.resource?.data.mandateEndDate">
+              <td class="text-muted">Mandate End Date:</td>
+              <td>
+                <span>{{ service.resource?.data.mandateEndDate | date }}</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <hr />
+        <a class="btn btn-block btn-outline-primary btn-rounded" href="./#/mandates/{{ service.resource?._id }}/edit"><i
+            class="fas fa-edit"></i>
+          Edit Mandate Information</a>
       </div>
-      </div>
+    </div>
   </div>
-  <div class="col-md-7">
+  <div class="col-md-8">
     <div class="row">
       <div class="col-12">
         <div class="card-deck">
@@ -95,16 +66,19 @@
               src="assets/images/Profile-Landing.png">
             <div class="card-body">
               <h6 class="card-title">Listing Profile</h6>
-              <p class="card-text"><small class="text-muted">Manage the Information Associated With This Mandate</small></p>
-              <a class="btn btn-block btn-warning" href="./#/listings/{{ service.resource?.data.listingProfileId }}/view">Manage Listing</a>
+              <p class="card-text"><small class="text-muted">Manage the Information Associated With This Mandate</small>
+              </p>
+              <a class="btn btn-block btn-warning"
+                href="./#/listings/{{ service.resource?.data.listingProfileId }}/view">Manage Listing</a>
             </div>
           </div>
           <div class="card"><img alt="Card image cap" class="card-img-top img-responsive"
               src="assets/images/Marketing-Landing.png">
             <div class="card-body">
               <h6 class="card-title">Marketing & Advertising</h6>
-              <p class="card-text"><small class="text-muted">Portal, Web and Brochures Options Available</small></p>
-              <a class="btn btn-block btn-warning" href="./#/tools/{{ service.resource?.data.toolsId }}/view">Manage Marketing</a>
+              <p class="card-text"><small class="text-muted">Portal, Web and Brochures Options Available Brochures </small></p>
+              <a class="btn btn-block btn-warning" href="./#/tools/{{ service.resource?.data.toolsId }}/view">Manage
+                Marketing</a>
 
             </div>
           </div>
@@ -112,67 +86,68 @@
               src="assets/images/Showings-Landing.png">
             <div class="card-body">
               <h6 class="card-title">Showings</h6>
-              <p class="card-text"><small class="text-muted">Schedule and Share Viewings, Showdays & Related Events</small></p>
+              <p class="card-text"><small class="text-muted">Schedule and Share Viewings, Showdays & Related
+                  Events</small></p>
               <a class="btn btn-block btn-warning" routerLink="showings">Manage Showings</a>
 
             </div>
           </div>
         </div>
-        
- 
+
+
       </div>
-       
+
     </div>
- 
+
   </div>
 </div>
-  <div class="row m-t-30">
-    <div class="col-12">
-      <div class="card-deck">
-        <div class="card bg-info text-white">
-          <div class="card-body">
-            <div class="d-flex">
-              <div class="m-r-20 align-self-center">
-                <h1 class="text-white"><i class="ti-pie-chart"></i></h1>
-              </div>
-              <div>
-                <h4 class="card-title">Bandwidth usage</h4>
-                <h6 class="text-white op-5">March 2019</h6>
-              </div>
+<div class="row m-t-30">
+  <div class="col-12">
+    <div class="card-deck">
+      <div class="card bg-info text-white">
+        <div class="card-body">
+          <div class="d-flex">
+            <div class="m-r-20 align-self-center">
+              <h1 class="text-white"><i class="ti-pie-chart"></i></h1>
             </div>
-            <div class="row m-t-20 align-items-center">
-              <div class="col-4">
-                <h3 class="font-light text-white">50 GB</h3>
-              </div>
-              <div class="col-8 text-right">
-                <div class="bandwidth"><canvas width="146" height="70"
-                    style="display: inline-block; width: 146px; height: 70px; vertical-align: top;"></canvas></div>
-              </div>
+            <div>
+              <h4 class="card-title">Bandwidth usage</h4>
+              <h6 class="text-white op-5">March 2019</h6>
+            </div>
+          </div>
+          <div class="row m-t-20 align-items-center">
+            <div class="col-4">
+              <h3 class="font-light text-white">50 GB</h3>
+            </div>
+            <div class="col-8 text-right">
+              <div class="bandwidth"><canvas width="146" height="70"
+                  style="display: inline-block; width: 146px; height: 70px; vertical-align: top;"></canvas></div>
             </div>
           </div>
         </div>
-        <div class="card bg-cyan text-white">
-          <div class="card-body">
-            <div class="d-flex">
-              <div class="m-r-20 align-self-center">
-                <h1 class="text-white"><i class="ti-pie-chart"></i></h1>
-              </div>
-              <div>
-                <h4 class="card-title">Mandate Views</h4>
-                <h6 class="text-white op-5">Date</h6>
-              </div>
+      </div>
+      <div class="card bg-cyan text-white">
+        <div class="card-body">
+          <div class="d-flex">
+            <div class="m-r-20 align-self-center">
+              <h1 class="text-white"><i class="ti-pie-chart"></i></h1>
             </div>
-            <div class="row m-t-20 align-items-center">
-              <div class="col-4">
-                <h3 class="font-light text-white">14506</h3>
-              </div>
-              <div class="col-8 text-right">
-                <div class="spark-count"><canvas width="460" height="70"
-                    style="display: inline-block; width: 460.656px; height: 70px; vertical-align: top;"></canvas></div>
-              </div>
+            <div>
+              <h4 class="card-title">Mandate Views</h4>
+              <h6 class="text-white op-5">Date</h6>
+            </div>
+          </div>
+          <div class="row m-t-20 align-items-center">
+            <div class="col-4">
+              <h3 class="font-light text-white">14506</h3>
+            </div>
+            <div class="col-8 text-right">
+              <div class="spark-count"><canvas width="460" height="70"
+                  style="display: inline-block; width: 460.656px; height: 70px; vertical-align: top;"></canvas></div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
