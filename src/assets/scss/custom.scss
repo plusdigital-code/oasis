@@ -73,6 +73,11 @@ body {
     margin-right: 15px;
 }
 
+.fa-times {
+    color: black;
+    background-color: #000;
+}
+
 .choices__list--single {
     font-weight: normal;
 }
@@ -414,6 +419,68 @@ small {
 
 .table-stock {
     font-size:0.9rem;
+}
+.choices__list--multiple .choices__item {
+    background-color: #fff200 !important;
+    border: 1px solid #b1b0b0 !important;
+    color: #000000 !important;
+}
+
+.choices[data-type*=select-multiple] .choices__button, .choices[data-type*=text] .choices__button {
+    background-image:url("https://digital-office-files.s3-us-west-2.amazonaws.com/times-solid.svg") !important;
+
+}
+
+.formio-button-remove-row {
+    background-color: #fff200 !important;
+    border: 1px solid #b1b0b0 !important;
+    color: #000000 !important;
+    background-image:url("https://digital-office-files.s3-us-west-2.amazonaws.com/times-solid.svg") !important;
+    text-indent: -9999px;
+    appearance: none;
+    border: 0;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    background-size: 50%;
+    font-size: 1rem !important;
+    line-height: 0.9rem !important;
+}
+.input-group-addon
+{
+    cursor: pointer;
+    background-color: #e8e8e7;
+    padding: 5px;
+    border: 1px solid #d4d4d4;
+    border-left: none;
+}
+
+.formio-dialog.formio-dialog-theme-default .formio-dialog-close:before {
+     /* display: block; */
+     background-color: #fff200 !important;
+     border: 1px solid #b1b0b0 !important;
+     /* color: #000000 !important; */
+     background-image: url(https://digital-office-files.s3-us-west-2.amazonaws.com/times-solid.svg) !important;
+     /* text-indent: -9999px; */
+     /* -webkit-appearance: none; */
+     appearance: none;
+     border: 0;
+     /* background-color: transparent; */
+     background-repeat: no-repeat !important;
+     background-position: center !important;
+     cursor: pointer;
+     background-size: 40% !important;
+    margin: 3px;
+    display: block;
+    padding: 3px;
+    margin-top: 3px;
+    /* background: 0 0; */
+    color: transparent !important;
+    font-size: 1rem !important;
+    line-height: 0.9rem !important;
+    /* line-height: 26px; */
+    /* text-align: center; */
 }
 
 @media (max-width:768px){

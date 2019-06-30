@@ -14,6 +14,7 @@ import {
   FormioResourceDeleteComponent
 } from 'angular-formio/resource';
 import { FormioGrid } from 'angular-formio/grid';
+import { ViewComponent } from './view/view.component';
 
 @NgModule({
   imports: [
@@ -41,7 +42,7 @@ import { FormioGrid } from 'angular-formio/grid';
           },
           {
             path: 'view',
-            component: FormioResourceViewComponent
+            component: ViewComponent
           },
           {
             path: 'edit',
@@ -55,7 +56,7 @@ import { FormioGrid } from 'angular-formio/grid';
       },
     ])
   ],
-  declarations: [ResourceComponent],
+  declarations: [ResourceComponent, ViewComponent],
   providers: [
     FormioResourceService,
     {
