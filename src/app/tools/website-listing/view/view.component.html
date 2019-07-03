@@ -3,8 +3,8 @@
     <div class="card bg-light-info no-card-border">
       <div class="card-body text-center">
         <div class="d-flex align-items-center">
-          <div>
-            <h4 class="m-b-0">Listing Is <span class="text-success">{{ service.resource?.data.mandates.data.mandateStatus | titlecase }}</span> On The Web</h4>
+          <div *ngIf="service.resource?.data.mandates.data.panel2PanelListingStatus">
+            <h4 class="m-b-0">Listing Is <span class="text-success">{{ service.resource?.data.mandates.data.panel2PanelListingStatus }}</span> On The Web</h4>
           </div>
           <div class="m-l-10">
               <a class="btn btn-rounded btn-warning font-bold"><i class="fas fa-toggle-off "></i>  Change Status</a>
@@ -25,15 +25,12 @@
           <tr>
             <td>
               <h3 class="font-normal m-b-0">{{ service.resource?.data.headline }}</h3>
-              <small><span *ngIf="service.resource?.data.city"><a
-                    href="/#/city/{{service.resource?.data.city._id}}/city-homes">{{ service.resource?.data.city.data.city }}</a></span><span
-                  *ngIf="service.resource?.data.suburb"> / <a
-                    href="/#/suburb/{{service.resource?.data.suburb._id}}/suburb-homes">{{ service.resource?.data.suburb.data.suburb }}</a></span></small>
+              <small>{{ service.resource?.data.city.data.city }} / {{ service.resource?.data.suburb.data.suburb }}</small>
             </td>
             <td>
                 <small *ngIf="service.resource?.data.dateListed" class="m-b-0 p-b-0 float-right text-muted">Listed: {{ service.resource?.data.dateListed | date }}</small>
                 <span class="clearfix"></span>
-                <small class="m-b-0 p-t-0 p-b-0 m-t-0 float-right">Ref No: {{ service.resource?.data.mandates.data.uniqueCode }}</small>
+                <small *ngIf="service.resource?.data.mandates.data.uniqueCode" class="m-b-0 p-t-0 p-b-0 m-t-0 float-right">Ref No: {{ service.resource?.data.mandates.data.uniqueCode }}</small>
                 <span class="clearfix"></span>
                   <label class="label label-price font-bold m-t-3">R{{ service.resource?.data.price | number }}</label>
               </td>
