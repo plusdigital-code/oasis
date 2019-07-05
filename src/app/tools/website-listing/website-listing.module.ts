@@ -65,8 +65,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     {
       provide: FormioResourceConfig,
       useValue: {
-        name: 'residentiallistingweb',
-        form: 'residentialListingWeb',
+        name: 'webResidentialListing',
+        form: 'webresidentiallisting',
         parents: [
           'tools'
         ]
