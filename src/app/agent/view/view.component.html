@@ -6,7 +6,7 @@
         <h4 class="m-b-0">{{ service.resource?.data.fullName }}</h4>
         <small class="text-muted">{{ service.resource?.data.agentJobTitle }}</small>
         <hr />
-        <p class="lead">{{ service.resource?.data.profile }}</p>
+        <p>{{ service.resource?.data.profile }}</p>
       </div>
     </div>
   </div>
@@ -14,39 +14,68 @@
     <div class="card">
       <div class="card-body">
         <h3>Contact Details & Links:</h3>
+      
         <hr />
+        <i class="icon-Phone-SMS icon-hero"></i>
         <small class="text-muted">Mobile Number </small><br />
-        {{ service.resource?.data.mobileNumber }}<br />
+        {{ service.resource?.data.mobileNumber }} 
+        <hr class="bg-light-success" />
+        <i class="icon-Email icon-hero"></i>
         <small class="text-muted">Email Address </small><br />
-        <a href="{{ service.resource?.data.email }}">{{ service.resource?.data.email }}</a><br />
-        <small class="text-muted">Property24 Profile </small><br />
-        <a href="{{ service.resource?.data.email }}">{{ service.resource?.data.email }}</a><br />
-        <small class="text-muted">Private Property Profile </small><br />
-        <a href="{{ service.resource?.data.email }}">{{ service.resource?.data.email }}</a><br />
-        <div *ngIf="service.resource?.data.websiteProfileLink">
+        <a href="{{ service.resource?.data.email }}">{{ service.resource?.data.email }}</a>
+        <div *ngIf="service.resource?.data.email">
+          <hr class="bg-light-success" />
+          <small class="text-muted">Property24 Profile </small><br />
+          <a href="{{ service.resource?.data.email }}">{{ service.resource?.data.email }}</a></div>
+        <div *ngIf="service.resource?.data.email">
+          <hr class="bg-light-success" />
+          <small class="text-muted">Private Property Profile </small><br />
+          <a href="{{ service.resource?.data.email }}">{{ service.resource?.data.email }}</a></div>
+        <hr class="bg-light-success" />
+        <i class="icon-Facebook icon-hero"></i>
         <small class="text-muted">Website Link </small><br />
-        <a href="{{ service.resource?.data.email }}">{{ service.resource?.data.websiteProfileLink }}</a><br /></div>
+        <a
+          href="https://www.maxprop.co.za/agent/{{ service.resource?._id }}">https://www.maxprop.co.za/agent/{{ service.resource?._id }}</a>
+        <hr class="bg-light-success" />
         <small class="text-muted">Personal Landing Page </small><br />
-        <a href="{{ service.resource?.data.email }}">{{ service.resource?.data.email }}</a><br />
+        <a
+          href="{{ service.resource?.data.profileLandingPageLink }}">{{ service.resource?.data.profileLandingPageLink }}</a>
         <div *ngIf="service.resource?.data.facebook">
-        <small class="text-muted">Facebook </small><br />
-        <a href="{{ service.resource?.data.email }}">{{ service.resource?.data.facebook }}</a><br /></div>
+          <hr class="bg-light-success" />
+          <small class="text-muted">Facebook </small><br />
+          <a href="{{ service.resource?.data.email }}">{{ service.resource?.data.facebook }}</a></div>
         <div *ngIf="service.resource?.data.twitter">
-        <small class="text-muted">Twitter </small><br />
-        <a href="{{ service.resource?.data.email }}">{{ service.resource?.data.twitter }}</a><br /></div>
+          <hr class="bg-light-success" />
+          <small class="text-muted">Twitter </small><br />
+          <a href="{{ service.resource?.data.email }}">{{ service.resource?.data.twitter }}</a></div>
         <div *ngIf="service.resource?.data.facebook">
-        <small class="text-muted">LinkedIn </small><br />
-        <a href="{{ service.resource?.data.email }}">{{ service.resource?.data.facebook }}</a><br /></div>
+          <hr class="bg-light-success" />
+          <small class="text-muted">LinkedIn </small><br />
+          <a href="{{ service.resource?.data.email }}">{{ service.resource?.data.facebook }}</a></div>
       </div>
     </div>
   </div>
   <div class="col-md-3">
     <a href="/#/agent/{{ service.resource?._id }}/agent-listings" class="btn btn-block btn-rounded btn-warning">View
       {{ service.resource?.data.firstName }}'s Listings</a>
+      <div class="card bg-light-success no-card-border m-t-20">
+          <div class="card-body">
+            <div class="d-flex align-items-center text-center">
+              <div *ngIf="service.resource?.data.hiddenDataTotalValue" class="p-r-10 border-right border-light"><small class="text-muted">Total Value on Market</small>
+                <h4>R{{ service.resource?.data.hiddenDataTotalValue | number }}</h4>
+              </div>
+              <div *ngIf="service.resource?.data.hiddenDataAvgPrice" class="p-l-10"><small class="text-muted">Avg Value on Market</small>
+                <h4>R{{ service.resource?.data.hiddenDataAvgPrice | number }}</h4>{{ service.resource?.data.hiddenDataTotalListings | number }}
+              </div>
+            
+            </div>
+          </div>
+        </div>
     <div class="card bg-light m-t-20">
       <div class="card-body">
         <small class="text-muted">Office</small>
-        <h6><a href="/#/offices/{{ service.resource?.data.offices._id }}">{{ service.resource?.data.offices.data.officeName }}</a>
+        <h6><a
+            href="/#/offices/{{ service.resource?.data.offices._id }}">{{ service.resource?.data.offices.data.officeName }}</a>
         </h6>
         <small class="text-muted">Office Number </small><br />
         {{ service.resource?.data.offices.data.officeNumber }}<br />

@@ -15,15 +15,24 @@
     </div>
   </div>
   <div class="col-md-5">
-    <div class="card">
-      <div class="card-body">
-        <h3>Interested in Working with {{ service.resource?.data.officeName }}?</h3>
-        <p class="capitalize text-muted">Complete the Form Below to get in Touch</p>
-        <formio src="https://digitaloffice.form.io/agentcontactform"></formio>
-      </div>
-    </div>
+      <div class="card">
+       
+        </div>
   </div>
   <div class="col-md-3">
+      <div class="card bg-light-success no-card-border m-t-20">
+          <div class="card-body">
+            <div class="d-flex align-items-center text-center">
+              <div *ngIf="service.resource?.data.hiddenDataTotalValue" class="p-r-10 border-right border-light"><small class="text-muted">Total Value on Market</small>
+                <h4>R{{ service.resource?.data.hiddenDataTotalValue | number }}</h4>
+              </div>
+              <div *ngIf="service.resource?.data.hiddenDataAvgPrice" class="p-l-10"><small class="text-muted">Avg Value on Market</small>
+                <h4>R{{ service.resource?.data.hiddenDataAvgPrice | number }}</h4>
+              </div>
+            
+            </div>
+          </div>
+        </div>
     <a href="/#/offices/{{ service.resource?._id }}/office-listings" class="btn btn-block btn-rounded btn-warning">View
       {{ service.resource?.data.officeName }}'s Listings</a>
   </div>
