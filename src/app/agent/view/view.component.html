@@ -2,11 +2,12 @@
   <div class="col-md-4">
     <div class="card">
       <div class="card-body">
-        <img class="m-b-15" style="width:100%;" src="{{ service.resource?.data.profilePhoto['0']['url'] }}" />
+        <img class="m-b-15" style="width:100%;" [src]="service.resource?.data.profilePhoto['0']['url']" />
         <h4 class="m-b-0">{{ service.resource?.data.fullName }}</h4>
         <small class="text-muted">{{ service.resource?.data.agentJobTitle }}</small>
         <hr />
         <p>{{ service.resource?.data.profile }}</p>
+        <!--<app-agent-feed></app-agent-feed>-->
       </div>
     </div>
   </div>

@@ -14,6 +14,7 @@ import {
 import { IndexComponent } from './index/index.component';
 import { FormioGrid } from 'angular-formio/grid';
 import { ViewComponent } from './view/view.component';
+import { AgentFeedComponent } from './agent-components/agent-feed/agent-feed.component';
 
 @NgModule({
     imports: [
@@ -56,7 +57,7 @@ import { ViewComponent } from './view/view.component';
             },
         ])
     ],
-    declarations: [ResourceComponent, IndexComponent, ViewComponent],
+    declarations: [ResourceComponent, IndexComponent, ViewComponent, AgentFeedComponent],
     providers: [
         FormioResourceService,
         {

@@ -22,7 +22,10 @@ import {
       provide: FormioResourceConfig,
       useValue: {
         name: 'obi',
-        form: 'obi'
+        form: 'obi',
+        parents: [
+          'leads'
+        ]
       }
     }
   ]

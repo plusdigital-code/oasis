@@ -2,9 +2,9 @@
       <ul class="nav nav-tabs" style="margin-bottom: 25px; width:100%;">
             <li class="nav-item"><a class="nav-link" routerLink="../"><i class="fa fa-chevron-left"></i></a></li>
             <li class="nav-item"><a class="nav-link" routerLink="view" routerLinkActive="active">Mandate</a></li>
-            <li class="nav-item"><a class="nav-link"
-                        href="./#/listings/{{ service.resource?.data.listingProfileId }}/view"
-                        routerLinkActive="active"><i class="icon-File-HorizontalText"></i> Listing Profile</a></li>
+
+            <li class="nav-item"><a class="nav-link" routerLink="mandate-listing/{{ service.resource?.data.listingProfileId }}" routerLinkActive="active"><i
+                  class="icon-Add-UserStar"></i> Mandate Listing</a></li>
             <li class="nav-item"><a class="nav-link" href="./#/tools/{{ service.resource?.data.toolsId }}/view"
                   routerLinkActive="active"><i class="icon-Megaphone"></i> Marketing</a></li>
             <li class="nav-item"><a class="nav-link" routerLink="showings" routerLinkActive="active"><i
