@@ -42,7 +42,7 @@ import { ViewComponent } from './view/view.component';
           },
           {
             path: 'view',
-            component: ViewComponent
+            component: FormioResourceViewComponent
           },
           {
             path: 'edit',

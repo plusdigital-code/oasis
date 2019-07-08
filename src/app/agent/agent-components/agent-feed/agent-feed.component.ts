@@ -12,7 +12,7 @@ import { FormioUtils } from 'angular-formio';
 })
 export class AgentFeedComponent implements OnInit {
 
-  public blah: object;
+  public blah: any;
   public url: any;
   constructor(private activatedRoute: ActivatedRoute, public auth: FormioAuthService) {
     console.log(this.activatedRoute);
@@ -47,7 +47,6 @@ pipeline.push({
   console.log(result);
 });
 this.blah = Formio;
-this.url = 'https://digitaloffice.form.io/agent/submission/' + this.activatedRoute._routerState.snapshot._root.children['0'].children['0'].children['0'].value.params.id;
 
 }
 }

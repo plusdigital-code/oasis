@@ -7,7 +7,6 @@
         <small class="text-muted">{{ service.resource?.data.agentJobTitle }}</small>
         <hr />
         <p>{{ service.resource?.data.profile }}</p>
-        <!--<app-agent-feed></app-agent-feed>-->
       </div>
     </div>
   </div>
@@ -36,12 +35,14 @@
         <i class="icon-Facebook icon-hero"></i>
         <small class="text-muted">Website Link </small><br />
         <a
-          href="https://www.maxprop.co.za/agent/{{ service.resource?._id }}">https://www.maxprop.co.za/agent/{{ service.resource?._id }}</a>
-        <hr class="bg-light-success" />
+          href="https://www.maxprop.co.za/agent/{{ service.resource?._id }}">Maxprop Site</a>
+       <div *ngIf="service.resource?.data.profileLandingPageLink">
+          <hr class="bg-light-success" />
         <small class="text-muted">Personal Landing Page </small><br />
         <a
-          href="{{ service.resource?.data.profileLandingPageLink }}">{{ service.resource?.data.profileLandingPageLink }}</a>
-        <div *ngIf="service.resource?.data.facebook">
+          href="{{ service.resource?.data.profileLandingPageLink }}">{{ service.resource?.data.fullName }} Website</a>
+        </div>
+          <div *ngIf="service.resource?.data.facebook">
           <hr class="bg-light-success" />
           <small class="text-muted">Facebook </small><br />
           <a href="{{ service.resource?.data.email }}">{{ service.resource?.data.facebook }}</a></div>
