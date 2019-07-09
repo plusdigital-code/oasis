@@ -69,6 +69,10 @@ import { AgmCoreModule } from '@agm/core';
           {
             path: 'mandate-listing',
             loadChildren: './mandate-listing/mandate-listing.module#MandateListingModule'
+          },
+          {
+            path: 'mandate-tools',
+            loadChildren: './mandate-tools/mandate-tools.module#MandateToolsModule'
           }
         ]
       },
