@@ -8,26 +8,23 @@ import {
   FormioResourceConfig,
   FormioResourceService,
   FormioResourceCreateComponent,
+  FormioResourceIndexComponent,
   FormioResourceViewComponent,
   FormioResourceEditComponent,
   FormioResourceDeleteComponent
 } from 'angular-formio/resource';
-import { IndexComponent } from './index/index.component';
 import { FormioGrid } from 'angular-formio/grid';
-import { ViewComponent } from './view/view.component';
-import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   imports: [
     CommonModule,
     FormioModule,
     FormioGrid,
-    AgmCoreModule,
     FormioResource,
     RouterModule.forChild([
       {
         path: '',
-        component: IndexComponent
+        component: FormioResourceIndexComponent
       },
       {
         path: 'new',
@@ -44,7 +41,7 @@ import { AgmCoreModule } from '@agm/core';
           },
           {
             path: 'view',
-            component: ViewComponent
+            component: FormioResourceViewComponent
           },
           {
             path: 'edit',
@@ -55,27 +52,43 @@ import { AgmCoreModule } from '@agm/core';
             component: FormioResourceDeleteComponent
           },
           {
-            path: 'documents',
-            loadChildren: './documents/documents.module#DocumentsModule'
+            path: 'notes',
+            loadChildren: './notes/notes.module#NotesModule'
           },
           {
-            path: 'mandate-listing',
-            loadChildren: './mandate-listing/mandate-listing.module#MandateListingModule'
+            path: 'contracts',
+            loadChildren: './contracts/contracts.module#ContractsModule'
+          },
+          {
+            path: 'showings',
+            loadChildren: './showings/showings.module#ShowingsModule'
+          },
+          {
+            path: 'leads',
+            loadChildren: './leads/leads.module#LeadsModule'
+          },
+          {
+            path: 'listing-profile',
+            loadChildren: './listing-profile/listing-profile.module#ListingProfileModule'
+          },
+          {
+            path: 'marketing',
+            loadChildren: './marketing/marketing.module#MarketingModule'
           }
         ]
       },
     ])
   ],
-  declarations: [ResourceComponent, IndexComponent, ViewComponent],
+  declarations: [ResourceComponent],
   providers: [
     FormioResourceService,
     {
       provide: FormioResourceConfig,
       useValue: {
-        name: 'mandates',
-        form: 'mandates'
+        name: 'mandate',
+        form: 'mandate'
       }
     }
   ]
 })
-export class MandatesModule { }
+export class MandateModule { }

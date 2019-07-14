@@ -54,7 +54,7 @@ export const ROUTES: RouteInfo[] = [
     submenu: []
   },
   {
-    path: '/mandates',
+    path: '/mandate',
     title: 'My Mandates',
     icon: 'fas fa-clipboard-list',
     class: '',

@@ -34,8 +34,8 @@ export const Approutes: Routes = [
         loadChildren: './mandates/mandates.module#MandatesModule'
       },
       {
-        path: 'office-stock',
-        loadChildren: './office-stock/office-stock.module#OfficeStockModule'
+        path: 'mandate',
+        loadChildren: './mandate/mandate.module#MandateModule'
       },
       {
         path: 'listings',
@@ -48,10 +48,6 @@ export const Approutes: Routes = [
       {
         path: 'contacts',
         loadChildren: './contacts/contacts.module#ContactsModule'
-      },
-      {
-        path: 'leads',
-        loadChildren: './leads/leads.module#LeadsModule'
       },
       {
         path: 'brand-marketing',
