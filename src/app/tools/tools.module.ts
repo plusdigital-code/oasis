@@ -58,18 +58,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
           {
             path: 'website-listing',
             loadChildren: './website-listing/website-listing.module#WebsiteListingModule'
-          },
-          {
-            path: 'brochures',
-            loadChildren: './brochures/brochures.module#BrochuresModule'
-          },
-          {
-            path: 'privateproperty',
-            loadChildren: './privateproperty/privateproperty.module#PrivatepropertyModule'
-          },
-          {
-            path: 'property24',
-            loadChildren: './property24/property24.module#Property24Module'
           }
         ]
       },
