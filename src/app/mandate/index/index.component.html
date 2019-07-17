@@ -1,0 +1,6 @@
+<div class="row m-t-20">
+  <div class="col-md-12">
+<formio src="https://digitaloffice.form.io/searchmandates" (submit)="onSubmit($event)"></formio>
+<formio-grid src="https://digitaloffice.form.io/mandate" (rowSelect)="onSelect($event)" [query]="{sort:'-created',limit:30,'data.mandateStatus':'Active'}" [createText]="'New Mandate'" (createItem)="onCreateItem()"></formio-grid>
+</div>
+</div>

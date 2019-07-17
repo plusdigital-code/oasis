@@ -43,10 +43,10 @@ pipeline.push({
 }
  );
 
- Formio.request('https://digitaloffice.form.io/report', 'POST', pipeline).then(function(result) {
+ Formio.request('https://digitaloffice.form.io/report', 'POST', pipeline).then(function(result: any) {
   console.log(result);
 });
-this.blah = Formio;
+this.blah = pipeline;
 
 }
 }

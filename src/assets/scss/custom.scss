@@ -494,6 +494,15 @@ small {
     /* text-align: center; */
 }
 
+#ee9fmu > div > div {
+    display: flex;
+    flex-wrap: wrap;    
+}
+
+#ee9fmu > div > div:nth-child(2) > div {
+    padding:5px;
+}
+
 @media (max-width:768px){
     h3 {
         font-size: 0.90rem;
@@ -503,6 +512,11 @@ small {
     }
     h5 {
         font-size: 0.8rem;
+    }
+    .page-link {
+       
+        padding: 0.5rem 0.2rem;
+        font-size: 0.60rem;
     }
     .label-price{font-size: 0.8rem;
         padding: 2px;
