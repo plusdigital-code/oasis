@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { FormioAuthService } from 'angular-formio/auth';
 import { Formio } from 'formiojs';
+import { ActivatedRoute, RouterState } from '@angular/router';
+
+import { FormioAuthService } from 'angular-formio/auth';
 import { JsonPipe } from '@angular/common';
-import { FormioUtils } from 'angular-formio';
 
 @Component({
   selector: 'app-agent-feed',
@@ -11,42 +11,25 @@ import { FormioUtils } from 'angular-formio';
   styleUrls: ['./agent-feed.component.css']
 })
 export class AgentFeedComponent implements OnInit {
+  public blah: JsonPipe;
+public url: any;
+public url2: any;
+public url3: any;
 
-  public blah: any;
-  public url: any;
-  constructor(private activatedRoute: ActivatedRoute, public auth: FormioAuthService) {
+constructor(private activatedRoute: ActivatedRoute, public auth: FormioAuthService) {
     console.log(this.activatedRoute);
   }
 
-  ngOnInit() {
-    const pipeline = [];
-pipeline.push({
-        '$match': {
-        'form': {
-            '$in':
-             ['5ced53e15ea4466b5cc77cce']
-        },
-            'data.offices._id': '5ced24a3aedcd715b26baff1'
-        }
-    },
-    {
-        '$group': {
-            '_id': '$data.offices._id',
-            'total value': {
-                '$sum': '$data.price'
-            },
-            'total': {
-                '$avg': '$data.price'
-            }
-    }
-
-}
- );
-
- Formio.request('https://digitaloffice.form.io/report', 'POST', pipeline).then(function(result: any) {
-  console.log(result);
-});
-this.blah = pipeline;
+ngOnInit() {
+this.url = '{\'data\':{\'listingId\':' + this.activatedRoute.snapshot.parent.url + '}}';
+this.url2 = this.activatedRoute.snapshot.parent.url['0'].path;
+const submission = {
+  data: {
+    listingId: this.url2
+  }
+};
+this.url3 = submission;
 
 }
 }
+

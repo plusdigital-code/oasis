@@ -17,8 +17,7 @@
   <div class="col-md-6">
       <div class="card">
         <div class="card-body">
-          {{ service.resource?.data.obi.data.oobaIntroductionStatus }}
-          <formio src="https://digitaloffice.form.io/obi/submission/{{ service.resource?.data.obi._id }}" (customEvent)="$testEvent"></formio>
+          <formio src="https://digitaloffice.form.io/obi/submission/{{ service.resource?.data.obi._id }}"></formio>
         </div>
       </div>
     </div>
