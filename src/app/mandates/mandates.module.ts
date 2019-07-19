@@ -55,16 +55,8 @@ import { AgmCoreModule } from '@agm/core';
             component: FormioResourceDeleteComponent
           },
           {
-            path: 'showings',
-            loadChildren: './showings/showings.module#ShowingsModule'
-          },
-          {
             path: 'documents',
             loadChildren: './documents/documents.module#DocumentsModule'
-          },
-          {
-            path: 'mandate-leads',
-            loadChildren: './mandate-leads/mandate-leads.module#MandateLeadsModule'
           },
           {
             path: 'mandate-listing',

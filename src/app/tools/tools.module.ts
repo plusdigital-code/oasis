@@ -15,10 +15,13 @@ import {
 import { IndexComponent } from './index/index.component';
 import { FormioGrid } from 'angular-formio/grid';
 import { ViewComponent } from './view/view.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
   imports: [
     CommonModule,
+    NgbModule,
     FormioModule,
     FormioGrid,
     FormioResource,
@@ -42,7 +45,7 @@ import { ViewComponent } from './view/view.component';
           },
           {
             path: 'view',
-            component: FormioResourceViewComponent
+            component: ViewComponent
           },
           {
             path: 'edit',
@@ -53,16 +56,8 @@ import { ViewComponent } from './view/view.component';
             component: FormioResourceDeleteComponent
           },
           {
-            path: 'websitelisting',
-            loadChildren: './websitelisting/websitelisting.module#WebsitelistingModule'
-          },
-          {
-            path: 'privateproperty',
-            loadChildren: './privateproperty/privateproperty.module#PrivatepropertyModule'
-          },
-          {
-            path: 'property24',
-            loadChildren: './property24/property24.module#Property24Module'
+            path: 'website-listing',
+            loadChildren: './website-listing/website-listing.module#WebsiteListingModule'
           }
         ]
       },

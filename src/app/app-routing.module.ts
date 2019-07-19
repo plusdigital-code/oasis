@@ -34,6 +34,10 @@ export const Approutes: Routes = [
         loadChildren: './mandates/mandates.module#MandatesModule'
       },
       {
+        path: 'mandate',
+        loadChildren: './mandate/mandate.module#MandateModule'
+      },
+      {
         path: 'listings',
         loadChildren: './listings/listings.module#ListingsModule'
       },
@@ -46,8 +50,8 @@ export const Approutes: Routes = [
         loadChildren: './contacts/contacts.module#ContactsModule'
       },
       {
-        path: 'leads',
-        loadChildren: './leads/leads.module#LeadsModule'
+        path: 'brand-marketing',
+        loadChildren: './brand-marketing/brand-marketing.module#BrandMarketingModule'
       },
       {
         path: 'auth',

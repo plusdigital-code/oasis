@@ -9,6 +9,6 @@ import { FormioResourceIndexComponent } from 'angular-formio/resource';
 export class IndexComponent extends FormioResourceIndexComponent {
   onSubmit(submission: any) {
     console.log(submission);
-    window.location.href = './#/agent/' + submission.data.searchAgents + '/view';
+    window.location.href = './#/agent/' + submission.data.searchAgent + '/view';
   }
 }

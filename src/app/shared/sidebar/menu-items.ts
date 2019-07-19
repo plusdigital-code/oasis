@@ -10,9 +10,9 @@ export const ROUTES: RouteInfo[] = [
     submenu: []
   },
   {
-    path: '/account',
+    path: '/account/5ced2266eadf9c6df7e51a8b/view',
     title: 'Account',
-    icon: 'icon-Security-Settings',
+    icon: 'fas fa-shield-alt',
     class: '',
     extralink: false,
     submenu: [
@@ -21,7 +21,7 @@ export const ROUTES: RouteInfo[] = [
   {
     path: '/offices',
     title: 'Offices',
-    icon: 'icon-Office',
+    icon: 'fas fa-hospital',
     class: '',
     extralink: false,
     submenu: [
@@ -30,7 +30,7 @@ export const ROUTES: RouteInfo[] = [
   {
     path: '/agent',
     title: 'Agents',
-    icon: 'icon-MaleFemale',
+    icon: 'fas fa-users',
     class: '',
     extralink: false,
     submenu: [
@@ -39,7 +39,7 @@ export const ROUTES: RouteInfo[] = [
   {
     path: '/brokers',
     title: 'Brokers',
-    icon: 'icon-Handshake',
+    icon: 'fas fa-handshake',
     class: '',
     extralink: false,
     submenu: [
@@ -54,9 +54,33 @@ export const ROUTES: RouteInfo[] = [
     submenu: []
   },
   {
-    path: '/mandates',
+    path: '/mandate',
     title: 'My Mandates',
-    icon: 'icon-File-Edit',
+    icon: 'fas fa-clipboard-list',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+  {
+    path: '',
+    title: 'Available Stock',
+    icon: 'mdi mdi-dots-horizontal',
+    class: 'nav-small-cap',
+    extralink: true,
+    submenu: []
+  },
+  {
+    path: '/office-stock',
+    title: 'Office Listings',
+    icon: 'fas fa-map',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+  {
+    path: '/',
+    title: 'Network Listings',
+    icon: 'fas fa-sitemap',
     class: '',
     extralink: false,
     submenu: []
@@ -71,8 +95,8 @@ export const ROUTES: RouteInfo[] = [
   },
   {
     path: '/contacts',
-    title: 'All Contacts',
-    icon: 'icon-Address-Book',
+    title: 'My Contacts',
+    icon: 'fas fa-address-book',
     class: '',
     extralink: false,
     submenu: []
@@ -80,12 +104,35 @@ export const ROUTES: RouteInfo[] = [
   {
     path: '/leads',
     title: 'Leads',
-    icon: 'icon-Add-UserStar',
+    icon: 'fas fa-address-card',
     class: '',
     extralink: false,
     submenu: []
   },
-
+  {
+    path: '',
+    title: 'Brand & Marketing',
+    icon: 'mdi mdi-dots-horizontal',
+    class: 'nav-small-cap',
+    extralink: true,
+    submenu: []
+  },
+  {
+    path: '/brand-marketing',
+    title: 'Brand & Marketing',
+    icon: 'fas fa-images',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+  {
+    path: '',
+    title: 'Ref',
+    icon: 'mdi mdi-dots-horizontal',
+    class: 'nav-small-cap',
+    extralink: true,
+    submenu: []
+  },
   {
     path: '/starter',
     title: 'Starter Page',
@@ -93,160 +140,5 @@ export const ROUTES: RouteInfo[] = [
     class: '',
     extralink: false,
     submenu: []
-  },
-  {
-    path: '',
-    title: 'UI',
-    icon: 'mdi mdi-dots-horizontal',
-    class: 'nav-small-cap',
-    extralink: true,
-    submenu: []
-  },
-  {
-    path: '',
-    title: 'UI Elements',
-    icon: 'icon-Paint-Brush',
-    class: 'has-arrow',
-    extralink: false,
-    submenu: [
-      {
-        path: '/component/accordion',
-        title: 'Accordion',
-        icon: '',
-        class: '',
-        extralink: false,
-        submenu: []
-      },
-      {
-        path: '/component/alert',
-        title: 'Alert',
-        icon: '',
-        class: '',
-        extralink: false,
-        submenu: []
-      },
-      {
-        path: '/component/carousel',
-        title: 'Carousel',
-        icon: '',
-        class: '',
-        extralink: false,
-        submenu: []
-      },
-      {
-        path: '/component/dropdown',
-        title: 'Dropdown',
-        icon: '',
-        class: '',
-        extralink: false,
-        submenu: []
-      },
-      {
-        path: '/component/modal',
-        title: 'Modal',
-        icon: '',
-        class: '',
-        extralink: false,
-        submenu: []
-      },
-      {
-        path: '/component/pagination',
-        title: 'Pagination',
-        icon: '',
-        class: '',
-        extralink: false,
-        submenu: []
-      },
-      {
-        path: '/component/poptool',
-        title: 'Popover & Tooltip',
-        icon: '',
-        class: '',
-        extralink: false,
-        submenu: []
-      },
-      {
-        path: '/component/progressbar',
-        title: 'Progressbar',
-        icon: '',
-        class: '',
-        extralink: false,
-        submenu: []
-      },
-      {
-        path: '/component/rating',
-        title: 'Ratings',
-        icon: '',
-        class: '',
-        extralink: false,
-        submenu: []
-      },
-      {
-        path: '/component/tabs',
-        title: 'Tabs',
-        icon: '',
-        class: '',
-        extralink: false,
-        submenu: []
-      },
-      {
-        path: '/component/timepicker',
-        title: 'Timepicker',
-        icon: '',
-        class: '',
-        extralink: false,
-        submenu: []
-      },
-      {
-        path: '/component/buttons',
-        title: 'Button',
-        icon: '',
-        class: '',
-        extralink: false,
-        submenu: []
-      }
-    ]
-  },
-  {
-    path: '',
-    title: 'Menu Levels',
-    icon: 'mdi mdi-notification-clear-all',
-    class: 'has-arrow',
-    extralink: false,
-    submenu: [
-      {
-        path: '',
-        title: 'Second Level',
-        icon: '',
-        class: '',
-        extralink: true,
-        submenu: []
-      },
-      {
-        path: '',
-        title: 'Second Child',
-        icon: '',
-        class: 'has-arrow',
-        extralink: false,
-        submenu: [
-          {
-            path: '',
-            title: 'Third 1.1',
-            icon: '',
-            class: '',
-            extralink: false,
-            submenu: []
-          },
-          {
-            path: '',
-            title: 'Third 1.2',
-            icon: '',
-            class: '',
-            extralink: false,
-            submenu: []
-          }
-        ]
-      }
-    ]
   }
 ];

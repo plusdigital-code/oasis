@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <h4>{{ service.resource?.data.contacts.data.fullName }}</h4>
+        <small *ngIf="service.resource?.data.contacts.data.mobile" class="text-muted">Mobile Number </small><br />
+        {{ service.resource?.data.contacts.data.mobile }}<br />
+        <small *ngIf="service.resource?.data.contacts.data.email" class="text-muted">Email Address </small><br />
+        <a href="{{ service.resource?.data.contacts.data.email }}">{{service.resource?.data.contacts.data.email }}</a><br />
+        <small *ngIf="service.resource?.data.contacts.data.workNumber" class="text-muted">Work Number: </small><br />
+        {{ service.resource?.data.contacts.data.workNumber }}
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <formio src="https://digitaloffice.form.io/obi/submission/{{ service.resource?.data.obi._id }}"></formio>
+        </div>
+      </div>
+    </div>
+</div>
