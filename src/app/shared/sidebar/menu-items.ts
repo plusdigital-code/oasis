@@ -102,7 +102,7 @@ export const ROUTES: RouteInfo[] = [
     submenu: []
   },
   {
-    path: '/leads',
+    path: '/lead',
     title: 'Leads',
     icon: 'fas fa-address-card',
     class: '',

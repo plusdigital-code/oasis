@@ -42,6 +42,10 @@ export const Approutes: Routes = [
         loadChildren: './tools/tools.module#ToolsModule'
       },
       {
+        path: 'lead',
+        loadChildren: './lead/lead.module#LeadModule'
+      },
+      {
         path: 'contacts',
         loadChildren: './contacts/contacts.module#ContactsModule'
       },
@@ -52,6 +56,10 @@ export const Approutes: Routes = [
       {
         path: 'auth',
         loadChildren: './auth/auth.module#AuthModule'
+      },
+      {
+        path: 'users',
+        loadChildren: './users/users.module#UsersModule'
       },
       {
         path: 'component',

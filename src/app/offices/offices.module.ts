@@ -63,10 +63,6 @@ import { OfficeSearchComponent } from './office-components/office-search/office-
                     {
                         path: 'office-agents',
                         loadChildren: './office-agents/office-agents.module#OfficeAgentsModule'
-                    },
-                    {
-                        path: 'office-listings',
-                        loadChildren: './office-listings/office-listings.module#OfficeListingsModule'
                     }
                 ]
             },

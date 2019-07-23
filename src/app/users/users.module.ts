@@ -4,11 +4,10 @@ import { RouterModule } from '@angular/router';
 import { FormioModule } from 'angular-formio';
 import {
   FormioResource,
-  FormioResourceRoutes,
   FormioResourceConfig,
+  FormioResourceRoutes,
   FormioResourceService
 } from 'angular-formio/resource';
-
 @NgModule({
   imports: [
     CommonModule,
@@ -22,13 +21,10 @@ import {
     {
       provide: FormioResourceConfig,
       useValue: {
-        name: 'officeStock',
-        form: 'officestock',
-        parents: [
-          'offices'
-        ]
+        name: 'user',
+        form: 'user'
       }
     }
   ]
 })
-export class OfficeListingsModule { }
+export class UsersModule { }
