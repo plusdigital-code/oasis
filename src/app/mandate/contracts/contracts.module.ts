@@ -22,8 +22,8 @@ import {
     {
       provide: FormioResourceConfig,
       useValue: {
-        name: 'contractsDocumentation',
-        form: 'contractsdocumentation',
+        name: 'saleAgreement',
+        form: 'saleagreement',
         parents: [
           'mandate'
         ]

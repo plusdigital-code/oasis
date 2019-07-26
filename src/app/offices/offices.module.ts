@@ -59,10 +59,6 @@ import { OfficeSearchComponent } from './office-components/office-search/office-
                     {
                         path: 'delete',
                         component: FormioResourceDeleteComponent
-                    },
-                    {
-                        path: 'office-agents',
-                        loadChildren: './office-agents/office-agents.module#OfficeAgentsModule'
                     }
                 ]
             },
