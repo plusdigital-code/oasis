@@ -66,6 +66,10 @@ import { ResourceComponent } from './resource/resource.component';
             {
               path: 'private-property',
               loadChildren: './private-property/private-property.module#PrivatePropertyModule'
+            },
+            {
+              path: 'facebook',
+              loadChildren: './facebook/facebook.module#FacebookModule'
             }
           ]
         },

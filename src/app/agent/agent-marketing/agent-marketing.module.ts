@@ -8,13 +8,13 @@ import {
     FormioResourceConfig,
     FormioResourceService,
     FormioResourceCreateComponent,
+    FormioResourceViewComponent,
     FormioResourceEditComponent,
     FormioResourceDeleteComponent,
 } from 'angular-formio/resource';
 import { IndexComponent } from './index/index.component';
 import { FormioGrid } from 'angular-formio/grid';
 import { ViewComponent } from './view/view.component';
-import { AgentFeedComponent } from './agent-components/agent-feed/agent-feed.component';
 
 @NgModule({
     imports: [
@@ -42,7 +42,7 @@ import { AgentFeedComponent } from './agent-components/agent-feed/agent-feed.com
                     },
                     {
                         path: 'view',
-                        component: ViewComponent
+                        component: FormioResourceViewComponent
                     },
                     {
                         path: 'edit',
@@ -51,27 +51,25 @@ import { AgentFeedComponent } from './agent-components/agent-feed/agent-feed.com
                     {
                         path: 'delete',
                         component: FormioResourceDeleteComponent
-                    },
-                    {
-                        path: 'agent-marketing',
-                        loadChildren: './agent-marketing/agent-marketing.module#AgentMarketingModule'
-
                     }
 
                 ]
             },
         ])
     ],
-    declarations: [ResourceComponent, IndexComponent, ViewComponent, AgentFeedComponent],
+    declarations: [ViewComponent, ResourceComponent, IndexComponent],
     providers: [
         FormioResourceService,
         {
             provide: FormioResourceConfig,
             useValue: {
-                name: 'agent',
-                form: 'agent'
+                name: 'agentMarketing',
+                form: 'agentmarketing',
+                parents: [
+                  'agent'
+                ]
             }
         }
     ]
 })
-export class AgentModule { }
+export class AgentMarketingModule { }

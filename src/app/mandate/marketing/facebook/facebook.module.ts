@@ -22,13 +22,13 @@ import {
     {
       provide: FormioResourceConfig,
       useValue: {
-        name: 'saleAgreement',
-        form: 'saleagreement',
+        name: 'facebook',
+        form: 'facebook',
         parents: [
-          'mandate'
+          'marketing'
         ]
       }
     }
   ]
 })
-export class AgentListingsModule { }
+export class FacebookModule { }
