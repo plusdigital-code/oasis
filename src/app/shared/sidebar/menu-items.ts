@@ -70,7 +70,7 @@ export const ROUTES: RouteInfo[] = [
     submenu: []
   },
   {
-    path: '/office-stock',
+    path: '/stock',
     title: 'Office Listings',
     icon: 'fas fa-map',
     class: '',
