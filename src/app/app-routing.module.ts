@@ -46,6 +46,10 @@ export const Approutes: Routes = [
         loadChildren: './tools/tools.module#ToolsModule'
       },
       {
+        path: 'form',
+        loadChildren: './form/form.module#FormModule'
+      },
+      {
         path: 'lead',
         loadChildren: './lead/lead.module#LeadModule'
       },

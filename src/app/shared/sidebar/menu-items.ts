@@ -134,6 +134,14 @@ export const ROUTES: RouteInfo[] = [
     submenu: []
   },
   {
+    path: '/form',
+    title: 'Form Builder',
+    icon: 'icon-Files',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+  {
     path: '/starter',
     title: 'Starter Page',
     icon: 'icon-Files',
