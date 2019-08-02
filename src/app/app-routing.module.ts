@@ -38,6 +38,10 @@ export const Approutes: Routes = [
         loadChildren: './listings/listings.module#ListingsModule'
       },
       {
+        path: 'commercial',
+        loadChildren: './commercial/commercial.module#CommercialModule'
+      },
+      {
         path: 'stock',
         loadChildren: './stock/stock.module#StockModule'
       },
