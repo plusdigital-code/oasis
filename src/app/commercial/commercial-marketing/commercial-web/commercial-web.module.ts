@@ -16,7 +16,6 @@ import { ResourceComponent } from './resource/resource.component';
 import { ViewComponent } from './view/view.component';
 import { FormioGrid } from 'angular-formio/grid';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ViewngComponent } from './viewng/viewng.component';
 
 
 @NgModule({
@@ -60,7 +59,7 @@ import { ViewngComponent } from './viewng/viewng.component';
         },
       ])
     ],
-  declarations: [ResourceComponent, ViewComponent, ViewngComponent],
+  declarations: [ResourceComponent, ViewComponent],
   providers: [
     FormioResourceService,
     {
