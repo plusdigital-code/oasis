@@ -54,6 +54,14 @@ export const ROUTES: RouteInfo[] = [
     submenu: []
   },
   {
+    path: '/commercial',
+    title: 'Commercial',
+    icon: 'icon-Office',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+  {
     path: '/mandate',
     title: 'My Mandates',
     icon: 'fas fa-clipboard-list',
@@ -131,14 +139,6 @@ export const ROUTES: RouteInfo[] = [
     icon: 'mdi mdi-dots-horizontal',
     class: 'nav-small-cap',
     extralink: true,
-    submenu: []
-  },
-  {
-    path: '/commercial',
-    title: 'Commercial',
-    icon: 'icon-Files',
-    class: '',
-    extralink: false,
     submenu: []
   },
   {

@@ -24,14 +24,7 @@ import { ResourceComponent } from './resource/resource.component';
     RouterModule.forChild([
         {
             path: '',
-            component: FormioResourceIndexComponent,
-            data: {
-              title: 'Mandates',
-              urls: [
-                { title: 'Home', url: '/home/maxprop' },
-                { title: 'Mandates' }
-              ]
-            }
+            component: FormioResourceIndexComponent
         },
         {
           path: ':id',

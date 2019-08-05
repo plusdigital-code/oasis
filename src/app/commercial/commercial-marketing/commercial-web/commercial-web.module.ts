@@ -16,8 +16,6 @@ import { ResourceComponent } from './resource/resource.component';
 import { ViewComponent } from './view/view.component';
 import { FormioGrid } from 'angular-formio/grid';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
-
 @NgModule({
   imports: [
     CommonModule,

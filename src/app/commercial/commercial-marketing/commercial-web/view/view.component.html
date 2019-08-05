@@ -1,3 +1,192 @@
-<p>
-  view works!
-</p>
+<div class="row m-t-15">
+  <div class="col-md-8 col-sm-12">
+    <div class="card">
+      <table class="table v-top no-border m-b-0 agent-header-index agent-header-index2">
+        <tbody>
+          <tr>
+            <td>
+              <h3>{{ service.resource?.data.commercialListing.data.headline }}</h3>
+            </td>
+            <td>
+              <label class="label label-price font-bold m-t-5">R{{ service.resource?.data.commercialListing.data.price | number }}</label>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr class="m-t-0" />
+      <table class="table v-middle no-border agent-header-index p-0">
+        <tbody>
+          <tr>
+            <td class="p-0">
+              Zoning: <span class="text-capitalize">{{ service.resource?.data.commercialListing.data.zoning }}</span>
+            </td>
+            <td class="p-0">
+              Property Type: <span class="text-capitalize">{{ service.resource?.data.commercialListing.data.propertyType }}</span>
+            </td>
+            <td class="p-0">Floor Space: {{ service.resource?.data.commercialListing.data.floorSpace | number }}m²</td>
+        </tbody>
+      </table>
+      <ngb-carousel>
+        <ng-template ngbSlide>
+          <img src="{{ service.resource?.data.commercialListing.data.images['0']['imageSrc'] }}" alt="Random first slide">
+        </ng-template>
+      </ngb-carousel>
+      <div class="card-body">
+        <h3>{{ service.resource?.data.commercialListing.data.headline }}</h3>
+        <hr />
+        <p class="m-t-15"><span [innerHTML]="service.resource?.data.commercialListing.data.description"></span></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+          <div class="card">
+              <div class="card-body bg-light-info">
+                <h4>Summary</h4>
+                <hr />
+                <table class="table no-border room-detail m-b-0">
+                  <tbody>
+                    <tr>
+                      <td>Price:</td>
+                      <td>
+                        <span class="text-capitalize">R{{ service.resource?.data.commercialListing.data.price | number }}</span>
+                      </td>
+                    </tr>
+                    <tr *ngIf="service.resource?.data.commercialListing.data.availableFromSelect">
+                        <td>Available From:</td>
+                        <td>
+                          <span class="text-capitalize">{{ service.resource?.data.commercialListing.data.availableFromSelect }}</span>
+                        </td>
+                      </tr>
+                    <tr *ngIf="service.resource?.data.commercialListing.data.availableFrom">
+                        <td>Available Date:</td>
+                        <td>
+                          <span class="text-capitalize">{{ service.resource?.data.commercialListing.data.availableFrom }}</span>
+                        </td>
+                      </tr>
+              
+                    <tr *ngIf="service.resource?.data.commercialListing.data.propertyType">
+                      <td>Property Title:</td>
+                      <td>
+                        <span class="text-capitalize">{{ service.resource?.data.commercialListing.data.propertyType }}</span>
+                      </td>
+                    </tr>
+                    <tr *ngIf="service.resource?.data.commercialListing.data.zoning">
+                      <td>Zoning:</td>
+                      <td>
+                        <span class="text-capitalize">{{ service.resource?.data.commercialListing.data.zoning }}</span>
+                      </td>
+                    </tr>
+    
+                    <tr *ngIf="service.resource?.data.commercialListing.data.security">
+                      <td>Security:</td>
+                      <td>
+                        <span class="text-capitalize">{{ service.resource?.data.commercialListing.data.security }}</span>
+                      </td>
+                    </tr>
+                    <tr *ngIf="service.resource?.data.commercialListing.data.airConditioning">
+                      <td>Air Conditioning:</td>
+                      <td>{{ service.resource?.data.commercialListing.data.airConditioning | titlecase }}</td>
+                    </tr>
+                    <tr *ngIf="service.resource?.data.commercialListing.data.power3Phase">
+                      <td>Power 3 Phase:</td>
+                      <td>{{ service.resource?.data.commercialListing.data.power3Phase | titlecase }}</td>
+                    </tr>
+                    <tr *ngIf="service.resource?.data.commercialListing.data.amps">
+                      <td>Amps:</td>
+                      <td>{{ service.resource?.data.commercialListing.data.amps }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+       
+      </div>
+      <div class="col-md-6">
+          <div class="card">
+              <div class="card-body">
+                <h4>Features</h4>
+                <hr />
+                <table class="table no-border room-detail m-b-0">
+                  <tbody>
+                    <tr *ngIf="service.resource?.data.commercialListing.data.erfSize">
+                      <td>ERF Size</td>
+                      <td>
+                        <span class="text-capitalize">{{ service.resource?.data.commercialListing.data.erfSize | number }}</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Floor Space</td>
+                      <td>
+                        <span class="text-capitalize">{{ service.resource?.data.commercialListing.data.floorSpace | number }}m²</span>
+                      </td>
+                    </tr>
+                    <tr *ngIf="service.resource?.data.commercialListing.data.officeSize">
+                      <td>Office Size</td>
+                      <td>
+                        <span class="text-capitalize">{{ service.resource?.data.commercialListing.data.officeSize | number }}m²</span>
+                      </td>
+                    </tr>
+                    <tr *ngIf="service.resource?.data.commercialListing.data.factoryWarehouseSize">
+                      <td>Factory / Warehouse Size</td>
+                      <td>
+                        <span class="text-capitalize">{{ service.resource?.data.commercialListing.data.factoryWarehouseSize | number }}m²</span>
+                      </td>
+                    </tr>
+                    <tr *ngIf="service.resource?.data.commercialListing.data.retailSize">
+                      <td>Retail Size</td>
+                      <td>
+                        <span class="text-capitalize">{{ service.resource?.data.commercialListing.data.retailSize | number }}m²</span>
+                      </td>
+                    </tr>
+                    <tr *ngIf="service.resource?.data.commercialListing.data.yardPrice">
+                      <td>Yard Space</td>
+                      <td>
+                        <span class="text-capitalize">{{ service.resource?.data.commercialListing.data.yardSpace | number }}m²</span>
+                      </td>
+                    </tr>
+                    <tr *ngIf="service.resource?.data.commercialListing.data.openParkingBays">
+                      <td>Open Parking Bays</td>
+                      <td>
+                        <span class="text-capitalize">{{ service.resource?.data.commercialListing.data.openParkingBays }}</span>
+                      </td>
+                    </tr>
+                    <tr *ngIf="service.resource?.data.commercialListing.data.coveredParkingBays">
+                      <td>Covered Parking Bays</td>
+                      <td>
+                        <span class="text-capitalize">{{ service.resource?.data.commercialListing.data.coveredParkingBays }}</span>
+                      </td>
+                    </tr>
+                    <tr *ngIf="service.resource?.data.commercialListing.data.basementParking">
+                      <td>Basement Parking</td>
+                      <td>
+                        <span class="text-capitalize">{{ service.resource?.data.commercialListing.data.basementParking }}</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 col-sm-12">
+    <div class="card bg-light no-card-border">
+      <div class="card-body text-center">
+                  <h6 class="m-0 p-0"><span class="text-muted">Listing Unique Code:</span> {{ service.resource?.data.commercialListing.data.commercialMandates.data.uniqueCode }}</h6>
+      </div>
+    </div>
+    <div class="card bg-light-info">
+        <div class="card-body text-center">
+        <div class="profile-pic m-b-0 m-t-10"><img alt="{{ service.resource?.data.commercialListing.data.brokerRef.data.fullName }}"
+            class="border" style="object-fit: cover;"
+            src="{{ service.resource?.data.commercialListing.data.brokerRef.data.profilePhoto['0']['url'] }}" width="95%">
+          <h4 class="m-t-20 m-b-0"><a href="/#/broker/{{service.resource?.data.commercialListing.data.brokerRef._id}}">
+              {{ service.resource?.data.commercialListing.data.brokerRef.data.fullName }}</a></h4>
+          <p>{{ service.resource?.data.commercialListing.data.brokerRef.data.mobileNumber }}<br />
+            <a href="mailto:#">{{ service.resource?.data.commercialListing.data.brokerRef.data.email }}</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
