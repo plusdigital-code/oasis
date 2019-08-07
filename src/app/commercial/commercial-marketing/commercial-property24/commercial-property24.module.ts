@@ -22,8 +22,8 @@ import {
     {
       provide: FormioResourceConfig,
       useValue: {
-        name: 'commercialBrochures',
-        form: 'commercialbrochures',
+        name: 'property24',
+        form: 'property24',
         parents: [
           'commercialMarketing'
         ]

@@ -57,8 +57,8 @@ providers: [
   {
       provide: FormioResourceConfig,
       useValue: {
-          name: 'commercialListing',
-          form: 'commerciallisting'
+          name: 'commercialListingProfile',
+          form: 'commerciallistingprofile'
       }
   }
 ]

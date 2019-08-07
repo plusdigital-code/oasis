@@ -31,7 +31,6 @@ import { ViewComponent } from './view/view.component';
               ]
             }
         },
- 
         {
             path: ':id',
             component: ResourceComponent,
@@ -52,7 +51,6 @@ import { ViewComponent } from './view/view.component';
                       ]
                     }
                 },
-                            
     ]
 },
     ])

@@ -5,10 +5,10 @@
         <tbody>
           <tr>
             <td>
-              <h3>{{ service.resource?.data.commercialListing.data.headline }}</h3>
+              <h3>{{ service.resource?.data.commercialListingProfile.data.headline }}</h3>
             </td>
             <td>
-              <label class="label label-price font-bold m-t-5">R{{ service.resource?.data.commercialListing.data.price | number }}</label>
+              <label class="label label-price font-bold m-t-5">R{{ service.resource?.data.commercialListingProfile.data.price | number }}</label>
             </td>
           </tr>
         </tbody>
@@ -18,23 +18,51 @@
         <tbody>
           <tr>
             <td class="p-0">
-              Zoning: <span class="text-capitalize">{{ service.resource?.data.commercialListing.data.zoning }}</span>
+              Zoning: <span class="text-capitalize">{{ service.resource?.data.commercialListingProfile.data.zoning }}</span>
             </td>
             <td class="p-0">
-              Property Type: <span class="text-capitalize">{{ service.resource?.data.commercialListing.data.propertyType }}</span>
+              Property Type: <span class="text-capitalize">{{ service.resource?.data.commercialListingProfile.data.propertyType }}</span>
             </td>
-            <td class="p-0">Floor Space: {{ service.resource?.data.commercialListing.data.floorSpace | number }}m²</td>
+            <td class="p-0">Floor Space: {{ service.resource?.data.commercialListingProfile.data.floorSpace | number }}m²</td>
         </tbody>
       </table>
       <ngb-carousel>
         <ng-template ngbSlide>
-          <img src="{{ service.resource?.data.commercialListing.data.images['0']['imageSrc'] }}" alt="Random first slide">
+          <img src="{{service.resource?.data.commercialListingProfile.data.images['0']['url']}}" alt="Random first slide">
+        </ng-template>
+        <ng-template ngbSlide>
+          <img src="{{service.resource?.data.commercialListingProfile.data.images['1']['url']}}" alt="Random first slide">
+        </ng-template>
+        <ng-template ngbSlide>
+          <img src="{{service.resource?.data.commercialListingProfile.data.images['2']['url']}}" alt="Random first slide">
+        </ng-template>
+        <ng-template ngbSlide>
+          <img src="{{service.resource?.data.commercialListingProfile.data.images['3']['url']}}" alt="Random first slide">
+        </ng-template>
+        <ng-template ngbSlide>
+          <img src="{{service.resource?.data.commercialListingProfile.data.images['4']['url']}}" alt="Random first slide">
+        </ng-template>
+        <ng-template ngbSlide>
+          <img src="{{service.resource?.data.commercialListingProfile.data.images['5']['url']}}" alt="Random first slide">
+        </ng-template>
+        <ng-template ngbSlide>
+          <img src="{{service.resource?.data.commercialListingProfile.data.images['6']['url']}}" alt="Random first slide">
+        </ng-template>
+        <ng-template ngbSlide>
+          <img src="{{service.resource?.data.commercialListingProfile.data.images['7']['url']}}" alt="Random first slide">
+        </ng-template>
+        <ng-template ngbSlide>
+          <img src="{{service.resource?.data.commercialListingProfile.data.images['8']['url']}}" alt="Random first slide">
+        </ng-template>
+        <ng-template ngbSlide>
+          <img src="{{service.resource?.data.commercialListingProfile.data.images['9']['url']}}" alt="Random first slide">
+        </ng-template>
+        <ng-template ngbSlide>
+          <img src="{{service.resource?.data.commercialListingProfile.data.images['10']['url']}}" alt="Random first slide">
         </ng-template>
       </ngb-carousel>
       <div class="card-body">
-        <h3>{{ service.resource?.data.commercialListing.data.headline }}</h3>
-        <hr />
-        <p class="m-t-15"><span [innerHTML]="service.resource?.data.commercialListing.data.description"></span></p>
+        <p class="m-t-15"><span [innerHTML]="service.resource?.data.commercialListingProfile.data.description"></span></p>
       </div>
     </div>
     <div class="row">
@@ -48,52 +76,52 @@
                     <tr>
                       <td>Price:</td>
                       <td>
-                        <span class="text-capitalize">R{{ service.resource?.data.commercialListing.data.price | number }}</span>
+                        <span class="text-capitalize">R{{ service.resource?.data.commercialListingProfile.data.price | number }}</span>
                       </td>
                     </tr>
-                    <tr *ngIf="service.resource?.data.commercialListing.data.availableFromSelect">
+                    <tr *ngIf="service.resource?.data.commercialListingProfile.data.availableFromSelect">
                         <td>Available From:</td>
                         <td>
-                          <span class="text-capitalize">{{ service.resource?.data.commercialListing.data.availableFromSelect }}</span>
+                          <span class="text-capitalize">{{ service.resource?.data.commercialListingProfile.data.availableFromSelect }}</span>
                         </td>
                       </tr>
-                    <tr *ngIf="service.resource?.data.commercialListing.data.availableFrom">
+                    <tr *ngIf="service.resource?.data.commercialListingProfile.data.availableFrom">
                         <td>Available Date:</td>
                         <td>
-                          <span class="text-capitalize">{{ service.resource?.data.commercialListing.data.availableFrom }}</span>
+                          <span class="text-capitalize">{{ service.resource?.data.commercialListingProfile.data.availableFrom }}</span>
                         </td>
                       </tr>
               
-                    <tr *ngIf="service.resource?.data.commercialListing.data.propertyType">
+                    <tr *ngIf="service.resource?.data.commercialListingProfile.data.propertyType">
                       <td>Property Title:</td>
                       <td>
-                        <span class="text-capitalize">{{ service.resource?.data.commercialListing.data.propertyType }}</span>
+                        <span class="text-capitalize">{{ service.resource?.data.commercialListingProfile.data.propertyType }}</span>
                       </td>
                     </tr>
-                    <tr *ngIf="service.resource?.data.commercialListing.data.zoning">
+                    <tr *ngIf="service.resource?.data.commercialListingProfile.data.zoning">
                       <td>Zoning:</td>
                       <td>
-                        <span class="text-capitalize">{{ service.resource?.data.commercialListing.data.zoning }}</span>
+                        <span class="text-capitalize">{{ service.resource?.data.commercialListingProfile.data.zoning }}</span>
                       </td>
                     </tr>
     
-                    <tr *ngIf="service.resource?.data.commercialListing.data.security">
+                    <tr *ngIf="service.resource?.data.commercialListingProfile.data.security">
                       <td>Security:</td>
                       <td>
-                        <span class="text-capitalize">{{ service.resource?.data.commercialListing.data.security }}</span>
+                        <span class="text-capitalize">{{ service.resource?.data.commercialListingProfile.data.security }}</span>
                       </td>
                     </tr>
-                    <tr *ngIf="service.resource?.data.commercialListing.data.airConditioning">
+                    <tr *ngIf="service.resource?.data.commercialListingProfile.data.airConditioning">
                       <td>Air Conditioning:</td>
-                      <td>{{ service.resource?.data.commercialListing.data.airConditioning | titlecase }}</td>
+                      <td>{{ service.resource?.data.commercialListingProfile.data.airConditioning | titlecase }}</td>
                     </tr>
-                    <tr *ngIf="service.resource?.data.commercialListing.data.power3Phase">
+                    <tr *ngIf="service.resource?.data.commercialListingProfile.data.power3Phase">
                       <td>Power 3 Phase:</td>
-                      <td>{{ service.resource?.data.commercialListing.data.power3Phase | titlecase }}</td>
+                      <td>{{ service.resource?.data.commercialListingProfile.data.power3Phase | titlecase }}</td>
                     </tr>
-                    <tr *ngIf="service.resource?.data.commercialListing.data.amps">
+                    <tr *ngIf="service.resource?.data.commercialListingProfile.data.amps">
                       <td>Amps:</td>
-                      <td>{{ service.resource?.data.commercialListing.data.amps }}</td>
+                      <td>{{ service.resource?.data.commercialListingProfile.data.amps }}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -108,58 +136,58 @@
                 <hr />
                 <table class="table no-border room-detail m-b-0">
                   <tbody>
-                    <tr *ngIf="service.resource?.data.commercialListing.data.erfSize">
+                    <tr *ngIf="service.resource?.data.commercialListingProfile.data.erfSize">
                       <td>ERF Size</td>
                       <td>
-                        <span class="text-capitalize">{{ service.resource?.data.commercialListing.data.erfSize | number }}</span>
+                        <span class="text-capitalize">{{ service.resource?.data.commercialListingProfile.data.erfSize | number }}</span>
                       </td>
                     </tr>
                     <tr>
                       <td>Floor Space</td>
                       <td>
-                        <span class="text-capitalize">{{ service.resource?.data.commercialListing.data.floorSpace | number }}m²</span>
+                        <span class="text-capitalize">{{ service.resource?.data.commercialListingProfile.data.floorSpace | number }}m²</span>
                       </td>
                     </tr>
-                    <tr *ngIf="service.resource?.data.commercialListing.data.officeSize">
+                    <tr *ngIf="service.resource?.data.commercialListingProfile.data.officeSize">
                       <td>Office Size</td>
                       <td>
-                        <span class="text-capitalize">{{ service.resource?.data.commercialListing.data.officeSize | number }}m²</span>
+                        <span class="text-capitalize">{{ service.resource?.data.commercialListingProfile.data.officeSize | number }}m²</span>
                       </td>
                     </tr>
-                    <tr *ngIf="service.resource?.data.commercialListing.data.factoryWarehouseSize">
+                    <tr *ngIf="service.resource?.data.commercialListingProfile.data.factoryWarehouseSize">
                       <td>Factory / Warehouse Size</td>
                       <td>
-                        <span class="text-capitalize">{{ service.resource?.data.commercialListing.data.factoryWarehouseSize | number }}m²</span>
+                        <span class="text-capitalize">{{ service.resource?.data.commercialListingProfile.data.factoryWarehouseSize | number }}m²</span>
                       </td>
                     </tr>
-                    <tr *ngIf="service.resource?.data.commercialListing.data.retailSize">
+                    <tr *ngIf="service.resource?.data.commercialListingProfile.data.retailSize">
                       <td>Retail Size</td>
                       <td>
-                        <span class="text-capitalize">{{ service.resource?.data.commercialListing.data.retailSize | number }}m²</span>
+                        <span class="text-capitalize">{{ service.resource?.data.commercialListingProfile.data.retailSize | number }}m²</span>
                       </td>
                     </tr>
-                    <tr *ngIf="service.resource?.data.commercialListing.data.yardPrice">
+                    <tr *ngIf="service.resource?.data.commercialListingProfile.data.yardPrice">
                       <td>Yard Space</td>
                       <td>
-                        <span class="text-capitalize">{{ service.resource?.data.commercialListing.data.yardSpace | number }}m²</span>
+                        <span class="text-capitalize">{{ service.resource?.data.commercialListingProfile.data.yardSpace | number }}m²</span>
                       </td>
                     </tr>
-                    <tr *ngIf="service.resource?.data.commercialListing.data.openParkingBays">
+                    <tr *ngIf="service.resource?.data.commercialListingProfile.data.openParkingBays">
                       <td>Open Parking Bays</td>
                       <td>
-                        <span class="text-capitalize">{{ service.resource?.data.commercialListing.data.openParkingBays }}</span>
+                        <span class="text-capitalize">{{ service.resource?.data.commercialListingProfile.data.openParkingBays }}</span>
                       </td>
                     </tr>
-                    <tr *ngIf="service.resource?.data.commercialListing.data.coveredParkingBays">
+                    <tr *ngIf="service.resource?.data.commercialListingProfile.data.coveredParkingBays">
                       <td>Covered Parking Bays</td>
                       <td>
-                        <span class="text-capitalize">{{ service.resource?.data.commercialListing.data.coveredParkingBays }}</span>
+                        <span class="text-capitalize">{{ service.resource?.data.commercialListingProfile.data.coveredParkingBays }}</span>
                       </td>
                     </tr>
-                    <tr *ngIf="service.resource?.data.commercialListing.data.basementParking">
+                    <tr *ngIf="service.resource?.data.commercialListingProfile.data.basementParking">
                       <td>Basement Parking</td>
                       <td>
-                        <span class="text-capitalize">{{ service.resource?.data.commercialListing.data.basementParking }}</span>
+                        <span class="text-capitalize">{{ service.resource?.data.commercialListingProfile.data.basementParking }}</span>
                       </td>
                     </tr>
                   </tbody>
@@ -172,18 +200,18 @@
   <div class="col-md-4 col-sm-12">
     <div class="card bg-light no-card-border">
       <div class="card-body text-center">
-                  <h6 class="m-0 p-0"><span class="text-muted">Listing Unique Code:</span> {{ service.resource?.data.commercialListing.data.commercialMandates.data.uniqueCode }}</h6>
+             <h6 class="m-0 p-0"><span class="text-muted">Listing Unique Code:</span> {{ service.resource?.data.commercialListingProfile.data.uniqueCodeRef }}</h6>
       </div>
     </div>
     <div class="card bg-light-info">
         <div class="card-body text-center">
-        <div class="profile-pic m-b-0 m-t-10"><img alt="{{ service.resource?.data.commercialListing.data.brokerRef.data.fullName }}"
+        <div class="profile-pic m-b-0 m-t-10"><img alt="{{ service.resource?.data.broker.data.fullName }}"
             class="border" style="object-fit: cover;"
-            src="{{ service.resource?.data.commercialListing.data.brokerRef.data.profilePhoto['0']['url'] }}" width="95%">
-          <h4 class="m-t-20 m-b-0"><a href="/#/broker/{{service.resource?.data.commercialListing.data.brokerRef._id}}">
-              {{ service.resource?.data.commercialListing.data.brokerRef.data.fullName }}</a></h4>
-          <p>{{ service.resource?.data.commercialListing.data.brokerRef.data.mobileNumber }}<br />
-            <a href="mailto:#">{{ service.resource?.data.commercialListing.data.brokerRef.data.email }}</a>
+            src="{{ service.resource?.data.broker.data.profilePhoto['0']['url'] }}" width="95%">
+          <h4 class="m-t-20 m-b-0"><a href="/#/broker/{{service.resource?.data.broker._id}}">
+              {{ service.resource?.data.broker.data.fullName }}</a></h4>
+          <p>{{ service.resource?.data.broker.data.mobileNumber }}<br />
+            <a href="mailto:#">{{ service.resource?.data.broker.data.email }}</a>
           </p>
         </div>
       </div>

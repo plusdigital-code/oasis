@@ -60,12 +60,12 @@ import { ResourceComponent } from './resource/resource.component';
               loadChildren: './commercial-property24/commercial-property24.module#CommercialProperty24Module'
             },
             {
-              path: 'commercial-brochures',
-              loadChildren: './commercial-brochures/commercial-brochures.module#CommercialBrochuresModule'
-            },
-            {
               path: 'commercial-private-property',
               loadChildren: './commercial-private-property/commercial-private-property.module#CommercialPrivatePropertyModule'
+            },
+            {
+              path: 'commercial-brochures',
+              loadChildren: './commercial-brochures/commercial-brochures.module#CommercialBrochuresModule'
             }
           ]
         },

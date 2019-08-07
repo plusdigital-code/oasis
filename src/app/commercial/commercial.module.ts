@@ -25,7 +25,7 @@ import { IndexComponent } from './index/index.component';
     RouterModule.forChild([
       {
         path: '',
-        component: FormioResourceIndexComponent
+        component: IndexComponent
       },
       {
         path: 'new',
