@@ -142,6 +142,22 @@ export const ROUTES: RouteInfo[] = [
     submenu: []
   },
   {
+    path: '/announcements',
+    title: 'Announcements',
+    icon: 'icon-Files',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+  {
+    path: '/support',
+    title: 'Support',
+    icon: 'icon-Files',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+  {
     path: '/form',
     title: 'Form Builder',
     icon: 'icon-Files',

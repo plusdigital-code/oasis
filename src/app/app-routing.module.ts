@@ -42,6 +42,10 @@ export const Approutes: Routes = [
         loadChildren: './commercial/commercial.module#CommercialModule'
       },
       {
+        path: 'announcements',
+        loadChildren: './announcements/announcements.module#AnnouncementsModule'
+      },
+      {
         path: 'stock',
         loadChildren: './stock/stock.module#StockModule'
       },
@@ -62,8 +66,12 @@ export const Approutes: Routes = [
         loadChildren: './contacts/contacts.module#ContactsModule'
       },
       {
-        path: 'brand-marketing',
-        loadChildren: './brand-marketing/brand-marketing.module#BrandMarketingModule'
+        path: 'brand',
+        loadChildren: './brand/brand.module#BrandModule'
+      },
+      {
+        path: 'support',
+        loadChildren: './support/support.module#SupportModule'
       },
       {
         path: 'auth',

@@ -2,7 +2,7 @@
   <div class="col-md-3">
     <div class="card">
       <div class="card-body">
-        <img class="m-b-15" style="width:100%;" src="{{ service.resource?.data.profilePhoto['0']['url'] }}" />
+        <img class="m-b-15" style="width:100%;" src="{{service.resource?.data.profilePhoto['0']['imageSrc']}}" />
         <h4>{{ service.resource?.data.fullName }}</h4>
         <h5 style="text-transform: capitalize">{{ service.resource?.data.designation }}</h5>
         <small class="text-muted">Mobile Number </small><br />
@@ -26,7 +26,7 @@
       {{ service.resource?.data.firstName }}'s Listings</a>
     <div class="card bg-light m-t-20">
       <div class="card-body">
-        <h6><a
+        <!-- <h6><a
             href="/#/offices/{{ service.resource?.data.offices._id }}">{{ service.resource?.data.offices.data.officeName }}</a>
         </h6>
         <small class="text-muted">Office Number </small><br />
@@ -37,7 +37,7 @@
         <small class="text-muted">Office Address </small><br />
         <a target="_blank"
           href="{{service.resource?.data.offices.data.address.url}}">{{ service.resource?.data.offices.data.address.formatted_address }}</a><br />
-
+        -->
       </div>
     </div>
   </div>
