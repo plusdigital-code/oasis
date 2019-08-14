@@ -35,7 +35,9 @@
                             "node_modules/@swimlane/ngx-datatable/release/themes/material.css",
                             "node_modules/@swimlane/ngx-datatable/release/assets/icons.css",
                             "src/assets/vendor/css-chart.css",
-                            "src/assets/scss/style.scss"
+                            "src/assets/scss/style.scss",
+                            "node_modules/angular-instantsearch/bundles/instantsearch.min.css",
+                            "node_modules/angular-instantsearch/bundles/instantsearch-theme-algolia.min.css"
                         ],
                         "scripts": [
                             "node_modules/jquery/dist/jquery.min.js",
@@ -44,10 +46,12 @@
                     },
                     "configurations": {
                         "production": {
-                            "fileReplacements": [{
-                                "replace": "src/environments/environment.ts",
-                                "with": "src/environments/environment.prod.ts"
-                            }],
+                            "fileReplacements": [
+                                {
+                                    "replace": "src/environments/environment.ts",
+                                    "with": "src/environments/environment.prod.ts"
+                                }
+                            ],
                             "optimization": true,
                             "outputHashing": "all",
                             "sourceMap": false,
