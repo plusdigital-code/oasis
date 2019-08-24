@@ -57,7 +57,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     CommonModule,
     BrowserModule,
     FormioModule,
-    NgAisModule.forRoot(),
+    NgAisModule,
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
