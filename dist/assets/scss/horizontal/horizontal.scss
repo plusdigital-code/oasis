@@ -20,7 +20,7 @@ $sidebarheight:54px;
     /****************************
     This is for the fixed sidebar layout
     ***************************/
-    &[data-sidebar-position="fixed"]{
+    [data-sidebar-position="fixed"]{
         .topbar{
             position: fixed;
             width: 100%;
