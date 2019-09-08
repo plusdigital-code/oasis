@@ -28,11 +28,7 @@ export const Approutes: Routes = [
       {
         path: 'offices',
         loadChildren: './offices/offices.module#OfficesModule'
-      },
-      {
-        path: 'mandates',
-        loadChildren: './mandates/mandates.module#MandatesModule'
-      },
+      }, 
       {
         path: 'mandate',
         loadChildren: './mandate/mandate.module#MandateModule'
