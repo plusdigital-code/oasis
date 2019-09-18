@@ -54,6 +54,10 @@ export const Approutes: Routes = [
         loadChildren: './tools/tools.module#ToolsModule'
       },
       {
+        path: 'collateral',
+        loadChildren: './collateral/collateral.module#CollateralModule'
+      },
+      {
         path: 'form',
         loadChildren: './form/form.module#FormModule'
       },

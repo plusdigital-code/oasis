@@ -12,6 +12,7 @@ import { FormManagerService, FormManagerConfig } from 'angular-formio/manager';
 import { FormioAuthService, FormioAuthConfig } from 'angular-formio/auth';
 import { FormioResources } from 'angular-formio/resource';
 import { AuthConfig, AppConfig } from '../config';
+import { NgAisModule } from 'angular-instantsearch';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
@@ -34,7 +35,6 @@ import { SpinnerComponent } from './shared/spinner.component';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
-import { NgAisModule } from 'angular-instantsearch';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,

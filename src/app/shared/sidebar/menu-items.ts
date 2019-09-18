@@ -126,6 +126,14 @@ export const ROUTES: RouteInfo[] = [
     submenu: []
   },
   {
+    path: '/collateral',
+    title: 'Agent Brand Material',
+    icon: 'fas fa-images',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+  {
     path: '/brand-marketing',
     title: 'Brand & Marketing',
     icon: 'fas fa-images',
