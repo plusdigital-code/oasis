@@ -42,16 +42,16 @@ export const Approutes: Routes = [
         loadChildren: './commercial/commercial.module#CommercialModule'
       },
       {
+        path: 'collateral',
+        loadChildren: './collateral/collateral.module#CollateralModule'
+      },
+      {
         path: 'announcements',
         loadChildren: './announcements/announcements.module#AnnouncementsModule'
       },
       {
         path: 'stock',
         loadChildren: './stock/stock.module#StockModule'
-      },
-      {
-        path: 'tools',
-        loadChildren: './tools/tools.module#ToolsModule'
       },
       {
         path: 'form',

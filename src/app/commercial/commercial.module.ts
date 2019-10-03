@@ -15,12 +15,15 @@ import {
 } from 'angular-formio/resource';
 import { FormioGrid } from 'angular-formio/grid';
 import { IndexComponent } from './index/index.component';
+import { NgAisModule } from 'angular-instantsearch';
+
 
 @NgModule({
   imports: [
     CommonModule,
     FormioModule,
     FormioGrid,
+    NgAisModule,
     FormioResource,
     RouterModule.forChild([
       {

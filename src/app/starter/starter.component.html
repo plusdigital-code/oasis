@@ -1,9 +1,55 @@
-<div class="row">
-    <div class="col-12">
-        <div class="card">
-            <div class="card-body">
-                {{subtitle}}
+<ais-instantsearch [config]="{
+    apiKey: 'efe2e1f090c52825b9413451ca24f3b0',
+    appId: '5BBJ80MJOQ',
+    indexName: 'commercial_All',
+    routing: true
+  }">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card bg-light-info m-t-15">
+                <div class="card-body p-20">
+                    <h2 class="m-b-15 text-center">Search For Anything on the Digital Office</h2>
+                    <hr />
+                    <ais-search-box placeholder='Start By Typing Here...'>
+                    </ais-search-box>
+                </div>
             </div>
         </div>
     </div>
-</div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card"><img alt="Card image cap" class="card-img-top img-responsive p-20"
+                                    src="/assets/images/home-leads.png" style="max-height:350px;">
+                                <div class="card-body">
+                                    <a [routerLink]="[ '/leads']"><h4 class="card-title text-center">Manage Your Leads</h4></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card"><img alt="Card image cap" class="card-img-top img-responsive p-20"
+                                    src="/assets/images/home-mandates.png" style="max-height:350px;">
+                                <div class="card-body">
+                                    <a [routerLink]="[ '/mandate']"><h4 class="card-title text-center">Manage Your Mandates</h4></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card"><img alt="Card image cap" class="card-img-top img-responsive p-20"
+                                    src="/assets/images/find-stock.png" style="max-height:350px;">
+                                <div class="card-body">
+                                    <a [routerLink]="[ '/mandate']"><h4 class="card-title text-center">Search Properties</h4></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+</ais-instantsearch>

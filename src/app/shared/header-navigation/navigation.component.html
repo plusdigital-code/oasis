@@ -17,25 +17,7 @@
   <li class="nav-item" *ngIf="auth.authenticated">
     <a class="nav-link" routerLink="/contact/new"><span class="mdi mdi-plus-circle"></span> Add New Contact</a>
   </li>
-  <li class="nav-item">
-    <ais-instantsearch [config]="{
-      apiKey: 'efe2e1f090c52825b9413451ca24f3b0',
-      appId: '5BBJ80MJOQ',
-      indexName: 'Residential',
-      routing: true
-    }">
-    <ais-configure [searchParameters]="{ hitsPerPage: 20 }" > </ais-configure>
-      <ais-search-box placeholder='Search for listings' searchAsYouType='true'></ais-search-box>
-      <ais-hits>
-        <ng-template let-hits="hits">
-          <div *ngFor="let hit of hits">
-            {{hit.data.listingProfile.data.headline}}<br />
-            <small>{{hit.data.listingProfile.data.price}}</small>
-          </div>
-        </ng-template>
-      </ais-hits>
-    </ais-instantsearch>
-  </li>
+ 
   <!-- ============================================================== -->
   <!-- End Messages -->
   <!-- ============================================================== -->
