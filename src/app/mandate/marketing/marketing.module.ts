@@ -52,22 +52,6 @@ import { ResourceComponent } from './resource/resource.component';
               component: FormioResourceDeleteComponent
             },
             {
-              path: 'web',
-              loadChildren: './web/web.module#WebModule'
-            },
-            {
-              path: 'property24',
-              loadChildren: './property24/property24.module#Property24Module'
-            },
-            {
-              path: 'brochures',
-              loadChildren: './brochures/brochures.module#BrochuresModule'
-            },
-            {
-              path: 'private-property',
-              loadChildren: './private-property/private-property.module#PrivatePropertyModule'
-            },
-            {
               path: 'facebook',
               loadChildren: './facebook/facebook.module#FacebookModule'
             }
