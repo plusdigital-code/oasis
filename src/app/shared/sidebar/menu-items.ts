@@ -11,7 +11,7 @@ export const ROUTES: RouteInfo[] = [
   },
   {
     path: '/mandate',
-    title: 'My Mandates',
+    title: 'Residential',
     icon: 'fas fa-clipboard-list',
     class: '',
     extralink: false,
@@ -35,14 +35,14 @@ export const ROUTES: RouteInfo[] = [
   },
   {
     path: '/stock',
-    title: 'Office Listings',
+    title: 'Residential Stock',
     icon: 'fas fa-map',
     class: '',
     extralink: false,
     submenu: []
   },
   {
-    path: '/commercial',
+    path: '/commercial-stock',
     title: 'Commercial Stock',
     icon: 'icon-Office',
     class: '',

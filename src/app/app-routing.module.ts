@@ -38,6 +38,10 @@ export const Approutes: Routes = [
         loadChildren: './commercial/commercial.module#CommercialModule'
       },
       {
+        path: 'commercial-stock',
+        loadChildren: './commercial-stock/commercial-stock.module#CommercialStockModule'
+      },
+      {
         path: 'collateral',
         loadChildren: './collateral/collateral.module#CollateralModule'
       },

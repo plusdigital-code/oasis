@@ -1,0 +1,113 @@
+<ais-instantsearch [config]="{
+  apiKey: 'efe2e1f090c52825b9413451ca24f3b0',
+  appId: '5BBJ80MJOQ',
+  indexName: 'commercial_All',
+  routing: true
+}">
+  <div class="row">
+      <div class="col-md-12">
+          <div class="card bg-light-info m-t-15">
+              <div class="card-body p-20">
+                  <h2 class="m-b-15 text-center">Search For Anything on the Digital Office</h2>
+                  <hr />
+                  <ais-search-box placeholder='Start By Typing Here...'>
+                  </ais-search-box>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-md-12">
+          <div class="card-columns">
+              <ais-hits>
+                  <ng-template let-hits="hits">
+                      <div *ngFor="let hit of hits">
+                          <div class="card">
+                              <table class="table v-top no-border m-b-0 agent-header-index agent-header-index2">
+                                  <tbody>
+                                      <tr>
+                                          <td>
+                                              <h3 class="font-normal m-b-0 index-headline">
+                                                  {{ hit.data.commercialListingProfile.data.headline }}
+                                              </h3>
+                                          </td>
+                                          <td>
+                                              <h4 class="m-b-0"><label
+                                                      class="label label-price font-bold">R{{ hit.data.commercialListingProfile.data.price | number }}</label>
+                                              </h4>
+                                          </td>
+
+                                      </tr>
+                                  </tbody>
+                              </table>
+                              <hr class="m-t-0 d-none d-md-block d-xl-none" />
+                              <div class="d-none d-md-block d-xl-none">
+                                  <table class="table v-middle no-border agent-header-index p-0">
+                                      <tbody>
+
+                                          <tr>
+                                              <td class="p-0">
+                                                  Zoning: <span
+                                                      class="text-capitalize">{{ hit.data.commercialWeb.data.commercialListingProfile.data.zoning }}</span>
+                                              </td>
+                                              <td class="p-0">
+                                                  Property Type: <span
+                                                      class="text-capitalize">{{ hit.data.commercialWeb.data.commercialListingProfile.data.propertyType }}</span>
+                                              </td>
+                                              <td class="p-0">Floor Space:
+                                                  {{ hit.data.commercialWeb.data.commercialListingProfile.data.floorSpace | number }}
+                                              </td>
+                                      </tbody>
+                                  </table>
+                              </div>
+                              <img alt="Card image cap" class="card-img-top img-responsive img-commercial-stock"
+                                  src="{{ hit.data.commercialWeb.data.commercialListingProfile.data.images.url }}"
+                                  style="max-height: 350px;" />
+
+                              <div class="card-body">
+                                  <p class="text-muted">
+                                      {{hit.data.listingData | date:'longDate'}}</p>
+                                  <p class="m-b-0 m-t-10 index-description">
+                                      {{ hit.data.commercialListingProfile.data.descriptionAbridged }}
+                                  </p>
+
+                                  <hr class="d-none d-md-block d-xl-none" />
+                                  <table
+                                      class="table v-middle no-border m-b-0 agent-header-index d-none d-md-block d-xl-none">
+                                      <tbody>
+                                          <tr>
+                                              <td><img alt="no-border" class="rounded-circle"
+                                                      style="object-fit: cover;" height="75"
+                                                      src="{{ hit.data.commercialWeb.data.commercialListingProfile.data.brokerRef.data.profilePhoto.url }}" />
+                                              </td>
+                                              <td class="text-right">
+                                                  {{ hit.data.commercialWeb.data.commercialListingProfile.data.brokerRef.data.fullName }}<br />
+                                              </td>
+                                              <!--
+                                                                                          <td class="text-right">
+                                                                                                 
+                                                                                          <h6 class="text-muted">
+                                                                                                  {{hit.data.uniqueCode}} 
+                                                                                          </h6>
+                                                                                        
+                                                                                       <span class="d-block text-muted">{{hit.data.listingData | date:'longDate'}}</span>
+                                                                                          </td>
+                                                                                            -->
+                                          </tr>
+                                      </tbody>
+                                  </table>
+                                  <a href="https://www.maxprop.co.za/#/commercial/{{hit.objectID}}/view"
+                                      class="btn btn-warning btn-block btn-rounded waves-effect waves-light m-t-20">
+                                      Property Details</a>
+                              </div>
+                          </div>
+
+                      </div>
+                  </ng-template>
+              </ais-hits>
+          </div>
+          <ais-pagination showLast="true" showFirst="true"></ais-pagination>
+      </div>
+
+  </div>
+</ais-instantsearch>

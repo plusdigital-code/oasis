@@ -9,6 +9,7 @@ import {
     FormioResourceService,
     FormioResourceCreateComponent,
     FormioResourceViewComponent,
+    FormioResourceIndexComponent,
     FormioResourceEditComponent,
     FormioResourceDeleteComponent,
 } from 'angular-formio/resource';
@@ -26,7 +27,7 @@ import { ContactSearchComponent } from './contact-components/contact-search/cont
         RouterModule.forChild([
             {
                 path: '',
-                component: IndexComponent
+                component: FormioResourceIndexComponent
             },
             {
                 path: 'new',

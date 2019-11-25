@@ -28,7 +28,7 @@ import { NgAisModule } from 'angular-instantsearch';
     RouterModule.forChild([
       {
         path: '',
-        component: FormioResourceIndexComponent
+        component: IndexComponent
       },
       {
         path: 'new',
@@ -54,30 +54,6 @@ import { NgAisModule } from 'angular-instantsearch';
           {
             path: 'delete',
             component: FormioResourceDeleteComponent
-          },
-          {
-            path: 'commercial-notes',
-            loadChildren: './commercial-notes/commercial-notes.module#CommercialNotesModule'
-          },
-          {
-            path: 'commercial-contracts',
-            loadChildren: './commercial-contracts/commercial-contracts.module#CommercialContractsModule'
-          },
-          {
-            path: 'commercial-showings',
-            loadChildren: './commercial-showings/commercial-showings.module#CommercialShowingsModule'
-          },
-          {
-            path: 'commercial-leads',
-            loadChildren: './commercial-leads/commercial-leads.module#CommercialLeadsModule'
-          },
-          {
-            path: 'commercial-listing',
-            loadChildren: './commercial-listing/commercial-listing.module#CommercialListingModule'
-          },
-          {
-            path: 'commercial-marketing',
-            loadChildren: './commercial-marketing/commercial-marketing.module#CommercialMarketingModule'
           }
         ]
       },
@@ -95,4 +71,4 @@ import { NgAisModule } from 'angular-instantsearch';
     }
   ]
 })
-export class CommercialModule { }
+export class CommercialStockModule { }
