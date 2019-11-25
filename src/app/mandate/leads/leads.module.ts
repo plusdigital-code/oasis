@@ -62,8 +62,8 @@ import { ResourceComponent } from './resource/resource.component';
     {
       provide: FormioResourceConfig,
       useValue: {
-        name: 'leads',
-        form: 'leads',
+        name: 'contacts',
+        form: 'contacts',
         parents: [
           'mandate'
         ]

@@ -1,7 +1,81 @@
-<div class="row m-t-20">
-        <div class="col-md-12">
-<formio src="https://digitaloffice.form.io/searchagents" (submit)="onSubmit($event)"></formio>
-<formio-grid src="https://digitaloffice.form.io/agent" [query]="{sort:'data.firstName',limit:50}"
-    (rowSelect)="onSelect($event)" [createText]="'Create New Agent'" (createItem)="onCreateItem()"></formio-grid>
-    </div>
-    </div>
+<ais-instantsearch [config]="{
+        apiKey: 'efe2e1f090c52825b9413451ca24f3b0',
+        appId: '5BBJ80MJOQ',
+        indexName: 'maxprop_Agents',
+        routing: true
+      }">
+        <div class="row">
+                <div class="col-md-12">
+                        <div class="card bg-light">
+                                <div class="card-body">
+                                        <ais-search-box
+                                                placeholder='Who Are You Looking For'>
+                                        </ais-search-box>
+                                </div>
+                        </div>
+                </div>
+        </div>
+        <div class="row m-t-20">
+                <div class="col-md-7">
+                        <ais-hits>
+                                <ng-template let-hits="hits">
+                                        <div *ngFor="let hit of hits">
+                                                <div class="card">
+                                                        <div class="card-body text-center">
+                                                                <div class="profile-pic m-b-20 m-t-20"><img
+                                                                                alt="{{hit.name}}"
+                                                                                class="rounded-circle"
+                                                                                src="{{hit.photo}}" width="150">
+                                                                        <h4 class="m-t-20 m-b-0">{{ hit.name }}</h4><a
+                                                                                href="mailto:danielkristeen@gmail.com">
+                                                                                <h5>{{ hit.email }}</h5>
+                                                                        </a>
+                                                                        <h5 class="m-b-0">{{ hit.mobile }}</h5>
+                                                                </div>
+                                                                <div class="badge badge-pill badge-light font-16">
+                                                                        {{ hit.designation }}
+                                                                </div>
+                                                                <h6 class="m-b-0">{{ hit.office }}</h6>
+                                                        </div>
+                                                        <div class="p-25 border-top m-t-15">
+                                                                <div class="row text-center">
+                                                                        <div class="col-6 border-right"><a
+                                                                                        class="link d-flex align-items-center justify-content-center font-medium"
+                                                                                        href="#"><i
+                                                                                                class="mdi mdi-message font-20 m-r-5"></i>Message</a>
+                                                                        </div>
+                                                                        <div class="col-6"><a
+                                                                                        class="link d-flex align-items-center justify-content-center font-medium"
+                                                                                        href="#"><i
+                                                                                                class="mdi mdi-developer-board font-20 m-r-5"></i>Listings</a>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </ng-template>
+                        </ais-hits>
+                        <ais-pagination showLast="true" showFirst="true"></ais-pagination>
+                </div>
+                <div class="col-md-5">
+                        <div class="card bg-light-info">
+                                <div class="card-body">
+                                        <h5 class="m-b-15">Office</h5>
+                                        <ais-refinement-list attribute="office" operator="or" [limit]="10"
+                                                [showMoreLimit]="15" showMoreLabel="More" showLessLabel="Less"
+                                                [searchable]="true">
+                                        </ais-refinement-list>
+                                </div>
+                        </div>
+                        <div class="card bg-light-info">
+                                <div class="card-body">
+                                        <h5 class="m-b-15">Agents</h5>
+                                        <ais-refinement-list attribute="name" operator="or" [limit]="10"
+                                                [showMoreLimit]="15" showMoreLabel="More" showLessLabel="Less"
+                                                [searchable]="true">
+                                        </ais-refinement-list>
+                                </div>
+                        </div>
+                </div>
+        </div>
+</ais-instantsearch>

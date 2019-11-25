@@ -65,8 +65,8 @@ providers: [
   {
       provide: FormioResourceConfig,
       useValue: {
-          name: 'listingProfile',
-          form: 'listingprofile'
+          name: 'listing',
+          form: 'listing'
       }
   }
 ]

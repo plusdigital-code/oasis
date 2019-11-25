@@ -22,8 +22,8 @@ import {
     {
       provide: FormioResourceConfig,
       useValue: {
-        name: 'mandateNotesFiles',
-        form: 'mandatenotesfiles',
+        name: 'notes',
+        form: 'notes',
         parents: [
           'mandate'
         ]

@@ -86,14 +86,6 @@ export const ROUTES: RouteInfo[] = [
     submenu: []
   },
   {
-    path: '/',
-    title: 'Network Listings',
-    icon: 'fas fa-sitemap',
-    class: '',
-    extralink: false,
-    submenu: []
-  },
-  {
     path: '',
     title: 'Contacts',
     icon: 'mdi mdi-dots-horizontal',

@@ -16,12 +16,15 @@ import { FormioGrid } from 'angular-formio/grid';
 import { ViewComponent } from './view/view.component';
 import { IndexComponent } from './index/index.component';
 import { OfficeSearchComponent } from './office-components/office-search/office-search.component';
+import { NgAisModule } from 'angular-instantsearch';
+
 
 @NgModule({
     imports: [
         CommonModule,
         FormioModule,
         FormioGrid,
+        NgAisModule,
         FormioResource,
         RouterModule.forChild([
             {

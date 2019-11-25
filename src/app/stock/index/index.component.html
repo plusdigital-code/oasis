@@ -1,5 +1,178 @@
-<div class="row m-t-20">
-  <div class="col-md-12">
-      <formio-grid src="https://digitaloffice.form.io/stock" (rowSelect)="onSelect($event)"></formio-grid>
+<ais-instantsearch [config]="{
+  apiKey: 'efe2e1f090c52825b9413451ca24f3b0',
+  appId: '5BBJ80MJOQ',
+  indexName: 'maxprop_Residential_All_Listings',
+  routing: true
+}">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card bg-light">
+        <div class="card-body">
+          <ais-search-box placeholder='Search by Anything You Looking For - Eg. Apartment in Umhlanga With a View'>
+          </ais-search-box>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+  <div class="row m-t-20">
+    <div class="col-md-3">
+      <div class="card bg-light-info">
+        <div class="card-body">
+          <ais-clear-refinements [clearsQuery]="true"></ais-clear-refinements>
+        </div>
+      </div>
+      <div class="card bg-light-info">
+        <div class="card-body">
+          <h5>Type</h5>
+          <ais-refinement-list attribute="type" operator="or" [limit]="5">
+          </ais-refinement-list>
+        </div>
+      </div>
+      <div class="card bg-light-info">
+        <div class="card-body">
+          <h5>Price</h5>
+          <ais-numeric-menu attribute="price" operator="or" [items]="[
+          { name: 'All' },
+          { end: 499999, name: 'Less than R500k' },
+          { start: 500000, end: 999999, name: 'R500k - R1M' },
+          { start: 1000000, end: 1499999, name: 'R1m - R1,5m' },
+          { start: 1500000, end: 1999999, name: 'R1.5m - R2m' },
+          { start: 2000000, end: 2499999, name: 'R2m - R2.5m' },
+          { start: 2500000, end: 2999999, name: 'R2.5m - R3m' },
+          { start: 3000000, end: 3499999, name: 'R3m - R3.5m' },
+          { start: 3500000, name: 'Above R3m' }
+        ]">
+          </ais-numeric-menu>
+        </div>
+      </div>
+
+      <div class="card bg-light-info">
+        <div class="card-body">
+          <h5 class="m-b-15">Suburbs</h5>
+          <ais-refinement-list attribute="suburb" operator="or" [limit]="10" [showMoreLimit]="15" showMoreLabel="More"
+            showLessLabel="Less" [searchable]="true">
+          </ais-refinement-list>
+        </div>
+      </div>
+      <div class="card bg-light-info">
+        <div class="card-body">
+          <h5 class="m-b-15">Agents</h5>
+          <ais-refinement-list attribute="agent" operator="or" [limit]="10" [showMoreLimit]="15" showMoreLabel="More"
+            showLessLabel="Less" [searchable]="true">
+          </ais-refinement-list>
+        </div>
+      </div>
+      <div class="card bg-light-info">
+        <div class="card-body">
+          <h5>Office</h5>
+          <ais-refinement-list attribute="office" operator="or" [limit]="20" [showMoreLimit]="21" showMoreLabel="More"
+            showLessLabel="Less">
+          </ais-refinement-list>
+        </div>
+      </div>
+      <div class="card bg-light-info">
+        <div class="card-body">
+          <h5>Property Types</h5>
+          <ais-refinement-list attribute="propertyType" operator="or" [limit]="4" [showMoreLimit]="10"
+            showMoreLabel="More" showLessLabel="Less">
+          </ais-refinement-list>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <ais-hits>
+        <ng-template let-hits="hits">
+          <div *ngFor="let hit of hits">
+            <div class="card">
+              <img class="card-img-top img-responsive" style="max-height: 350px;" src="{{hit.cover}}" />
+              <div class="card-body">
+                <span class="float-right">{{ hit.suburb }}</span>
+                <h3>
+                  {{hit.headline}}
+                </h3>
+
+
+                <div class="d-flex no-block align-items-center m-b-15">
+                  <ais-highlight attribute="bedrooms" [hit]="hit">
+                  </ais-highlight>
+                  <span class="p-l-5">Bedrooms</span>
+
+                  <div class="ml-auto">
+                    <span class="font-weight-bold">R{{hit.price | number}}</span>
+                  </div>
+                </div>
+                <p class="m-b-0 m-t-10">
+                  <ais-highlight attribute="descriptionAbridged" [hit]="hit">
+                  </ais-highlight>...
+                </p>
+                <hr />
+                <div class="comment-widgets">
+                  <!-- Comment Row -->
+                  <div class="d-flex flex-row comment-row m-t-0">
+                    <div>
+                      <img src="{{hit.photo}}" alt="user" height="60" class="rounded-circle">
+                    </div>
+                    <div class="comment-text w-100">
+                      <h6 class="font-medium">
+                        {{ hit.agent }}
+                      </h6>
+                      <span class="d-block">{{hit.office }}</span>
+                    </div>
+                    <div class="comment-text w-100 text-right">
+                      <h6 class="text-muted">
+                        <ais-highlight attribute="code" [hit]="hit">
+                        </ais-highlight>
+                      </h6>
+                      <span class="d-block text-muted">{{hit.listingDate | date:'longDate'}}</span>
+                    </div>
+                  </div>
+                </div>
+                <a href="/#/homes-for-sale/{{hit.mandate}}/view"
+                  class="btn btn-warning btn-block btn-rounded waves-effect waves-light m-t-20">
+                  Property Details</a>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </ais-hits>
+      <ais-pagination showLast="true" showFirst="true"></ais-pagination>
+    </div>
+    <div class="col-md-3">
+      <div class="card bg-light-info">
+        <div class="card-body" style="margin-bottom: 25px;">
+
+          <h5 style="margin-bottom: 45px;">Bedrooms</h5>
+          <ais-range-slider attribute="bedrooms" [precision]="0" [pips]="false">
+          </ais-range-slider>
+          <hr />
+          <h5 style="margin-bottom: 45px;">Bathrooms</h5>
+          <ais-range-slider attribute="bathrooms" [precision]="0" [pips]="false">
+          </ais-range-slider>
+        </div>
+      </div>
+      <div class="card bg-light-info">
+        <div class="card-body">
+          <h5>Floor Space (m²)</h5>
+          <ais-range-input attribute="floor" [precision]="0" separator="→" currency="">
+          </ais-range-input>
+          <hr />
+          <h5>Land Size (m²)</h5>
+          <ais-range-input attribute="land" [precision]="0" separator="→" currency="">
+          </ais-range-input>
+        </div>
+      </div>
+      <div class="card bg-light-info">
+        <div class="card-body">
+          <h5>Security</h5>
+          <ais-toggle attribute="security" label="Security"></ais-toggle>
+        </div>
+      </div>
+      <div class="card bg-light-info">
+        <div class="card-body">
+          <h5>Pool</h5>
+          <ais-toggle attribute="pool" label="Pool"></ais-toggle>
+        </div>
+      </div>
+    </div>
+  </div>
+</ais-instantsearch>

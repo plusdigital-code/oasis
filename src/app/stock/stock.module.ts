@@ -16,6 +16,7 @@ import { IndexComponent } from './index/index.component';
 import { FormioGrid } from 'angular-formio/grid';
 import { ViewComponent } from './view/view.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgAisModule } from 'angular-instantsearch';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CommonModule,
     NgbModule,
     FormioModule,
+    NgAisModule,
     FormioGrid,
     FormioResource,
     RouterModule.forChild([

@@ -22,8 +22,8 @@ import {
     {
       provide: FormioResourceConfig,
       useValue: {
-        name: 'showdays',
-        form: 'showdays',
+        name: 'viewings',
+        form: 'viewings',
         parents: [
           'mandate'
         ]

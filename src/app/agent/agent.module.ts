@@ -15,12 +15,14 @@ import { IndexComponent } from './index/index.component';
 import { FormioGrid } from 'angular-formio/grid';
 import { ViewComponent } from './view/view.component';
 import { AgentFeedComponent } from './agent-components/agent-feed/agent-feed.component';
+import { NgAisModule } from 'angular-instantsearch';
 
 @NgModule({
     imports: [
         CommonModule,
         FormioModule,
         FormioGrid,
+        NgAisModule,
         FormioResource,
         RouterModule.forChild([
             {
