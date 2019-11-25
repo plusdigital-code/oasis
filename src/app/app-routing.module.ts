@@ -22,10 +22,6 @@ export const Approutes: Routes = [
         loadChildren: './agent/agent.module#AgentModule'
       },
       {
-        path: 'brokers',
-        loadChildren: './brokers/brokers.module#BrokersModule'
-      },
-      {
         path: 'offices',
         loadChildren: './offices/offices.module#OfficesModule'
       },
@@ -64,6 +60,10 @@ export const Approutes: Routes = [
       {
         path: 'contacts',
         loadChildren: './contacts/contacts.module#ContactsModule'
+      },
+      {
+        path: 'companies',
+        loadChildren: './companies/companies.module#CompaniesModule'
       },
       {
         path: 'brand',
