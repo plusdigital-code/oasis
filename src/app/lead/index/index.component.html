@@ -1,8 +1,0 @@
-<div class="row m-t-20">
-    <div class="col-md-12">
-        <formio src="https://digitaloffice.form.io/searchleads" (submit)="onSubmit($event)"></formio>
-        <formio-grid src="https://digitaloffice.form.io/leads"
-           (rowSelect)="onSelect($event)"
-            [createText]="'New Lead'" (createItem)="onCreateItem()"></formio-grid>
-    </div>
-</div>
