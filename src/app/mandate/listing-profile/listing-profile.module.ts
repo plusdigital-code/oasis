@@ -23,41 +23,38 @@ import { IndexComponent } from './index/index.component';
     FormioGrid,
     FormioResource,
     RouterModule.forChild([
-        {
-            path: '',
-            component: IndexComponent,
-            data: {
-              title: 'Mandates',
-              urls: [
-                { title: 'Home', url: '/home/maxprop' },
-                { title: 'Mandates' }
-              ]
-            }
-        },
-        {
-          path: ':id',
-          component: ResourceComponent,
-          children: [
-              {
-                  path: '',
-                  redirectTo: 'view',
-                  pathMatch: 'full'
-              },
-              {
-                  path: 'view',
-                  component: FormioResourceViewComponent
-              },
-              {
-                  path: 'edit',
-                  component: FormioResourceEditComponent
-              },
-              {
-                  path: 'delete',
-                  component: FormioResourceDeleteComponent
-              }
-          ]
+      {
+          path: '',
+          component: FormioResourceIndexComponent
       },
-    ])
+      {
+        path: 'new',
+        component: FormioResourceCreateComponent
+    },
+      {
+        path: ':id',
+        component: ResourceComponent,
+        children: [
+            {
+                path: '',
+                redirectTo: 'view',
+                pathMatch: 'full'
+            },
+            {
+                path: 'view',
+                component: FormioResourceViewComponent
+            },
+            {
+                path: 'edit',
+                component: FormioResourceEditComponent
+            },
+            {
+                path: 'delete',
+                component: FormioResourceDeleteComponent
+            }
+        ]
+    },
+  ])
 ],
   declarations: [ResourceComponent, IndexComponent],
 providers: [
@@ -66,7 +63,10 @@ providers: [
       provide: FormioResourceConfig,
       useValue: {
           name: 'listing',
-          form: 'listing'
+          form: 'listing',
+          parents: [
+            'mandate'
+          ]
       }
   }
 ]

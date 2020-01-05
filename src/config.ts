@@ -2,7 +2,7 @@ import { FormioAppConfig } from 'angular-formio';
 import { FormioAuthConfig } from 'angular-formio/auth';
 
 export const AppConfig: FormioAppConfig = {
-  appUrl: 'https://digitaloffice.form.io',
+  appUrl: 'https://whitefang-digitaloffice.form.io',
   apiUrl: 'https://api.form.io'
 };
 

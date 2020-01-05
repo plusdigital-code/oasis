@@ -25,7 +25,7 @@ import { IndexComponent } from './index/index.component';
     RouterModule.forChild([
       {
         path: '',
-        component: IndexComponent
+        component: FormioResourceIndexComponent
       },
       {
         path: 'new',
@@ -51,18 +51,6 @@ import { IndexComponent } from './index/index.component';
           {
             path: 'delete',
             component: FormioResourceDeleteComponent
-          },
-          {
-            path: 'notes',
-            loadChildren: './notes/notes.module#NotesModule'
-          },
-          {
-            path: 'showings',
-            loadChildren: './showings/showings.module#ShowingsModule'
-          },
-          {
-            path: 'leads',
-            loadChildren: './leads/leads.module#LeadsModule'
           },
           {
             path: 'listing-profile',
