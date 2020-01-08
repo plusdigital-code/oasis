@@ -42,7 +42,7 @@ import { ResourceComponent } from './resource/resource.component';
               },
               {
                   path: 'view',
-                  component: ViewComponent
+                  component: FormioResourceViewComponent
               },
               {
                   path: 'edit',
@@ -62,8 +62,8 @@ import { ResourceComponent } from './resource/resource.component';
     {
       provide: FormioResourceConfig,
       useValue: {
-        name: 'contacts',
-        form: 'contacts',
+        name: 'contact',
+        form: 'contact',
         parents: [
           'mandate'
         ]
