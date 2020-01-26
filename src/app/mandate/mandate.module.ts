@@ -53,16 +53,8 @@ import { IndexComponent } from './index/index.component';
             component: FormioResourceDeleteComponent
           },
           {
-            path: 'listing-profile',
-            loadChildren: './listing-profile/listing-profile.module#ListingProfileModule'
-          },
-          {
             path: 'leads',
             loadChildren: './leads/leads.module#LeadsModule'
-          },
-          {
-            path: 'marketing',
-            loadChildren: './marketing/marketing.module#MarketingModule'
           }
         ]
       },

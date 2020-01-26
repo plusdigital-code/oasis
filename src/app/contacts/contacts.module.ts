@@ -65,8 +65,8 @@ import { ContactSearchComponent } from './contact-components/contact-search/cont
         {
             provide: FormioResourceConfig,
             useValue: {
-                name: 'contacts',
-                form: 'contacts'
+                name: 'contact',
+                form: 'contact'
             }
         }
     ]

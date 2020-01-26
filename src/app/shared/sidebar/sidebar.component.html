@@ -7,6 +7,7 @@
 
                 <div class="user-content hide-menu m-t-10">
                     <h5 class="m-b-10 user-name font-medium">Hi {{ auth.user.data.firstName }}</h5>
+<img src="{{auth.user.data.profilePhoto['0'].url}}" style="max-width: 50px;" />
                 </div>
             </div>
             <!-- End User Profile-->
