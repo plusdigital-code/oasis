@@ -7,6 +7,8 @@
 
                 <div class="user-content hide-menu m-t-10">
                     <h5 class="m-b-10 user-name font-medium">Hi {{ auth.user.data.firstName }}</h5>
+                    <img src="{{auth.user.data.profilePhoto['0'].url}}" class="rounded-circle img-fluid" style="width: 66px;height: 66px; object-fit: cover;" />
+                    
                 </div>
             </div>
             <!-- End User Profile-->
