@@ -3,11 +3,27 @@ import { RouteInfo } from './sidebar.metadata';
 export const ROUTES: RouteInfo[] = [
 
   {
+    path: '/agent',
+    title: 'Agent',
+    icon: 'icon-Office',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+  {
+    path: '/contact',
+    title: 'contact',
+    icon: 'fas fa-map',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+  {
     path: '/form',
-    title: 'Form',
-    icon: 'mdi mdi-dots-horizontal',
-    class: 'nav-small-cap',
-    extralink: true,
+    title: 'form',
+    icon: 'fas fa-map',
+    class: '',
+    extralink: false,
     submenu: []
   }
 ];

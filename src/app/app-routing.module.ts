@@ -14,6 +14,14 @@ export const Approutes: Routes = [
         loadChildren: './starter/starter.module#StarterModule'
       },
       {
+        path: 'contact',
+        loadChildren: './contact/contact.module#ContactModule'
+      },
+      {
+        path: 'agent',
+        loadChildren: './agent/agent.module#AgentModule'
+      },
+      {
         path: 'form',
         loadChildren: './form/form.module#FormModule'
       },

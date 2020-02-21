@@ -1,0 +1,41 @@
+<ais-instantsearch [config]="{
+  apiKey: 'efe2e1f090c52825b9413451ca24f3b0',
+  appId: '5BBJ80MJOQ',
+  indexName: 'listings_Residential',
+  routing: true
+}">
+<div class="row">
+  <div class="col-md-12">
+    <div class="kt-portlet kt-portlet--mobile">
+      <div class="kt-portlet__body">
+        <ais-search-box placeholder='Search by Anything you Looking For - Factory in New Germany'>
+        </ais-search-box>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+
+  <div class="col-md-12">
+    <div>
+      <ais-hits>
+        <ng-template let-hits="hits">
+          <mat-grid-list cols="3" rowHeight="2:2.8" gutterSize="10px;">
+            <div *ngFor="let hit of hits">
+              <mat-grid-tile>
+
+                <p>{{ hit.objectID }}</p>
+              </mat-grid-tile>
+            </div>
+          </mat-grid-list>
+        </ng-template>
+      </ais-hits>
+    </div>
+
+  </div>
+
+  <ais-pagination showLast="true" showFirst="true"></ais-pagination>
+</div>
+
+
+</ais-instantsearch>
