@@ -13,6 +13,9 @@ body {
 .sidebar-nav ul .nav-small-cap {
     opacity: 1;
 }
+input[type="radio"], input[type="checkbox"]{
+    margin-right:5px;
+}
 
 .topbar .nav-toggler,
 .topbar .topbartoggler {
@@ -23,7 +26,9 @@ body {
 .pac-container {
     z-index: 10000 !important;
 }
-
+.comment-widgets .comment-row:hover, .comment-widgets .comment-row.active {
+    background-color: #ffffff;
+}
 .form-control {
     color: #000000;
 }

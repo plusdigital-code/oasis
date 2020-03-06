@@ -4,7 +4,7 @@
     indexName: 'ooba_Con',
     routing: true
   }">
-    <div class="row">
+    <div class="row" style="margin-top:15px;">
         <div class="col-md-12">
             <div class="card bg-light">
                 <div class="card-body">
@@ -22,13 +22,7 @@
                     <ais-clear-refinements [clearsQuery]="true"></ais-clear-refinements>
                 </div>
             </div>
-            <div class="card bg-light-info">
-                <div class="card-body">
-                    <h5>Type</h5>
-                    <ais-refinement-list attribute="type" operator="or" [limit]="5">
-                    </ais-refinement-list>
-                </div>
-            </div>
+
             <div class="card bg-light-info">
                 <div class="card-body">
                     <h5>Price</h5>
@@ -46,7 +40,6 @@
                     </ais-numeric-menu>
                 </div>
             </div>
-
             <div class="card bg-light-info">
                 <div class="card-body">
                     <h5 class="m-b-15">Suburbs</h5>
@@ -57,24 +50,8 @@
             </div>
             <div class="card bg-light-info">
                 <div class="card-body">
-                    <h5 class="m-b-15">Agents</h5>
-                    <ais-refinement-list attribute="agent" operator="or" [limit]="10" [showMoreLimit]="15"
-                        showMoreLabel="More" showLessLabel="Less" [searchable]="true">
-                    </ais-refinement-list>
-                </div>
-            </div>
-            <div class="card bg-light-info">
-                <div class="card-body">
-                    <h5>Office</h5>
-                    <ais-refinement-list attribute="office" operator="or" [limit]="20" [showMoreLimit]="21"
-                        showMoreLabel="More" showLessLabel="Less">
-                    </ais-refinement-list>
-                </div>
-            </div>
-            <div class="card bg-light-info">
-                <div class="card-body">
-                    <h5>Property Types</h5>
-                    <ais-refinement-list attribute="propertyType" operator="or" [limit]="4" [showMoreLimit]="10"
+                    <h5>Cities</h5>
+                    <ais-refinement-list attribute="city" operator="or" [limit]="20" [showMoreLimit]="21"
                         showMoreLabel="More" showLessLabel="Less">
                     </ais-refinement-list>
                 </div>
@@ -85,15 +62,14 @@
                 <ng-template let-hits="hits">
                     <div *ngFor="let hit of hits">
                         <div class="card">
-                            <img class="card-img-top img-responsive" style="max-height: 350px;" src="{{hit.cover}}" />
+                            <img class="card-img-top img-fluid" style="height: 350px;" src="{{hit.cover}}" />
                             <div class="card-body">
-                                <span class="float-right">{{ hit.suburb }}</span>
-                                <h3>
-                                    {{hit.headline}}
-                                </h3>
-
+                                <div class="d-flex no-block align-items-center m-b-15">
+                                    <i class="sl-icon-location-pin"></i> {{ hit.address }}
+                                </div>
 
                                 <div class="d-flex no-block align-items-center m-b-15">
+
                                     <ais-highlight attribute="bedrooms" [hit]="hit">
                                     </ais-highlight>
                                     <span class="p-l-5">Bedrooms</span>
@@ -102,16 +78,144 @@
                                         <span class="font-weight-bold">R{{hit.price | number}}</span>
                                     </div>
                                 </div>
-                                <p class="m-b-0 m-t-10">
-                                    <ais-highlight attribute="descriptionAbridged" [hit]="hit">
-                                    </ais-highlight>...
-                                </p>
+                                <div [innerHTML]="hit.descriptionAbridged"></div>
+                                <h3>Property Features</h3>
+                                <div class="card-body">
+                                    <ul class="list-style-none float-left">
+                                        <li class="m-t-10">
+                                            <div class="d-flex align-items-center"><img src="../../assets/images/bedroom.png" class="img-fluid" style="width:35px; object-fit: cover;" />
+                                                <div class="m-l-10">
+                                                    <h5 class="m-b-0">{{ hit.bedrooms }}</h5><span class="text-muted">Bedrooms</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="m-t-10">
+                                            <div class="d-flex align-items-center"><img src="../../assets/images/bathroom.png" class="img-fluid" style="width:35px; object-fit: cover;" />
+                                                <div class="m-l-10">
+                                                    <h5 class="m-b-0">{{ hit.bathrooms }}</h5><span class="text-muted">Bathrooms</span>
+                                                </div>
+                                            </div>
+                                            
+                                        </li>
+                                        <li class="m-t-10 m-b-10">
+                                            <div class="d-flex align-items-center"><img src="../../assets/images/kitchen.png" class="img-fluid" style="width:35px; object-fit: cover;" />
+                                                <div class="m-l-10">
+                                                    <h5 class="m-b-0">{{ hit.kitchens }}</h5><span class="text-muted">Kitchens</span>
+                                                </div>
+                                            </div>
+                                         
+                                        </li>
+                                        <li class="m-t-10">
+                                            <div class="d-flex align-items-center"><img src="../../assets/images/garage.png" class="img-fluid" style="width:35px; object-fit: cover;" />
+                                                <div class="m-l-10">
+                                                    <h5 class="m-b-0">{{ hit.garages }}</h5><span class="text-muted">Garages</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="m-t-10 m-b-10">
+                                            <div class="d-flex align-items-center"><img src="../../assets/images/parking.png" class="img-fluid" style="width:35px; object-fit: cover;" />
+                                                <div class="m-l-10">
+                                                    <h5 class="m-b-0">{{ hit.carPorts }}</h5><span class="text-muted">Car Ports</span>
+                                                </div>
+                                            </div>
+                                         
+                                        </li>
+                                    </ul>
+                                    <ul class="list-style-none float-right">
+                                        
+                                        <li class="m-t-10" *ngIf="hit.studies">
+                                            <div class="d-flex align-items-center"><img src="../../assets/images/studies.png" class="img-fluid" style="width:35px; object-fit: cover;" />
+                                                <div class="m-l-10">
+                                                    <h5 class="m-b-0">{{ hit.studies }}</h5><span class="text-muted">Study Rooms</span>
+                                                </div>
+                                            </div>
+                                            
+                                        </li>
+                                        <li class="m-t-10 m-b-10" *ngIf="hit.flatlet">
+                                            <div class="d-flex align-items-center"><img src="../../assets/images/bathrooms.png" class="img-fluid" style="width:35px; object-fit: cover;" />
+                                                <div class="m-l-10">
+                                                    <h5 class="m-b-0">{{ hit.flatlet }}</h5><span class="text-muted">Flatlet</span>
+                                                </div>
+                                            </div>
+                                         
+                                        </li>
+                                        <li class="m-t-10 m-b-10" *ngIf="hit.domesticAccomodation">
+                                            <div class="d-flex align-items-center"><img src="../../assets/images/bathrooms.png" class="img-fluid" style="width:35px; object-fit: cover;" />
+                                                <div class="m-l-10">
+                                                    <h5 class="m-b-0">{{ hit.domesticAccomodation }}</h5><span class="text-muted">Domestic Rooms</span>
+                                                </div>
+                                            </div>
+                                         
+                                        </li>
+                                   
+                                        <li class="m-t-10 m-b-10">
+                                            <div class="d-flex align-items-center"><img src="../../assets/images/view.png" class="img-fluid" style="width:35px; object-fit: cover;" />
+                                                <div class="m-l-10">
+                                                    <h5 class="m-b-0">{{ hit.views }}</h5><span class="text-muted">Views</span>
+                                                </div>
+                                            </div>
+                                         
+                                        </li>
+                                        <li class="m-t-10 m-b-10">
+                                            <div class="d-flex align-items-center"><img src="../../assets/images/pool.png" class="img-fluid" style="width:35px; object-fit: cover;" />
+                                                <div class="m-l-10">
+                                                    <h5 class="m-b-0">{{ hit.pool }}</h5><span class="text-muted">Pool</span>
+                                                </div>
+                                            </div>
+                                         
+                                        </li>
+                                        <li class="m-t-10 m-b-10">
+                                            <div class="d-flex align-items-center"><img src="../../assets/images/security.png" class="img-fluid" style="width:35px; object-fit: cover;" />
+                                                <div class="m-l-10">
+                                                    <h5 class="m-b-0">{{ hit.security }}</h5><span class="text-muted">Security</span>
+                                                </div>
+                                            </div>
+                                         
+                                        </li>
+                                        <!--                                        <li class="m-t-10 m-b-10">
+                                            <div class="d-flex align-items-center"><img src="../../assets/images/bathrooms.png" class="img-fluid" style="width:35px; object-fit: cover;" />
+                                                <div class="m-l-10">
+                                                    <h5 class="m-b-0">{{ hit.petsAllowed }}</h5><span class="text-muted">Pets Allowed</span>
+                                                </div>
+                                            </div>
+                                         
+                                        </li>
+                                        <li class="m-t-10 m-b-10">
+                                            <div class="d-flex align-items-center"><img src="../../assets/images/bathrooms.png" class="img-fluid" style="width:35px; object-fit: cover;" />
+                                                <div class="m-l-10">
+                                                    <h5 class="m-b-0">{{ hit.receptionRooms }}</h5><span class="text-muted">Reception Rooms</span>
+                                                </div>
+                                            </div>
+                                         
+                                        </li>
+                                    -->
+                                        <li class="m-t-10 m-b-10" *ngIf="hit.floor">
+                                            <div class="d-flex align-items-center"><img src="../../assets/images/floor.png" class="img-fluid" style="width:35px; object-fit: cover;" />
+                                                <div class="m-l-10">
+                                                    <h5 class="m-b-0">{{ hit.floor | number }}m²</h5><span class="text-muted">Floor Size</span>
+                                                </div>
+                                            </div>
+                                         
+                                        </li>
+                                        <li class="m-t-10 m-b-10" *ngIf="hit.land">
+                                            <div class="d-flex align-items-center"><img src="../../assets/images/land.png" class="img-fluid" style="width:35px; object-fit: cover;" />
+                                                <div class="m-l-10">
+                                                    <h5 class="m-b-0">{{ hit.land | number }}m²</h5><span class="text-muted">Land Size</span>
+                                                </div>
+                                            </div>
+                                         
+                                        </li>
+                                    </ul>
+                                    <div class="clear"></div>
+                                </div>
+
                                 <hr />
                                 <div class="comment-widgets">
                                     <!-- Comment Row -->
                                     <div class="d-flex flex-row comment-row m-t-0">
                                         <div>
-                                            <img src="{{hit.agentPhoto}}" alt="user" style="object-fit: cover; height: 75px;">
+                                            <img src="{{hit.agentPhoto}}" alt="user"
+                                                style="object-fit: cover; height: 75px;">
                                         </div>
                                         <div class="comment-text w-100">
                                             <h6 class="font-medium">
@@ -124,14 +228,13 @@
                                                 <ais-highlight attribute="code" [hit]="hit">
                                                 </ais-highlight>
                                             </h6>
-                                            <span
-                                                class="d-block text-muted">Blah</span>
+                                            <span class="d-block text-muted">{{ hit.partner }}</span>
                                         </div>
                                     </div>
                                 </div>
                                 <a href="#"
                                     class="btn btn-primary btn-block btn-rounded waves-effect waves-light m-t-20">
-                                    Property Details</a>
+                                    Property Brochure</a>
                             </div>
                         </div>
                     </div>

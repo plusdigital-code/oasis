@@ -1,27 +1,26 @@
 import { RouteInfo } from './sidebar.metadata';
 
 export const ROUTES: RouteInfo[] = [
-
+  {
+    path: '/starter',
+    title: 'Listings',
+    icon: 'fas fa-home',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
   {
     path: '/agent',
     title: 'Agent',
-    icon: 'icon-Office',
+    icon: 'fas fa-id-badge',
     class: '',
     extralink: false,
     submenu: []
   },
   {
     path: '/contact',
-    title: 'contact',
-    icon: 'fas fa-map',
-    class: '',
-    extralink: false,
-    submenu: []
-  },
-  {
-    path: '/form',
-    title: 'form',
-    icon: 'fas fa-map',
+    title: 'Leads',
+    icon: 'fas fa-id-card',
     class: '',
     extralink: false,
     submenu: []
