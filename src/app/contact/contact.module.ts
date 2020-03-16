@@ -14,7 +14,7 @@ import {
     FormioResourceDeleteComponent,
 } from 'angular-formio/resource';
 import { FormioGrid } from 'angular-formio/grid';
-
+import { IndexComponent } from './index/index.component';
 @NgModule({
     imports: [
         CommonModule,
@@ -60,7 +60,7 @@ import { FormioGrid } from 'angular-formio/grid';
             },
         ])
     ],
-    declarations: [ResourceComponent],
+    declarations: [ResourceComponent, IndexComponent],
     providers: [
         FormioResourceService,
         {
