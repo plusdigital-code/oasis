@@ -26,38 +26,6 @@ export const ROUTES: RouteInfo[] = [
     submenu: []
   },
   {
-    path: '/users',
-    title: 'Users',
-    icon: 'fas fa-address-book',
-    class: '',
-    extralink: false,
-    submenu: []
-  },
-  {
-    path: '',
-    title: 'Available Stock',
-    icon: 'mdi mdi-dots-horizontal',
-    class: 'nav-small-cap',
-    extralink: true,
-    submenu: []
-  },
-  {
-    path: '/stock',
-    title: 'Residential Stock',
-    icon: 'fas fa-map',
-    class: '',
-    extralink: false,
-    submenu: []
-  },
-  {
-    path: '/commercial-stock',
-    title: 'Commercial Stock',
-    icon: 'icon-Office',
-    class: '',
-    extralink: false,
-    submenu: []
-  },
-  {
     path: '',
     title: 'Contacts',
     icon: 'mdi mdi-dots-horizontal',
@@ -106,21 +74,5 @@ export const ROUTES: RouteInfo[] = [
     extralink: false,
     submenu: [
     ]
-  },
-  {
-    path: '',
-    title: 'Brand & Marketing',
-    icon: 'mdi mdi-dots-horizontal',
-    class: 'nav-small-cap',
-    extralink: true,
-    submenu: []
-  },
-  {
-    path: '/brand-marketing',
-    title: 'Brand & Marketing',
-    icon: 'fas fa-images',
-    class: '',
-    extralink: false,
-    submenu: []
   }
 ];
