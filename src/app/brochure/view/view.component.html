@@ -20,8 +20,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div style="float:left">
-                        <h3>{{ service.resource?.data.headline }}</h3>
-                        <p class="text-dark">R{{ service.resource?.data.price | number }}</p>
+                        <h4>R{{ service.resource?.data.price | number }}</h4>
                     </div>
                     <div style="float: right">
                         <h4 class="font-bold">{{ service.resource?.data.address.formatted_address }}</h4>
@@ -34,13 +33,13 @@
             </div>
             <div class="row">
                 <div class="col-md-7"><img src="{{ service.resource?.data.images[0].url }}" class="img-fluid"
-                        style="object-fit: cover;max-height:400px;min-width:100%;" />
+                        style="object-fit: cover;max-height:340px;min-width:100%;min-height:340px;" />
                 </div>
 
                 <div class="col-md-5"><img src="{{ service.resource?.data.images[1].url }}" class="img-fluid"
-                        style="object-fit: cover;max-height:190px;min-width:100%;" /><img
-                        src="{{ service.resource?.data.images[2].url }}" class="img-fluid m-t-15"
-                        style="object-fit: cover; max-height:190px;min-width:100%;" />
+                        style="object-fit: cover;max-height:160px;min-width:100%;" /><img
+                        src="{{ service.resource?.data.images[2].url }}" class="img-fluid m-t-20"
+                        style="object-fit: cover; max-height:160px;min-width:100%;" />
                 </div>
             </div>
             <div class="row">
