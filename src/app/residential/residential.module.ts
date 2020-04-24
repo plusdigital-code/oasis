@@ -14,7 +14,6 @@ import {
   FormioResourceDeleteComponent
 } from 'angular-formio/resource';
 import { FormioGrid } from 'angular-formio/grid';
-import { IndexComponent } from './index/index.component';
 
 @NgModule({
   imports: [
@@ -25,7 +24,7 @@ import { IndexComponent } from './index/index.component';
     RouterModule.forChild([
       {
         path: '',
-        component: IndexComponent
+        component: FormioResourceIndexComponent
       },
       {
         path: 'new',
@@ -60,7 +59,7 @@ import { IndexComponent } from './index/index.component';
       },
     ])
   ],
-  declarations: [ResourceComponent, IndexComponent],
+  declarations: [ResourceComponent],
   providers: [
     FormioResourceService,
     {
@@ -72,4 +71,4 @@ import { IndexComponent } from './index/index.component';
     }
   ]
 })
-export class MandateModule { }
+export class ResidentialModule { }
