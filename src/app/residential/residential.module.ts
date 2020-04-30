@@ -50,11 +50,8 @@ import { FormioGrid } from 'angular-formio/grid';
           {
             path: 'delete',
             component: FormioResourceDeleteComponent
-          },
-          {
-            path: 'leads',
-            loadChildren: './leads/leads.module#LeadsModule'
           }
+          
         ]
       },
     ])

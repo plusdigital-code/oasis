@@ -78,12 +78,21 @@ export const Approutes: Routes = [
         loadChildren: './support/support.module#SupportModule'
       },
       {
+        path: 'tools',
+        loadChildren: './tools/tools.module#ToolsModule'
+      },
+      {
         path: 'auth',
         loadChildren: './auth/auth.module#AuthModule'
       },
       {
         path: 'users',
         loadChildren: './users/users.module#UsersModule'
+      },
+
+      {
+        path: 'residential',
+        loadChildren: './residential/residential.module#ResidentialModule'
       },
       {
         path: 'component',

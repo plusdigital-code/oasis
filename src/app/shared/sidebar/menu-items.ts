@@ -41,14 +41,7 @@ export const ROUTES: RouteInfo[] = [
     extralink: false,
     submenu: []
   },
-  {
-    path: '/companies',
-    title: 'Companies',
-    icon: 'fas fa-briefcase',
-    class: '',
-    extralink: false,
-    submenu: []
-  },
+ 
   {
     path: '',
     title: 'Agents and Offices',
