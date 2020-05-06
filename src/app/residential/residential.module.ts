@@ -51,6 +51,14 @@ import { IndexComponent } from './index/index.component';
           {
             path: 'delete',
             component: FormioResourceDeleteComponent
+          },
+          {
+            path: 'contact',
+            loadChildren: './contact/contact.module#ContactModule'
+          },
+          {
+            path: 'notes',
+            loadChildren: './notes/notes.module#NotesModule'
           }
         ]
       },
