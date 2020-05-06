@@ -18,6 +18,14 @@ export const Approutes: Routes = [
         loadChildren: './auth/auth.module#AuthModule'
       },
       {
+        path: 'residential',
+        loadChildren: './residential/residential.module#ResidentialModule'
+      },
+      {
+        path: 'office',
+        loadChildren: './office/office.module#OfficeModule'
+      },
+      {
         path: 'component',
         loadChildren: './component/component.module#ComponentsModule'
       }
