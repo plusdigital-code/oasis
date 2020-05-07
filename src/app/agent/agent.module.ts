@@ -21,8 +21,8 @@ import {
     {
       provide: FormioResourceConfig,
       useValue: {
-        name: 'agent',
-        form: 'agent'
+        name: 'onboarding',
+        form: 'onboarding'
       }
     }
   ]
