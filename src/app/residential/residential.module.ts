@@ -59,6 +59,10 @@ import { IndexComponent } from './index/index.component';
           {
             path: 'notes',
             loadChildren: './notes/notes.module#NotesModule'
+          },
+          {
+            path: 'viewings',
+            loadChildren: './viewings/viewings.module#ViewingsModule'
           }
         ]
       },
