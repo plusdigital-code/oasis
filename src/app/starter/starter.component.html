@@ -17,225 +17,67 @@
     </div>
     <div class="row m-t-20">
         <div class="col-md-3">
-            <div class="card bg-light-info">
-                <div class="card-body">
-                    <ais-clear-refinements [clearsQuery]="true"></ais-clear-refinements>
-                </div>
-            </div>
-
-            <div class="card bg-light-info">
-                <div class="card-body">
-                    <h5>Price</h5>
-                    <ais-numeric-menu attribute="price" operator="or" [items]="[
-                          { name: 'All' },
-                          { end: 499999, name: 'Less than R500k' },
-                          { start: 500000, end: 999999, name: 'R500k - R1M' },
-                          { start: 1000000, end: 1499999, name: 'R1m - R1,5m' },
-                          { start: 1500000, end: 1999999, name: 'R1.5m - R2m' },
-                          { start: 2000000, end: 2499999, name: 'R2m - R2.5m' },
-                          { start: 2500000, end: 2999999, name: 'R2.5m - R3m' },
-                          { start: 3000000, end: 3499999, name: 'R3m - R3.5m' },
-                          { start: 3500000, name: 'Above R3m' }
-                        ]">
-                    </ais-numeric-menu>
-                </div>
-            </div>
-            <div class="card bg-light-info">
-                <div class="card-body">
-                    <h5 class="m-b-15">Suburbs</h5>
-                    <ais-refinement-list attribute="suburb" operator="or" [limit]="10" [showMoreLimit]="15"
-                        showMoreLabel="More" showLessLabel="Less" [searchable]="true">
-                    </ais-refinement-list>
-                </div>
-            </div>
-            <div class="card bg-light-info">
-                <div class="card-body">
-                    <h5>Cities</h5>
-                    <ais-refinement-list attribute="city" operator="or" [limit]="20" [showMoreLimit]="21"
-                        showMoreLabel="More" showLessLabel="Less">
-                    </ais-refinement-list>
-                </div>
-            </div>
         </div>
         <div class="col-md-6">
             <ais-hits>
                 <ng-template let-hits="hits">
                     <div *ngFor="let hit of hits">
                         <div class="card">
-                            <img class="card-img-top img-fluid" style="height: 350px;" src="{{hit.cover}}" />
-                            <div class="card-body">
-                                <div class="d-flex no-block align-items-center m-b-15">
-                                    <i class="sl-icon-location-pin"></i> {{ hit.address }}
-                                </div>
-
-                                <div class="d-flex no-block align-items-center m-b-15">
-
-                                    <ais-highlight attribute="bedrooms" [hit]="hit">
-                                    </ais-highlight>
-                                    <span class="p-l-5">Bedrooms</span>
-
-                                    <div class="ml-auto">
-                                        <span class="font-weight-bold">R{{hit.price | number}}</span>
-                                    </div>
-                                </div>
-                                <div [innerHTML]="hit.descriptionAbridged"></div>
-                                <h3>Property Features</h3>
-                                <div class="card-body">
-                                    <ul class="list-style-none float-left">
-                                        <li class="m-t-10">
-                                            <div class="d-flex align-items-center"><img src="../../assets/images/bedroom.png" class="img-fluid" style="width:35px; object-fit: cover;" />
-                                                <div class="m-l-10">
-                                                    <h5 class="m-b-0">{{ hit.bedrooms }}</h5><span class="text-muted">Bedrooms</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="m-t-10">
-                                            <div class="d-flex align-items-center"><img src="../../assets/images/bathroom.png" class="img-fluid" style="width:35px; object-fit: cover;" />
-                                                <div class="m-l-10">
-                                                    <h5 class="m-b-0">{{ hit.bathrooms }}</h5><span class="text-muted">Bathrooms</span>
-                                                </div>
-                                            </div>
-                                            
-                                        </li>
-                                        <li class="m-t-10 m-b-10">
-                                            <div class="d-flex align-items-center"><img src="../../assets/images/kitchen.png" class="img-fluid" style="width:35px; object-fit: cover;" />
-                                                <div class="m-l-10">
-                                                    <h5 class="m-b-0">{{ hit.kitchens }}</h5><span class="text-muted">Kitchens</span>
-                                                </div>
-                                            </div>
-                                         
-                                        </li>
-                                        <li class="m-t-10">
-                                            <div class="d-flex align-items-center"><img src="../../assets/images/garage.png" class="img-fluid" style="width:35px; object-fit: cover;" />
-                                                <div class="m-l-10">
-                                                    <h5 class="m-b-0">{{ hit.garages }}</h5><span class="text-muted">Garages</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="m-t-10 m-b-10">
-                                            <div class="d-flex align-items-center"><img src="../../assets/images/parking.png" class="img-fluid" style="width:35px; object-fit: cover;" />
-                                                <div class="m-l-10">
-                                                    <h5 class="m-b-0">{{ hit.carPorts }}</h5><span class="text-muted">Car Ports</span>
-                                                </div>
-                                            </div>
-                                         
-                                        </li>
-                                    </ul>
-                                    <ul class="list-style-none float-right">
-                                        
-                                        <li class="m-t-10" *ngIf="hit.studies">
-                                            <div class="d-flex align-items-center"><img src="../../assets/images/studies.png" class="img-fluid" style="width:35px; object-fit: cover;" />
-                                                <div class="m-l-10">
-                                                    <h5 class="m-b-0">{{ hit.studies }}</h5><span class="text-muted">Study Rooms</span>
-                                                </div>
-                                            </div>
-                                            
-                                        </li>
-                                        <li class="m-t-10 m-b-10" *ngIf="hit.flatlet">
-                                            <div class="d-flex align-items-center"><img src="../../assets/images/bathrooms.png" class="img-fluid" style="width:35px; object-fit: cover;" />
-                                                <div class="m-l-10">
-                                                    <h5 class="m-b-0">{{ hit.flatlet }}</h5><span class="text-muted">Flatlet</span>
-                                                </div>
-                                            </div>
-                                         
-                                        </li>
-                                        <li class="m-t-10 m-b-10" *ngIf="hit.domesticAccomodation">
-                                            <div class="d-flex align-items-center"><img src="../../assets/images/bathrooms.png" class="img-fluid" style="width:35px; object-fit: cover;" />
-                                                <div class="m-l-10">
-                                                    <h5 class="m-b-0">{{ hit.domesticAccomodation }}</h5><span class="text-muted">Domestic Rooms</span>
-                                                </div>
-                                            </div>
-                                         
-                                        </li>
-                                   
-                                        <li class="m-t-10 m-b-10">
-                                            <div class="d-flex align-items-center"><img src="../../assets/images/view.png" class="img-fluid" style="width:35px; object-fit: cover;" />
-                                                <div class="m-l-10">
-                                                    <h5 class="m-b-0">{{ hit.views }}</h5><span class="text-muted">Views</span>
-                                                </div>
-                                            </div>
-                                         
-                                        </li>
-                                        <li class="m-t-10 m-b-10">
-                                            <div class="d-flex align-items-center"><img src="../../assets/images/pool.png" class="img-fluid" style="width:35px; object-fit: cover;" />
-                                                <div class="m-l-10">
-                                                    <h5 class="m-b-0">{{ hit.pool }}</h5><span class="text-muted">Pool</span>
-                                                </div>
-                                            </div>
-                                         
-                                        </li>
-                                        <li class="m-t-10 m-b-10">
-                                            <div class="d-flex align-items-center"><img src="../../assets/images/security.png" class="img-fluid" style="width:35px; object-fit: cover;" />
-                                                <div class="m-l-10">
-                                                    <h5 class="m-b-0">{{ hit.security }}</h5><span class="text-muted">Security</span>
-                                                </div>
-                                            </div>
-                                         
-                                        </li>
-                                        <!--                                        <li class="m-t-10 m-b-10">
-                                            <div class="d-flex align-items-center"><img src="../../assets/images/bathrooms.png" class="img-fluid" style="width:35px; object-fit: cover;" />
-                                                <div class="m-l-10">
-                                                    <h5 class="m-b-0">{{ hit.petsAllowed }}</h5><span class="text-muted">Pets Allowed</span>
-                                                </div>
-                                            </div>
-                                         
-                                        </li>
-                                        <li class="m-t-10 m-b-10">
-                                            <div class="d-flex align-items-center"><img src="../../assets/images/bathrooms.png" class="img-fluid" style="width:35px; object-fit: cover;" />
-                                                <div class="m-l-10">
-                                                    <h5 class="m-b-0">{{ hit.receptionRooms }}</h5><span class="text-muted">Reception Rooms</span>
-                                                </div>
-                                            </div>
-                                         
-                                        </li>
-                                    -->
-                                        <li class="m-t-10 m-b-10" *ngIf="hit.floor">
-                                            <div class="d-flex align-items-center"><img src="../../assets/images/floor.png" class="img-fluid" style="width:35px; object-fit: cover;" />
-                                                <div class="m-l-10">
-                                                    <h5 class="m-b-0">{{ hit.floor | number }}m²</h5><span class="text-muted">Floor Size</span>
-                                                </div>
-                                            </div>
-                                         
-                                        </li>
-                                        <li class="m-t-10 m-b-10" *ngIf="hit.land">
-                                            <div class="d-flex align-items-center"><img src="../../assets/images/land.png" class="img-fluid" style="width:35px; object-fit: cover;" />
-                                                <div class="m-l-10">
-                                                    <h5 class="m-b-0">{{ hit.land | number }}m²</h5><span class="text-muted">Land Size</span>
-                                                </div>
-                                            </div>
-                                         
-                                        </li>
-                                    </ul>
-                                    <div class="clear"></div>
-                                </div>
-
-                                <hr />
-                                <div class="comment-widgets">
-                                    <!-- Comment Row -->
-                                    <div class="d-flex flex-row comment-row m-t-0">
-                                        <div>
-                                            <img src="{{hit.agentPhoto}}" alt="user"
-                                                style="object-fit: cover; height: 75px;">
-                                        </div>
-                                        <div class="comment-text w-100">
-                                            <h6 class="font-medium">
-                                                {{ hit.agent }}
-                                            </h6>
-                                            <span class="d-block">{{hit.office }}</span>
-                                        </div>
-                                        <div class="comment-text w-100 text-right">
-                                            <h6 class="text-muted">
-                                                <ais-highlight attribute="code" [hit]="hit">
-                                                </ais-highlight>
-                                            </h6>
-                                            <span class="d-block text-muted">{{ hit.partner }}</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="/starter/{{hit.objectID}}"
-                                    class="btn btn-primary btn-block btn-rounded waves-effect waves-light m-t-20">
-                                    Property Brochure</a>
+                            <img class="card-img-top img-fluid"
+                                style="height: 350px; margin-bottom:25px;box-shadow: 0 5px 12px 0 rgba(0,0,0,0.2),0 5px 12px 0 rgba(0,0,0,0.19) !important;"
+                                src="{{hit.cover}}" />
+                            <h2 style="color: #6abd46; margin-bottom: 10px;">R{{hit.price | number}}</h2>
+                            <span class="font-weight-bold" style="color: #6abd46;">{{ hit.bedrooms }} Bedroom
+                                {{ hit.propertyType }}</span>
+                            <div class="d-flex no-block align-items-center m-b-10 m-t-10">
+                                <i class="sl-icon-location-pin" style="color: #6abd46;margin-right: 8px;"></i> <span
+                                    class="font-weight-bold">{{ hit.address }}</span>
                             </div>
+                            <div class="card" style="border: 0px; margin-top:20px; margin-bottom: 30px;">
+                                    <div class="d-flex align-items-center">
+                                        <div class="m-r-10"><span style="color: #6abd46;">{{ hit.bedrooms }}</span></div>
+                                        <div> <img src="../../assets/images/bed-icon.jpg" style="height: 40px; margin-right: 10px;" /></div>
+                                        <div class="m-r-10"><span style="color: #6abd46;">{{ hit.bathrooms }}</span></div>
+                                        <div> <img src="../../assets/images/bathroom-icon.jpg" style="height: 40px; margin-right: 10px" /></div>
+                                        <div class="m-r-10"><span style="color: #6abd46;">{{ hit.garages }}</span></div>
+                                        <div> <img src="../../assets/images/garages-icon.jpg" style="height: 40px; margin-right: 10px" /></div>
+                                     
+                                </div>
+                                <div *ngIf="hit.pool" class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-bottom">
+                                            <div> <img src="../../assets/images/pool.jpg" /></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div [innerHTML]="hit.descriptionAbridged"></div>
+                            <div class="card bg-light" style="margin-top: 45px;">
+                                <div class="card-body">
+                                    <h4 style="margin-left: 15px;">Property Features</h4>
+                                    <table class="table">
+                                        <tr>
+                                            <th>{{ hit.bedrooms }} Bedrooms</th>
+                                            <th>1</th>
+                                        </tr>
+                                        <tr>
+                                            <th>{{ hit.bathrooms }} Bathrooms</th>
+                                            <th>1</th>
+                                        </tr>
+                                        <tr>
+                                            <th>{{ hit.garages }} Garages</th>
+                                            <th>1</th>
+                                        </tr>
+                                        <tr>
+                                            <th>1</th>
+                                            <th>1</th>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <a href="/starter/{{hit.objectID}}"
+                                class="btn btn-primary btn-block btn-rounded waves-effect waves-light m-t-20">
+                                Property Brochure</a>
                         </div>
                     </div>
                 </ng-template>
