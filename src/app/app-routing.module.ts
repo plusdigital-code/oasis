@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { FullComponent } from './layouts/full/full.component';
+import { BlankComponent } from './layouts/blank/blank.component';
 
 export const Approutes: Routes = [
   {
@@ -14,52 +15,30 @@ export const Approutes: Routes = [
         loadChildren: './starter/starter.module#StarterModule'
       },
       {
-        path: 'account',
-        loadChildren: './account/account.module#AccountModule'
+        path: 'contact',
+        loadChildren: './contact/contact.module#ContactModule'
       },
       {
         path: 'agent',
         loadChildren: './agent/agent.module#AgentModule'
       },
       {
-        path: 'brokers',
-        loadChildren: './brokers/brokers.module#BrokersModule'
-      },
-      {
-        path: 'offices',
-        loadChildren: './offices/offices.module#OfficesModule'
-      },
-      {
-        path: 'mandates',
-        loadChildren: './mandates/mandates.module#MandatesModule'
-      },
-      {
-        path: 'mandate',
-        loadChildren: './mandate/mandate.module#MandateModule'
-      },
-      {
-        path: 'listings',
-        loadChildren: './listings/listings.module#ListingsModule'
-      },
-      {
-        path: 'tools',
-        loadChildren: './tools/tools.module#ToolsModule'
-      },
-      {
-        path: 'contacts',
-        loadChildren: './contacts/contacts.module#ContactsModule'
-      },
-      {
-        path: 'brand-marketing',
-        loadChildren: './brand-marketing/brand-marketing.module#BrandMarketingModule'
+        path: 'form',
+        loadChildren: './form/form.module#FormModule'
       },
       {
         path: 'auth',
         loadChildren: './auth/auth.module#AuthModule'
-      },
+      }
+    ]
+  },
+  {
+    path: '',
+    component: BlankComponent,
+    children: [
       {
-        path: 'component',
-        loadChildren: './component/component.module#ComponentsModule'
+        path: 'brochure',
+        loadChildren: './brochure/brochure.module#BrochureModule'
       }
     ]
   },
