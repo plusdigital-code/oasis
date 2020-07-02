@@ -32,7 +32,7 @@ constructor(
             this.slimLoader.complete();
         });
         this.auth.onLogin.subscribe(() => {
-            this.router.navigate(['/']);
+            this.router.navigate(['/contacts']);
           });
           this.auth.onLogout.subscribe(() => {
             this.router.navigate(['/auth/login']);

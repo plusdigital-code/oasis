@@ -17,6 +17,45 @@
     </div>
     <div class="row m-t-20">
         <div class="col-md-3">
+            <div class="card bg-light-info">
+                <div class="card-body">
+                    <ais-clear-refinements [clearsQuery]="true"></ais-clear-refinements>
+                </div>
+            </div>
+
+            <div class="card bg-light-info">
+                <div class="card-body">
+                    <h5>Price</h5>
+                    <ais-numeric-menu attribute="price" operator="or" [items]="[
+                          { name: 'All' },
+                          { end: 499999, name: 'Less than R500k' },
+                          { start: 500000, end: 999999, name: 'R500k - R1M' },
+                          { start: 1000000, end: 1499999, name: 'R1m - R1,5m' },
+                          { start: 1500000, end: 1999999, name: 'R1.5m - R2m' },
+                          { start: 2000000, end: 2499999, name: 'R2m - R2.5m' },
+                          { start: 2500000, end: 2999999, name: 'R2.5m - R3m' },
+                          { start: 3000000, end: 3499999, name: 'R3m - R3.5m' },
+                          { start: 3500000, name: 'Above R3m' }
+                        ]">
+                    </ais-numeric-menu>
+                </div>
+            </div>
+            <div class="card bg-light-info">
+                <div class="card-body">
+                    <h5 class="m-b-15">Suburbs</h5>
+                    <ais-refinement-list attribute="suburb" operator="or" [limit]="10" [showMoreLimit]="15"
+                        showMoreLabel="More" showLessLabel="Less" [searchable]="true">
+                    </ais-refinement-list>
+                </div>
+            </div>
+            <div class="card bg-light-info">
+                <div class="card-body">
+                    <h5>Cities</h5>
+                    <ais-refinement-list attribute="city" operator="or" [limit]="20" [showMoreLimit]="21"
+                        showMoreLabel="More" showLessLabel="Less">
+                    </ais-refinement-list>
+                </div>
+            </div>
         </div>
         <div class="col-md-6">
             <ais-hits>
@@ -26,6 +65,7 @@
                             <img class="card-img-top img-fluid"
                                 style="height: 350px; margin-bottom:25px;box-shadow: 0 5px 12px 0 rgba(0,0,0,0.2),0 5px 12px 0 rgba(0,0,0,0.19) !important;"
                                 src="{{hit.cover}}" />
+                                <div class="listing-body" style="padding:15px;">
                             <h2 style="color: #6abd46; margin-bottom: 10px;">R{{hit.price | number}}</h2>
                             <span class="font-weight-bold" style="color: #6abd46;">{{ hit.bedrooms }} Bedroom
                                 {{ hit.propertyType }}</span>
@@ -41,6 +81,10 @@
                                         <div> <img src="../../assets/images/bathroom-icon.jpg" style="height: 40px; margin-right: 10px" /></div>
                                         <div class="m-r-10"><span style="color: #6abd46;">{{ hit.garages }}</span></div>
                                         <div> <img src="../../assets/images/garages-icon.jpg" style="height: 40px; margin-right: 10px" /></div>
+                                        <div *ngIf="hit.floorSize" class="m-r-10"><span style="color: #6abd46;">{{ hit.floorSize }}</span></div>
+                                        <div *ngIf="hit.floorSize"> <img src="../../assets/images/garages-icon.jpg" style="height: 40px; margin-right: 10px" /></div>
+                                        <div *ngIf="hit.landSize" class="m-r-10"><span style="color: #6abd46;">{{ hit.landSize }}</span></div>
+                                        <div *ngIf="hit.landSize"> <img src="../../assets/images/garages-icon.jpg" style="height: 40px; margin-right: 10px" /></div>
                                      
                                 </div>
                                 <div *ngIf="hit.pool" class="card">
@@ -51,35 +95,41 @@
                                     </div>
                                 </div>
                             </div>
-                            <div [innerHTML]="hit.descriptionAbridged"></div>
+                            <div [innerHTML]="hit.description"></div>
                             <div class="card bg-light" style="margin-top: 45px;">
                                 <div class="card-body">
-                                    <h4 style="margin-left: 15px;">Property Features</h4>
+                                    <h4 style="margin-left: 15px;" style="font-weight: bold;">Property Features</h4>
                                     <table class="table">
                                         <tr>
-                                            <th>{{ hit.bedrooms }} Bedrooms</th>
-                                            <th>1</th>
+                                            <th *ngIf="hit.bedrooms">{{ hit.bedrooms }} Bedrooms</th>
+                                            <th *ngIf="hit.flatlet">{{ hit.flatlet }} Flatlet(s)</th>
                                         </tr>
                                         <tr>
-                                            <th>{{ hit.bathrooms }} Bathrooms</th>
-                                            <th>1</th>
+                                            <th *ngIf="hit.bathrooms">{{ hit.bathrooms }} Bathrooms</th>
+                                            <th *ngIf="hit.receptionRooms">{{ hit.receptionRooms }} Reception Rooms</th>
                                         </tr>
                                         <tr>
-                                            <th>{{ hit.garages }} Garages</th>
-                                            <th>1</th>
+                                            <th *ngIf="hit.kitchens">{{ hit.kitchens }} Kitchens</th>
+                                            <th *ngIf="hit.domesticRooms">{{ hit.domesticRooms }} Domestic Rooms</th>
                                         </tr>
                                         <tr>
-                                            <th>1</th>
-                                            <th>1</th>
+                                            <th *ngIf="hit.garages">{{ hit.garages }} Garages</th>
+                                            <th *ngIf="hit.carPorts">{{ hit.carPorts }} Car Ports</th>
                                         </tr>
                                     </table>
                                 </div>
                             </div>
-                            <a href="/starter/{{hit.objectID}}"
-                                class="btn btn-primary btn-block btn-rounded waves-effect waves-light m-t-20">
-                                Property Brochure</a>
+                            <!-- The text field -->
+                            <div class="input-group mb-3">
+                            <div class="input-group-prepend"><label class="input-group-text" for="myInput">Listing Code:</label></div>
+<input class="form-control" style="width: 50%;" type="text" value="{{hit.code}}" id="myInput">
+</div>
+<!-- The button used to copy the text -->
+<button class="btn btn-primary btn-block" onclick="myFunction()">Copy Code</button>
+                         
                         </div>
                     </div>
+                </div>
                 </ng-template>
             </ais-hits>
             <ais-pagination showLast="true" showFirst="true"></ais-pagination>
