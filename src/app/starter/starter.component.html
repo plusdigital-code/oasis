@@ -5,7 +5,10 @@
     routing: true
   }">
     <div class="row" style="margin-top:15px;">
-        <div class="col-md-12">
+        <div class="col-md-2">
+           
+        </div>
+        <div class="col-md-8">
             <div class="card bg-light">
                 <div class="card-body">
                     <ais-search-box
@@ -13,6 +16,9 @@
                     </ais-search-box>
                 </div>
             </div>
+        </div>
+        <div class="col-md-2">
+           
         </div>
     </div>
     <div class="row m-t-20">
@@ -65,71 +71,83 @@
                             <img class="card-img-top img-fluid"
                                 style="height: 350px; margin-bottom:25px;box-shadow: 0 5px 12px 0 rgba(0,0,0,0.2),0 5px 12px 0 rgba(0,0,0,0.19) !important;"
                                 src="{{hit.cover}}" />
-                                <div class="listing-body" style="padding:15px;">
-                            <h2 style="color: #6abd46; margin-bottom: 10px;">R{{hit.price | number}}</h2>
-                            <span class="font-weight-bold" style="color: #6abd46;">{{ hit.bedrooms }} Bedroom
-                                {{ hit.propertyType }}</span>
-                            <div class="d-flex no-block align-items-center m-b-10 m-t-10">
-                                <i class="sl-icon-location-pin" style="color: #6abd46;margin-right: 8px;"></i> <span
-                                    class="font-weight-bold">{{ hit.address }}</span>
-                            </div>
-                            <div class="card" style="border: 0px; margin-top:20px; margin-bottom: 30px;">
-                                    <div class="d-flex align-items-center">
-                                        <div class="m-r-10"><span style="color: #6abd46;">{{ hit.bedrooms }}</span></div>
-                                        <div> <img src="../../assets/images/bed-icon.jpg" style="height: 40px; margin-right: 10px;" /></div>
-                                        <div class="m-r-10"><span style="color: #6abd46;">{{ hit.bathrooms }}</span></div>
-                                        <div> <img src="../../assets/images/bathroom-icon.jpg" style="height: 40px; margin-right: 10px" /></div>
-                                        <div class="m-r-10"><span style="color: #6abd46;">{{ hit.garages }}</span></div>
-                                        <div> <img src="../../assets/images/garages-icon.jpg" style="height: 40px; margin-right: 10px" /></div>
-                                        <div *ngIf="hit.floorSize" class="m-r-10"><span style="color: #6abd46;">{{ hit.floorSize }}</span></div>
-                                        <div *ngIf="hit.floorSize"> <img src="../../assets/images/garages-icon.jpg" style="height: 40px; margin-right: 10px" /></div>
-                                        <div *ngIf="hit.landSize" class="m-r-10"><span style="color: #6abd46;">{{ hit.landSize }}</span></div>
-                                        <div *ngIf="hit.landSize"> <img src="../../assets/images/garages-icon.jpg" style="height: 40px; margin-right: 10px" /></div>
-                                     
+                            <div class="listing-body" style="padding:15px;">
+                                <h2 style="color: #6abd46; margin-bottom: 10px;">R{{hit.price | number}}</h2>
+                                <span class="font-weight-bold" style="color: #6abd46;">{{ hit.bedrooms }} Bedroom
+                                    {{ hit.propertyType }}</span>
+                                <div class="d-flex no-block align-items-center m-b-10 m-t-10">
+                                    <i class="sl-icon-location-pin" style="color: #6abd46;margin-right: 8px;"></i> <span
+                                        class="address">{{ hit.address }}</span>
                                 </div>
-                                <div *ngIf="hit.pool" class="card">
-                                    <div class="card-body">
-                                        <div class="d-flex align-items-bottom">
-                                            <div> <img src="../../assets/images/pool.jpg" /></div>
+                                <div class="card" style="border: 0px; margin-top:20px; margin-bottom: 30px;">
+                                    <div class="d-flex align-items-center">
+                                        <div class="m-r-10"><span style="color: #6abd46;">{{ hit.bedrooms }}</span>
+                                        </div>
+                                        <div> <img src="../../assets/images/bed-icon.jpg"
+                                                style="height: 40px; margin-right: 10px;" /></div>
+                                        <div class="m-r-10"><span style="color: #6abd46;">{{ hit.bathrooms }}</span>
+                                        </div>
+                                        <div> <img src="../../assets/images/bathroom-icon.jpg"
+                                                style="height: 40px; margin-right: 10px" /></div>
+                                        <div class="m-r-10"><span style="color: #6abd46;">{{ hit.garages }}</span></div>
+                                        <div> <img src="../../assets/images/garages-icon.jpg"
+                                                style="height: 40px; margin-right: 10px" /></div>
+                                        <div *ngIf="hit.floorSize" class="m-r-10"><span
+                                                style="color: #6abd46;">{{ hit.floorSize }}</span></div>
+                                        <div *ngIf="hit.floorSize"> <img src="../../assets/images/garages-icon.jpg"
+                                                style="height: 40px; margin-right: 10px" /></div>
+                                        <div *ngIf="hit.landSize" class="m-r-10"><span
+                                                style="color: #6abd46;">{{ hit.landSize }}</span></div>
+                                        <div *ngIf="hit.landSize"> <img src="../../assets/images/garages-icon.jpg"
+                                                style="height: 40px; margin-right: 10px" /></div>
+
+                                    </div>
+                                    <div *ngIf="hit.pool" class="card">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-bottom">
+                                                <div> <img src="../../assets/images/pool.jpg" /></div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div [innerHTML]="hit.description"></div>
-                            <div class="card bg-light" style="margin-top: 45px;">
-                                <div class="card-body">
-                                    <h4 style="margin-left: 15px;" style="font-weight: bold;">Property Features</h4>
-                                    <table class="table">
-                                        <tr>
-                                            <th *ngIf="hit.bedrooms">{{ hit.bedrooms }} Bedrooms</th>
-                                            <th *ngIf="hit.flatlet">{{ hit.flatlet }} Flatlet(s)</th>
-                                        </tr>
-                                        <tr>
-                                            <th *ngIf="hit.bathrooms">{{ hit.bathrooms }} Bathrooms</th>
-                                            <th *ngIf="hit.receptionRooms">{{ hit.receptionRooms }} Reception Rooms</th>
-                                        </tr>
-                                        <tr>
-                                            <th *ngIf="hit.kitchens">{{ hit.kitchens }} Kitchens</th>
-                                            <th *ngIf="hit.domesticRooms">{{ hit.domesticRooms }} Domestic Rooms</th>
-                                        </tr>
-                                        <tr>
-                                            <th *ngIf="hit.garages">{{ hit.garages }} Garages</th>
-                                            <th *ngIf="hit.carPorts">{{ hit.carPorts }} Car Ports</th>
-                                        </tr>
-                                    </table>
+                                <div [innerHTML]="hit.description"></div>
+                                <div class="card bg-light-info" style="margin-top: 45px;">
+                                    <div class="card-body">
+                                        <h4 style="margin-left: 15px;" style="font-weight: bold;">Property Features</h4>
+                                        <table class="table">
+                                            <tr>
+                                                <th>{{ hit.bedrooms }} Bedrooms</th>
+                                                <th>{{ hit.flatlet }} Flatlet(s)</th>
+                                            </tr>
+                                            <tr>
+                                                <th>{{ hit.bathrooms }} Bathrooms</th>
+                                                <th>{{ hit.receptionRooms }} Reception Rooms</th>
+                                            </tr>
+                                            <tr>
+                                                <th>{{ hit.kitchens }} Kitchens</th>
+                                                <th>{{ hit.domesticRooms }} Domestic Rooms</th>
+                                            </tr>
+                                            <tr>
+                                                <th>{{ hit.garages }} Garages</th>
+                                                <th>{{ hit.carPorts }} Car Ports</th>
+                                            </tr>
+                                        </table>
+                                    </div>
                                 </div>
+                                <!-- The text field -->
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend"><label class="input-group-text"
+                                            for="myInput">Listing Code:</label></div>
+                                    <input class="form-control" type="text" value="{{hit.code}}" id="myInput">
+
+                                    <div class="input-group-append"><button class="btn btn-primary copyButton"
+                                            onclick="myFunction()">Copy Code</button></div>
+                                </div>
+                                <!-- The button used to copy the text -->
+
                             </div>
-                            <!-- The text field -->
-                            <div class="input-group mb-3">
-                            <div class="input-group-prepend"><label class="input-group-text" for="myInput">Listing Code:</label></div>
-<input class="form-control" style="width: 50%;" type="text" value="{{hit.code}}" id="myInput">
-</div>
-<!-- The button used to copy the text -->
-<button class="btn btn-primary btn-block" onclick="myFunction()">Copy Code</button>
-                         
                         </div>
                     </div>
-                </div>
                 </ng-template>
             </ais-hits>
             <ais-pagination showLast="true" showFirst="true"></ais-pagination>
