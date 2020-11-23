@@ -1,3 +1,4 @@
+
 <ais-instantsearch [config]="{
     apiKey: 'be3cea14adbbe71cf02d833888d191ac',
     appId: 'G0RI7NNWIC',
@@ -48,8 +49,8 @@
             </div>
             <div class="card bg-light-info">
                 <div class="card-body">
-                    <h5 class="m-b-15">Suburbs</h5>
-                    <ais-refinement-list attribute="suburb" operator="or" [limit]="10" [showMoreLimit]="15"
+                    <h5 class="m-b-15">Province</h5>
+                    <ais-refinement-list attribute="province" operator="or" [limit]="10" [showMoreLimit]="15"
                         showMoreLabel="More" showLessLabel="Less" [searchable]="true">
                     </ais-refinement-list>
                 </div>
@@ -58,18 +59,20 @@
                 <div class="card-body">
                     <h5>Cities</h5>
                     <ais-refinement-list attribute="city" operator="or" [limit]="20" [showMoreLimit]="21"
-                        showMoreLabel="More" showLessLabel="Less">
+                        showMoreLabel="More" showLessLabel="Less" [searchable]="true">
                     </ais-refinement-list>
                 </div>
             </div>
             <div class="card bg-light-info">
                 <div class="card-body">
-                    <h5 class="m-b-15">Province</h5>
-                    <ais-refinement-list attribute="province" operator="or" [limit]="10" [showMoreLimit]="15"
+                    <h5 class="m-b-15">Suburbs</h5>
+                    <ais-refinement-list attribute="suburb" operator="or" [limit]="10" [showMoreLimit]="15"
                         showMoreLabel="More" showLessLabel="Less" [searchable]="true">
                     </ais-refinement-list>
                 </div>
             </div>
+           
+            
         </div>
         <div class="col-md-6">
             <ais-hits>
@@ -104,14 +107,11 @@
                                                 style="color: #6abd46;">{{ hit.floor | number }}m²</span></div>
                                         <div *ngIf="hit.floor"> <img src="../../assets/images/floor.png"
                                                 style="height: 40px; margin-right: 10px" /></div>
-                                        <div *ngIf="hit.land" class="m-r-10"><span
-                                                style="color: #6abd46;">{{ hit.land | number }}m²</span></div>
-                                        <div *ngIf="hit.land"> <img src="../../assets/images/floor.png"
-                                                style="height: 40px; margin-right: 10px" /></div>
 
                                     </div>
                             
                                 </div>
+                               
                                 <div [innerHTML]="hit.description"></div>
                                 <div class="card bg-light-info" style="margin-top: 45px;">
                                     <div class="card-body">
@@ -136,6 +136,13 @@
                                         </table>
                                     </div>
                                 </div>
+                                <div class="card bg-light-info" style="margin-top: 45px;">
+                                    <div class="card-body">
+<strong>Agent:</strong> {{ hit.agent }}<br />
+<strong>Partner:</strong> {{ hit.partner }}<br />
+<a href="{{ hit.webLink }}" target="_blank" style="text-decoration: underline;">Web Link</a>
+                                        </div>
+                                        </div>
                                 <!-- The text field -->
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend"><label class="input-group-text"
@@ -178,30 +185,7 @@
                     </ais-range-input>
                 </div>
             </div>
-            <div class="card bg-light-info">
-                <div class="card-body">
-                    <h5>View</h5>
-                    <ais-toggle attribute="views" label="View"></ais-toggle>
-                </div>
-            </div>
-            <div class="card bg-light-info">
-                <div class="card-body">
-                    <h5>Security</h5>
-                    <ais-toggle attribute="security" label="Security"></ais-toggle>
-                </div>
-            </div>
-            <div class="card bg-light-info">
-                <div class="card-body">
-                    <h5>Pool</h5>
-                    <ais-toggle attribute="pool" label="Pool"></ais-toggle>
-                </div>
-            </div>
-            <div class="card bg-light-info">
-                <div class="card-body">
-                    <h5>Pets</h5>
-                    <ais-toggle attribute="pets" label="Pets"></ais-toggle>
-                </div>
-            </div>
+            
         </div>
     </div>
 </ais-instantsearch>
