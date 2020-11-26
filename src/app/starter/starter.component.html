@@ -1,4 +1,3 @@
-
 <ais-instantsearch [config]="{
     apiKey: 'be3cea14adbbe71cf02d833888d191ac',
     appId: 'G0RI7NNWIC',
@@ -7,7 +6,7 @@
   }">
     <div class="row" style="margin-top:15px;">
         <div class="col-md-2">
-           
+
         </div>
         <div class="col-md-8">
             <div class="card bg-light">
@@ -19,7 +18,7 @@
             </div>
         </div>
         <div class="col-md-2">
-           
+
         </div>
     </div>
     <div class="row m-t-20">
@@ -71,8 +70,8 @@
                     </ais-refinement-list>
                 </div>
             </div>
-           
-            
+
+
         </div>
         <div class="col-md-6">
             <ais-hits>
@@ -109,9 +108,9 @@
                                                 style="height: 40px; margin-right: 10px" /></div>
 
                                     </div>
-                            
+
                                 </div>
-                               
+
                                 <div [innerHTML]="hit.description"></div>
                                 <div class="card bg-light-info" style="margin-top: 45px;">
                                     <div class="card-body">
@@ -138,19 +137,20 @@
                                 </div>
                                 <div class="card bg-light-info" style="margin-top: 45px;">
                                     <div class="card-body">
-<strong>Agent:</strong> {{ hit.agent }}<br />
-<strong>Partner:</strong> {{ hit.partner }}<br />
-<a href="{{ hit.webLink }}" target="_blank" style="text-decoration: underline;">Web Link</a>
-                                        </div>
-                                        </div>
+                                        <strong>Agent:</strong> {{ hit.agent }}<br />
+                                        <strong>Partner:</strong> {{ hit.partner }}<br />
+                                        <a href="{{ hit.webLink }}" target="_blank"
+                                            style="text-decoration: underline;">Web Link</a>
+                                    </div>
+                                </div>
                                 <!-- The text field -->
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend"><label class="input-group-text"
                                             for="myInput">Listing Code:</label></div>
-                                    <input class="form-control" type="text" value="{{hit.code}}" id="myInput">
+                                    <input class="form-control inputCode" type="text" value="{{hit.code}}" id="myInput">
 
                                     <div class="input-group-append"><button class="btn btn-primary copyButton"
-                                            onclick="myFunction()">Copy Code</button></div>
+                                            onclick="myFunction(this)">Copy Code</button></div>
                                 </div>
                                 <!-- The button used to copy the text -->
 
@@ -185,7 +185,7 @@
                     </ais-range-input>
                 </div>
             </div>
-            
+
         </div>
     </div>
 </ais-instantsearch>

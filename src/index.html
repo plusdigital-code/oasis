@@ -34,19 +34,21 @@
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <app-root></app-root>
-    <script>function myFunction() {
+    <script>
+    function myFunction(e) {
+     
             /* Get the text field */
             var copyText = document.getElementById("myInput");
 
             /* Select the text field */
-            copyText.select();
-            copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+            e.offsetParent.childNodes[1].select();
+            e.offsetParent.childNodes[1].setSelectionRange(0, 99999); /*For mobile devices*/
 
             /* Copy the text inside the text field */
             document.execCommand("copy");
 
             /* Alert the copied text */
-            alert("Copied the text: " + copyText.value);
+            alert("Copied the text: " + e.offsetParent.childNodes[1].value);
         }</script>
 
 </body>
