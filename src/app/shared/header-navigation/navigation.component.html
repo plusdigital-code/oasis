@@ -19,7 +19,7 @@
 <!-- ============================================================== -->
 <!-- Right side toggle and nav items -->
 <!-- ============================================================== -->
-<ul class="navbar-nav float-right">
+<ul class="navbar-nav float-right loginMenu">
   <!-- ============================================================== -->
   <!-- Search -->
   <!-- ============================================================== -->
@@ -27,11 +27,11 @@
   <!-- create new -->
   <!-- ============================================================== -->
   <li class="nav-item" routerLinkActive="active" *ngIf="!auth.authenticated">
-    <a class="nav-link" routerLink="auth" style="border: 1px solid #000; border-radius: 3px;"><i
-        class="mdi mdi-power"></i> Login | Register</a>
+    <a class="nav-link" href="/#/auth/login" style="border: 1px solid #000; border-radius: 3px;"><i
+        class="mdi mdi-power"></i> Login</a>
   </li>
   <li class="nav-item" *ngIf="auth.authenticated">
-    <a class="nav-link" routerLink="home" (click)="auth.logout()"><i class="mdi mdi-power"></i> Logout</a>
+    <a class="nav-link" routerLink="starter" (click)="auth.logout()"><i class="mdi mdi-power"></i> Logout</a>
   </li>
   <!-- ============================================================== -->
   <!-- User profile and search -->
